@@ -5,58 +5,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SuryaSg | Advanced AI Research & Development</title>
     <meta name="description" content="Exploring the Theoretical Frontiers of Artificial Intelligence - Research, Innovation, and Technical Insights.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --deep-space: #0a0e17;
             --stellar-white: #f0f2f5;
             --intellectual-blue: #1a3a63;
-            --theory-gray: #384b62;
-            --accent-teal: #2c7d8c;
+            --futuristic-blue: #0b3b8c;
+            --accent-teal: #00b8d4;
             --highlight-blue: #4a90e2;
+            --glass-blue: rgba(10, 25, 47, 0.7);
+            --glass-highlight: rgba(0, 184, 212, 0.1);
             --subtle-purple: #4a4e69;
+            --glow-color: rgba(0, 184, 212, 0.5);
+        }
+        
+        @keyframes subtleFloat {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes pulsate {
+            0% { box-shadow: 0 0 0 0 var(--glow-color); }
+            70% { box-shadow: 0 0 10px 5px var(--glow-color); }
+            100% { box-shadow: 0 0 0 0 var(--glow-color); }
         }
         
         body {
-            font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
             background-color: var(--deep-space);
             background-image: 
-                radial-gradient(var(--stellar-white), rgba(240,242,245,.1) 2px, transparent 40px),
-                radial-gradient(var(--stellar-white), rgba(240,242,245,.05) 1px, transparent 30px);
-            background-size: 550px 550px, 350px 350px;
-            background-position: 0 0, 40px 40px;
+                linear-gradient(125deg, #060c21, #0f172a);
             color: var(--stellar-white);
             line-height: 1.7;
             margin: 0;
             padding: 0;
             font-weight: 300;
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        .background-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: 
+                linear-gradient(rgba(240,242,245,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(240,242,245,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
+        
+        .background-stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(var(--stellar-white), rgba(240,242,245,0) 2px),
+                radial-gradient(var(--stellar-white), rgba(240,242,245,0) 1px);
+            background-size: 250px 250px, 150px 150px;
+            background-position: 0 0, 75px 75px;
+            opacity: 0.3;
+            z-index: -1;
         }
         
         .container {
-            max-width: 960px;
+            max-width: 1140px;
             margin: 0 auto;
             padding: 2rem;
+            position: relative;
         }
         
         header {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             padding: 2rem 0;
             border-bottom: 1px solid rgba(240,242,245,0.1);
+            position: relative;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-teal), transparent);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1rem;
+        }
+        
+        .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--futuristic-blue), var(--accent-teal));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--stellar-white);
+            box-shadow: 0 0 15px var(--glow-color);
         }
         
         h1 {
-            font-size: 2.4rem;
+            font-size: 2.6rem;
             margin: 0;
-            color: var(--stellar-white);
-            font-weight: 400;
+            background: linear-gradient(90deg, var(--stellar-white), var(--accent-teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 500;
             letter-spacing: -0.5px;
         }
         
         h2 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             margin: 0.5rem 0 1.5rem;
-            color: var(--highlight-blue);
-            font-weight: 300;
+            color: rgba(240,242,245,0.8);
+            font-weight: 400;
             letter-spacing: 0.3px;
         }
         
@@ -65,8 +152,15 @@
             color: var(--accent-teal);
             border-bottom: 1px solid rgba(240,242,245,0.1);
             padding-bottom: 0.5rem;
-            font-weight: 400;
+            font-weight: 500;
             margin-top: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        h3 i {
+            font-size: 1.1rem;
         }
         
         p {
@@ -76,8 +170,25 @@
         }
         
         .section {
-            margin: 3rem 0;
-            padding: 0.5rem 0;
+            margin: 4rem 0;
+            padding: 2rem;
+            background: var(--glass-blue);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            border: 1px solid rgba(240,242,245,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--futuristic-blue), var(--accent-teal), transparent);
         }
         
         .expertise-matrix {
@@ -85,7 +196,7 @@
         }
         
         .expertise-area {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
         }
@@ -94,6 +205,7 @@
             flex: 0 0 240px;
             font-weight: 400;
             letter-spacing: 0.3px;
+            color: rgba(240,242,245,0.9);
         }
         
         .expertise-level {
@@ -101,7 +213,7 @@
             height: 6px;
             background-color: rgba(240,242,245,0.1);
             position: relative;
-            border-radius: 3px;
+            border-radius: 10px;
             overflow: hidden;
         }
         
@@ -111,8 +223,10 @@
             top: 0;
             left: 0;
             height: 100%;
-            background-color: var(--highlight-blue);
-            border-radius: 3px;
+            background: linear-gradient(90deg, var(--accent-teal), var(--highlight-blue));
+            border-radius: 10px;
+            box-shadow: 0 0 10px var(--glow-color);
+            transition: width 1s ease-in-out;
         }
         
         .expertise-level.level-90::after {
@@ -132,19 +246,33 @@
         }
         
         .expertise-percent {
-            margin-left: 12px;
+            margin-left: 15px;
             font-size: 0.9rem;
-            color: rgba(240,242,245,0.7);
+            color: var(--accent-teal);
             width: 40px;
+            font-family: 'JetBrains Mono', monospace;
         }
         
         .philosophical-quote {
             font-style: italic;
-            margin: 3rem 0;
+            margin: 3rem 1rem;
             color: rgba(240,242,245,0.8);
             font-size: 1.1rem;
-            padding-left: 1.5rem;
+            padding: 2rem;
             border-left: 3px solid var(--accent-teal);
+            background: var(--glass-highlight);
+            border-radius: 0 8px 8px 0;
+            position: relative;
+        }
+        
+        .philosophical-quote::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 3rem;
+            color: var(--accent-teal);
+            opacity: 0.3;
         }
         
         .professional-links {
@@ -155,31 +283,65 @@
         }
         
         .professional-links a {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: rgba(26, 58, 99, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: rgba(26, 58, 99, 0.3);
             border: 1px solid rgba(240,242,245,0.1);
-            border-radius: 4px;
+            border-radius: 8px;
             color: var(--stellar-white);
             text-decoration: none;
             font-weight: 400;
-            transition: all 0.2s ease;
-            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .professional-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.7s ease;
         }
         
         .professional-links a:hover {
-            background-color: rgba(26, 58, 99, 0.5);
-            border-color: var(--highlight-blue);
+            background: rgba(26, 58, 99, 0.5);
+            border-color: var(--accent-teal);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .professional-links a:hover::before {
+            left: 100%;
+        }
+        
+        .professional-links a i {
+            font-size: 1.2rem;
+            color: var(--accent-teal);
         }
         
         .coordinates {
-            font-family: 'IBM Plex Mono', monospace;
-            background-color: rgba(26, 58, 99, 0.15);
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--glass-highlight);
             padding: 1.5rem;
-            border-radius: 4px;
+            border-radius: 8px;
             margin: 2rem 0;
             font-size: 0.9rem;
             border-left: 3px solid var(--intellectual-blue);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .coordinates code {
+            background: transparent;
+            color: var(--accent-teal);
         }
         
         .collaboration {
@@ -187,6 +349,15 @@
             font-weight: 400;
             font-size: 1.1rem;
             color: var(--stellar-white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(11, 59, 140, 0.2), rgba(0, 184, 212, 0.1));
+            border: 1px solid rgba(0, 184, 212, 0.2);
+        }
+        
+        .collaboration h4 {
+            margin-top: 0;
+            color: var(--accent-teal);
         }
         
         footer {
@@ -196,13 +367,25 @@
             color: rgba(240,242,245,0.5);
             border-top: 1px solid rgba(240,242,245,0.1);
             margin-top: 4rem;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-teal), transparent);
         }
         
         code {
             background-color: rgba(26, 58, 99, 0.2);
             padding: 3px 6px;
             border-radius: 3px;
-            font-family: 'IBM Plex Mono', monospace;
+            font-family: 'JetBrains Mono', monospace;
             font-size: 0.85em;
         }
         
@@ -214,14 +397,64 @@
         ul li {
             position: relative;
             padding-left: 1.5rem;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
         
         ul li::before {
-            content: "•";
+            content: "";
             position: absolute;
             left: 0;
-            color: var(--highlight-blue);
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-teal);
+            border-radius: 50%;
+            box-shadow: 0 0 5px var(--glow-color);
+        }
+        
+        ul li a {
+            color: var(--accent-teal);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            border-bottom: 1px dashed rgba(0, 184, 212, 0.3);
+            padding-bottom: 2px;
+        }
+        
+        ul li a:hover {
+            color: var(--stellar-white);
+        }
+        
+        .backdrop-blur {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(50px);
+            pointer-events: none;
+            z-index: -2;
+        }
+        
+        .floating-element {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, rgba(0, 184, 212, 0.15), transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+            animation: subtleFloat 8s ease-in-out infinite;
+        }
+        
+        .floating-element.top-right {
+            top: -150px;
+            right: -150px;
+        }
+        
+        .floating-element.bottom-left {
+            bottom: -150px;
+            left: -150px;
+            animation-delay: 2s;
         }
         
         @media (max-width: 768px) {
@@ -238,22 +471,41 @@
             }
             
             .section {
-                padding: 0;
+                padding: 1.5rem;
             }
             
             .expertise-name {
                 flex: 0 0 160px;
+                font-size: 0.9rem;
+            }
+            
+            .professional-links {
+                flex-direction: column;
+            }
+            
+            .professional-links a {
+                width: 100%;
             }
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="backdrop-blur"></div>
+    <div class="background-grid"></div>
+    <div class="background-stars"></div>
+    
     <div class="container">
+        <div class="floating-element top-right"></div>
+        <div class="floating-element bottom-left"></div>
+        
         <header>
-            <h1>SuryaSg.github.io</h1>
+            <div class="logo-container">
+                <div class="logo">SG</div>
+                <h1>SuryaSg.github.io</h1>
+            </div>
             <h2>Theoretical Exploration of Artificial Intelligence in the Cosmic Framework</h2>
         </header>
         
@@ -263,16 +515,16 @@
         </div>
         
         <div class="section">
-            <h3>Research Initiatives</h3>
+            <h3><i class="fas fa-flask"></i> Research Initiatives</h3>
             <ul>
-                <li><a href="https://chatboteam.github.io/" style="color: var(--highlight-blue);">Conversational Intelligence Framework</a> – Systematic exploration of linguistic cognition in artificial systems</li>
-                <li><a href="https://github.com/SuryaSg" style="color: var(--highlight-blue);">Computational Repository</a> – Open-source implementations of theoretical AI constructs</li>
-                <li><a href="https://aijourney.substack.com" style="color: var(--highlight-blue);">Theoretical Perspectives</a> – Technical analyses and philosophical inquiries into artificial cognition</li>
+                <li><a href="https://chatboteam.github.io/">Conversational Intelligence Framework</a> – Systematic exploration of linguistic cognition in artificial systems</li>
+                <li><a href="https://github.com/SuryaSg">Computational Repository</a> – Open-source implementations of theoretical AI constructs</li>
+                <li><a href="https://aijourney.substack.com">Theoretical Perspectives</a> – Technical analyses and philosophical inquiries into artificial cognition</li>
             </ul>
         </div>
         
         <div class="section">
-            <h3>Current Research Domains</h3>
+            <h3><i class="fas fa-brain"></i> Current Research Domains</h3>
             <ul>
                 <li>Development of cognitive architectures for extended context understanding in language models</li>
                 <li>Investigation of self-supervised learning paradigms for improved representation learning</li>
@@ -282,7 +534,7 @@
         </div>
         
         <div class="section">
-            <h3>Technical Expertise</h3>
+            <h3><i class="fas fa-microchip"></i> Technical Expertise</h3>
             <div class="expertise-matrix">
                 <div class="expertise-area">
                     <span class="expertise-name">Cognitive Modeling</span>
@@ -308,31 +560,32 @@
         </div>
         
         <div class="section">
-            <h3>Professional Network</h3>
+            <h3><i class="fas fa-network-wired"></i> Professional Network</h3>
             <div class="professional-links">
-                <a href="https://twitter.com/AISuryaSg">Twitter Academic Discourse</a>
-                <a href="https://www.linkedin.com/in/ayrusurya">LinkedIn Professional Network</a>
-                <a href="https://ai.stackexchange.com/users/16322/surya-sg">AI StackExchange Contributions</a>
-                <a href="https://stackoverflow.com/users/7084117/surya-sg">StackOverflow Technical Insights</a>
-                <a href="https://github.com/SuryaSg">GitHub Implementation Repository</a>
+                <a href="https://twitter.com/AISuryaSg"><i class="fab fa-twitter"></i> Twitter Academic Discourse</a>
+                <a href="https://www.linkedin.com/in/ayrusurya"><i class="fab fa-linkedin"></i> LinkedIn Professional Network</a>
+                <a href="https://ai.stackexchange.com/users/16322/surya-sg"><i class="fab fa-stack-exchange"></i> AI StackExchange Contributions</a>
+                <a href="https://stackoverflow.com/users/7084117/surya-sg"><i class="fab fa-stack-overflow"></i> StackOverflow Technical Insights</a>
+                <a href="https://github.com/SuryaSg"><i class="fab fa-github"></i> GitHub Implementation Repository</a>
             </div>
         </div>
         
         <div class="section">
-            <h3>Temporal-Spatial Coordinates</h3>
+            <h3><i class="fas fa-project-diagram"></i> Temporal-Spatial Coordinates</h3>
             <div class="coordinates">
-                <code>Current Epoch: 2025.03.06</code><br>
-                <code>Research Cycle: Q1.2025</code><br>
+                <code>Current Epoch: 2025.03.06</code>
+                <code>Research Cycle: Q1.2025</code>
                 <code>Reference Frame: Earth, Solar System, Local Arm, Milky Way Galaxy</code>
             </div>
         </div>
         
         <div class="collaboration">
-            <p>Research Collaboration Inquiry: If you are engaged in similar theoretical domains and wish to establish an intellectual exchange, please utilize the professional network channels listed above.</p>
+            <h4><i class="fas fa-handshake"></i> Research Collaboration</h4>
+            <p>If you are engaged in similar theoretical domains and wish to establish an intellectual exchange, please utilize the professional network channels listed above.</p>
         </div>
         
         <div class="philosophical-quote">
-            "The universe operates on mathematical principles; artificial intelligence represents our attempt to formalize these principles into computable models of cognition and understanding."
+            The universe operates on mathematical principles; artificial intelligence represents our attempt to formalize these principles into computable models of cognition and understanding.
         </div>
         
         <footer>
