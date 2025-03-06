@@ -3,187 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuryaSg | AI Pioneer of the Cosmos</title>
-    <meta name="description" content="Navigating the Cosmic Frontiers of Artificial Intelligence - Stellar Research, Interstellar Projects, and Nebular Insights.">
+    <title>SuryaSg | Advanced AI Research & Development</title>
+    <meta name="description" content="Exploring the Theoretical Frontiers of Artificial Intelligence - Research, Innovation, and Technical Insights.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css">
     <style>
         :root {
-            --space-black: #0a0a1a;
-            --star-white: #ffffff;
-            --nebula-purple: #6e4a9e;
-            --cosmic-blue: #1e3b70;
-            --stellar-teal: #05d9e8;
-            --nova-orange: #ff6b35;
-            --quantum-green: #6eff3e;
+            --deep-space: #0a0e17;
+            --stellar-white: #f0f2f5;
+            --intellectual-blue: #1a3a63;
+            --theory-gray: #384b62;
+            --accent-teal: #2c7d8c;
+            --highlight-blue: #4a90e2;
+            --subtle-purple: #4a4e69;
         }
         
         body {
-            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-            background-color: var(--space-black);
+            font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--deep-space);
             background-image: 
-                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
-                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
-            background-size: 550px 550px, 350px 350px, 250px 250px;
-            color: var(--star-white);
-            line-height: 1.6;
+                radial-gradient(var(--stellar-white), rgba(240,242,245,.1) 2px, transparent 40px),
+                radial-gradient(var(--stellar-white), rgba(240,242,245,.05) 1px, transparent 30px);
+            background-size: 550px 550px, 350px 350px;
+            background-position: 0 0, 40px 40px;
+            color: var(--stellar-white);
+            line-height: 1.7;
             margin: 0;
             padding: 0;
+            font-weight: 300;
         }
         
         .container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
             padding: 2rem;
         }
         
         header {
-            text-align: center;
             margin-bottom: 3rem;
-            padding: 2rem;
-            background: linear-gradient(145deg, var(--cosmic-blue), var(--nebula-purple));
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(240,242,245,0.1);
         }
         
         h1 {
-            font-size: 3rem;
+            font-size: 2.4rem;
             margin: 0;
-            background: linear-gradient(90deg, var(--stellar-teal), var(--star-white));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
-            font-weight: 900;
-            letter-spacing: -1px;
+            color: var(--stellar-white);
+            font-weight: 400;
+            letter-spacing: -0.5px;
         }
         
         h2 {
-            font-size: 1.8rem;
-            margin: 1rem 0;
-            color: var(--stellar-teal);
-            font-weight: 700;
+            font-size: 1.6rem;
+            margin: 0.5rem 0 1.5rem;
+            color: var(--highlight-blue);
+            font-weight: 300;
+            letter-spacing: 0.3px;
         }
         
         h3 {
-            font-size: 1.4rem;
-            color: var(--quantum-green);
-            border-bottom: 1px solid var(--nebula-purple);
+            font-size: 1.3rem;
+            color: var(--accent-teal);
+            border-bottom: 1px solid rgba(240,242,245,0.1);
             padding-bottom: 0.5rem;
+            font-weight: 400;
+            margin-top: 2.5rem;
         }
         
         p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             line-height: 1.8;
+            margin-bottom: 1.2rem;
         }
         
         .section {
-            margin: 4rem 0;
-            padding: 2rem;
-            background-color: rgba(14, 14, 40, 0.7);
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            border-left: 4px solid var(--nebula-purple);
+            margin: 3rem 0;
+            padding: 0.5rem 0;
         }
         
-        .skills-matrix {
+        .expertise-matrix {
             margin: 2rem 0;
         }
         
-        .skill-bar {
-            margin-bottom: 1rem;
+        .expertise-area {
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
         }
         
-        .skill-name {
-            display: inline-block;
-            width: 200px;
-            font-weight: 600;
+        .expertise-name {
+            flex: 0 0 240px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
         }
         
-        .skill-level {
-            color: var(--stellar-teal);
-            font-family: monospace;
-            letter-spacing: 2px;
+        .expertise-level {
+            flex: 1;
+            height: 6px;
+            background-color: rgba(240,242,245,0.1);
+            position: relative;
+            border-radius: 3px;
+            overflow: hidden;
         }
         
-        .skill-percent {
-            color: var(--nova-orange);
-            font-weight: 600;
-            margin-left: 10px;
+        .expertise-level::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: var(--highlight-blue);
+            border-radius: 3px;
         }
         
-        .cosmic-quote {
+        .expertise-level.level-90::after {
+            width: 90%;
+        }
+        
+        .expertise-level.level-80::after {
+            width: 80%;
+        }
+        
+        .expertise-level.level-70::after {
+            width: 70%;
+        }
+        
+        .expertise-level.level-85::after {
+            width: 85%;
+        }
+        
+        .expertise-percent {
+            margin-left: 12px;
+            font-size: 0.9rem;
+            color: rgba(240,242,245,0.7);
+            width: 40px;
+        }
+        
+        .philosophical-quote {
             font-style: italic;
-            text-align: center;
-            font-size: 1.2rem;
             margin: 3rem 0;
-            color: var(--stellar-teal);
+            color: rgba(240,242,245,0.8);
+            font-size: 1.1rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--accent-teal);
         }
         
-        .social-links {
+        .professional-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
+            gap: 16px;
             margin: 2rem 0;
         }
         
-        .social-links a {
+        .professional-links a {
             display: inline-block;
             padding: 8px 16px;
-            background: linear-gradient(45deg, var(--nebula-purple), var(--cosmic-blue));
-            border-radius: 6px;
-            color: var(--star-white);
+            background-color: rgba(26, 58, 99, 0.3);
+            border: 1px solid rgba(240,242,245,0.1);
+            border-radius: 4px;
+            color: var(--stellar-white);
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            font-weight: 400;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
         }
         
-        .social-links a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-            background: linear-gradient(45deg, var(--cosmic-blue), var(--nebula-purple));
+        .professional-links a:hover {
+            background-color: rgba(26, 58, 99, 0.5);
+            border-color: var(--highlight-blue);
         }
         
-        .temporal-coordinates {
-            font-family: monospace;
-            background-color: rgba(30, 59, 112, 0.3);
+        .coordinates {
+            font-family: 'IBM Plex Mono', monospace;
+            background-color: rgba(26, 58, 99, 0.15);
             padding: 1.5rem;
-            border-radius: 8px;
+            border-radius: 4px;
             margin: 2rem 0;
+            font-size: 0.9rem;
+            border-left: 3px solid var(--intellectual-blue);
         }
         
-        .cta {
-            text-align: center;
+        .collaboration {
             margin: 3rem 0;
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: var(--quantum-green);
+            font-weight: 400;
+            font-size: 1.1rem;
+            color: var(--stellar-white);
         }
         
         footer {
             text-align: center;
             padding: 2rem;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-            border-top: 1px solid var(--nebula-purple);
+            font-size: 0.85rem;
+            color: rgba(240,242,245,0.5);
+            border-top: 1px solid rgba(240,242,245,0.1);
             margin-top: 4rem;
         }
         
         code {
-            background-color: rgba(30, 59, 112, 0.5);
+            background-color: rgba(26, 58, 99, 0.2);
             padding: 3px 6px;
-            border-radius: 4px;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.9em;
+            border-radius: 3px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85em;
         }
         
-        pre {
-            background-color: rgba(30, 59, 112, 0.3);
-            padding: 1rem;
-            border-radius: 8px;
-            overflow-x: auto;
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--highlight-blue);
         }
         
         @media (max-width: 768px) {
@@ -192,121 +230,113 @@
             }
             
             h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             
             h2 {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
             
             .section {
-                padding: 1.5rem;
+                padding: 0;
             }
             
-            .social-links {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .social-links a {
-                width: 80%;
-                text-align: center;
+            .expertise-name {
+                flex: 0 0 160px;
             }
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Fira+Code&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>NEURAL NEXUS: SuryaSg.github.io</h1>
-            <h2>✧ Charting the Cosmic Frontiers of Artificial Intelligence ✧</h2>
+            <h1>SuryaSg.github.io</h1>
+            <h2>Theoretical Exploration of Artificial Intelligence in the Cosmic Framework</h2>
         </header>
         
         <div class="section">
-            <p>🚀 <strong>GREETINGS, INTERSTELLAR VOYAGER!</strong></p>
-            <p>Welcome to my orbital station where quantum thoughts materialize into cosmic AI innovations. This digital nebula houses my explorations across the vast universe of artificial intelligence—where algorithms bend spacetime and neural networks map the stars.</p>
-            <p><em>In this expanding digital universe, curiosity is our starship fuel.</em></p>
+            <p>Welcome to this intellectual repository dedicated to the advancement of artificial intelligence research within the cosmological context. This digital space serves as a nexus for theoretical frameworks, technical implementations, and conceptual models exploring the intersection of computational cognition and universal principles.</p>
+            <p>The fundamental objective is to extend the boundaries of what contemporary AI systems can achieve through rigorous investigation and innovative approaches to knowledge representation and reasoning.</p>
         </div>
         
         <div class="section">
-            <h3>🌌 STELLAR INNOVATIONS</h3>
-            <p>Navigate through my constellation of AI projects, quantum research, and galactic open-source contributions:</p>
+            <h3>Research Initiatives</h3>
             <ul>
-                <li>🛸 <a href="https://chatboteam.github.io/" style="color: var(--stellar-teal);">Chatboteam Nexus</a> – AI explorations across parallel dimensions</li>
-                <li>🔭 <a href="https://github.com/SuryaSg" style="color: var(--stellar-teal);">Quantum GitHub Repository</a> – Open-source experiments from the AI cosmos</li>
-                <li>💫 <a href="https://aijourney.substack.com" style="color: var(--stellar-teal);">Neural Transmissions</a> – Insights beamed directly from the AI frontier</li>
+                <li><a href="https://chatboteam.github.io/" style="color: var(--highlight-blue);">Conversational Intelligence Framework</a> – Systematic exploration of linguistic cognition in artificial systems</li>
+                <li><a href="https://github.com/SuryaSg" style="color: var(--highlight-blue);">Computational Repository</a> – Open-source implementations of theoretical AI constructs</li>
+                <li><a href="https://aijourney.substack.com" style="color: var(--highlight-blue);">Theoretical Perspectives</a> – Technical analyses and philosophical inquiries into artificial cognition</li>
             </ul>
         </div>
         
         <div class="section">
-            <h3>🌠 CURRENT COSMIC MISSIONS</h3>
+            <h3>Current Research Domains</h3>
             <ul>
-                <li>Engineering <strong>sentient AI companions</strong> for interstellar communication</li>
-                <li>Pioneering <strong>quantum-enhanced LLMs</strong> that predict the patterns of the universe</li>
-                <li>Translating alien knowledge through <strong>cross-dimensional transfer learning</strong></li>
-                <li>Mapping the <strong>neural pathways between human and artificial consciousness</strong></li>
+                <li>Development of cognitive architectures for extended context understanding in language models</li>
+                <li>Investigation of self-supervised learning paradigms for improved representation learning</li>
+                <li>Formalization of cross-domain knowledge transfer mechanisms in artificial systems</li>
+                <li>Theoretical frameworks mapping the isomorphism between neural and cognitive structures</li>
             </ul>
         </div>
         
         <div class="section">
-            <h3>⚡ QUANTUM SKILLS MATRIX</h3>
-            <div class="skills-matrix">
-                <div class="skill-bar">
-                    <span class="skill-name">INTELLIGENCE AUGMENTATION</span>
-                    <span class="skill-level">[■■■■■■■■■□]</span>
-                    <span class="skill-percent">90%</span>
+            <h3>Technical Expertise</h3>
+            <div class="expertise-matrix">
+                <div class="expertise-area">
+                    <span class="expertise-name">Cognitive Modeling</span>
+                    <div class="expertise-level level-90"></div>
+                    <span class="expertise-percent">90%</span>
                 </div>
-                <div class="skill-bar">
-                    <span class="skill-name">NEURAL ARCHITECTURE</span>
-                    <span class="skill-level">[■■■■■■■■□□]</span>
-                    <span class="skill-percent">80%</span>
+                <div class="expertise-area">
+                    <span class="expertise-name">Neural Architecture Design</span>
+                    <div class="expertise-level level-80"></div>
+                    <span class="expertise-percent">80%</span>
                 </div>
-                <div class="skill-bar">
-                    <span class="skill-name">QUANTUM ALGORITHMS</span>
-                    <span class="skill-level">[■■■■■■■□□□]</span>
-                    <span class="skill-percent">70%</span>
+                <div class="expertise-area">
+                    <span class="expertise-name">Algorithmic Optimization</span>
+                    <div class="expertise-level level-70"></div>
+                    <span class="expertise-percent">70%</span>
                 </div>
-                <div class="skill-bar">
-                    <span class="skill-name">COSMIC DATA SYNTHESIS</span>
-                    <span class="skill-level">[■■■■■■■■□□]</span>
-                    <span class="skill-percent">80%</span>
+                <div class="expertise-area">
+                    <span class="expertise-name">Information Theory</span>
+                    <div class="expertise-level level-85"></div>
+                    <span class="expertise-percent">85%</span>
                 </div>
             </div>
         </div>
         
         <div class="section">
-            <h3>🌍 ESTABLISH SUBSPACE COMMUNICATION</h3>
-            <div class="social-links">
-                <a href="https://twitter.com/AISuryaSg">Quantum Twitter</a>
-                <a href="https://www.linkedin.com/in/ayrusurya">Neural LinkedIn</a>
-                <a href="https://ai.stackexchange.com/users/16322/surya-sg">AI Knowledge Base</a>
-                <a href="https://stackoverflow.com/users/7084117/surya-sg">Code Continuum</a>
-                <a href="https://github.com/SuryaSg">Star Repository</a>
+            <h3>Professional Network</h3>
+            <div class="professional-links">
+                <a href="https://twitter.com/AISuryaSg">Twitter Academic Discourse</a>
+                <a href="https://www.linkedin.com/in/ayrusurya">LinkedIn Professional Network</a>
+                <a href="https://ai.stackexchange.com/users/16322/surya-sg">AI StackExchange Contributions</a>
+                <a href="https://stackoverflow.com/users/7084117/surya-sg">StackOverflow Technical Insights</a>
+                <a href="https://github.com/SuryaSg">GitHub Implementation Repository</a>
             </div>
         </div>
         
         <div class="section">
-            <h3>🌐 TEMPORAL COORDINATES</h3>
-            <div class="temporal-coordinates">
-                <code>EARTH TIME: 2025.03.06</code><br>
-                <code>COSMIC CYCLE: 065/365</code><br>
-                <code>UNIVERSAL POSITION: Sol System, Milky Way, Local Group</code>
+            <h3>Temporal-Spatial Coordinates</h3>
+            <div class="coordinates">
+                <code>Current Epoch: 2025.03.06</code><br>
+                <code>Research Cycle: Q1.2025</code><br>
+                <code>Reference Frame: Earth, Solar System, Local Arm, Milky Way Galaxy</code>
             </div>
         </div>
         
-        <div class="cta">
-            ⚡ <strong>SEEKING INTERSTELLAR COLLABORATION?</strong> Transmit your proposal through the quantum communication channels above!
+        <div class="collaboration">
+            <p>Research Collaboration Inquiry: If you are engaged in similar theoretical domains and wish to establish an intellectual exchange, please utilize the professional network channels listed above.</p>
         </div>
         
-        <div class="cosmic-quote">
-            "The universe speaks in the language of mathematics; AI is our universal translator."
+        <div class="philosophical-quote">
+            "The universe operates on mathematical principles; artificial intelligence represents our attempt to formalize these principles into computable models of cognition and understanding."
         </div>
         
         <footer>
-            © 2025 SuryaSg | Neural Nexus Portal | All Rights Reserved Across The Multiverse
+            © 2025 SuryaSg | Center for Advanced AI Theory | All Rights Reserved
         </footer>
     </div>
 </body>
