@@ -249,6 +249,62 @@
             color: var(--accent);
         }
 
+        /* Company Card */
+        .company-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 24px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.06), rgba(56, 189, 248, 0.02));
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            border-radius: 14px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.25s ease;
+        }
+
+        .company-card:hover {
+            border-color: rgba(56, 189, 248, 0.35);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(56, 189, 248, 0.1);
+        }
+
+        .company-logo {
+            width: 56px;
+            height: 56px;
+            min-width: 56px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--accent), #0ea5e9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--bg);
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .company-details h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1px;
+            letter-spacing: -0.3px;
+        }
+
+        .company-role {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 6px;
+        }
+
+        .company-details p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
         /* Skills */
         .skills-grid {
             display: grid;
@@ -437,7 +493,7 @@
                 <div class="hero-intro">
                     <div class="hero-badge"><span class="dot"></span> Open to collaborate</div>
                     <h1><span>Surya SG</span></h1>
-                    <div class="role">AI Developer &amp; Builder</div>
+                    <div class="role">AI Developer &amp; Builder &middot; Founder at <a href="https://spacemarvel.ai" target="_blank" style="color: var(--accent); text-decoration: none; border-bottom: 1px dashed var(--accent);">SpaceMarvel.ai</a></div>
                 </div>
             </div>
             <p class="hero-subtitle">I build conversational AI systems, open-source tools, and applied ML products. Currently exploring what's possible at the intersection of language models and real-world applications.</p>
@@ -476,6 +532,21 @@
                     <span class="project-arrow"><i class="fas fa-arrow-right"></i></span>
                 </a>
             </div>
+        </div>
+
+        <div class="section">
+            <div class="section-label">Company</div>
+            <a class="company-card" href="https://spacemarvel.ai" target="_blank">
+                <div class="company-logo">
+                    <i class="fas fa-meteor"></i>
+                </div>
+                <div class="company-details">
+                    <h3>SpaceMarvel.ai</h3>
+                    <div class="company-role">Founder</div>
+                    <p>Building AI-powered products that push the boundaries of what's possible. Turning cutting-edge machine learning research into real-world solutions.</p>
+                </div>
+                <span class="project-arrow"><i class="fas fa-arrow-right"></i></span>
+            </a>
         </div>
 
         <div class="section">
