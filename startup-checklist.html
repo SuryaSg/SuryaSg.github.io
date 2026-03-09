@@ -1235,13 +1235,34 @@
 </div>
 
 <script>
+function saveProgress() {
+  const checkboxes = document.querySelectorAll('.check-item input[type="checkbox"]');
+  const state = {};
+  checkboxes.forEach(cb => { state[cb.id] = cb.checked; });
+  localStorage.setItem('startup-checklist-progress', JSON.stringify(state));
+}
+
+function loadProgress() {
+  const saved = localStorage.getItem('startup-checklist-progress');
+  if (saved) {
+    const state = JSON.parse(saved);
+    Object.keys(state).forEach(id => {
+      const cb = document.getElementById(id);
+      if (cb) cb.checked = state[id];
+    });
+  }
+}
+
 function updateProgress() {
   const total = document.querySelectorAll('.check-item input[type="checkbox"]').length;
   const checked = document.querySelectorAll('.check-item input[type="checkbox"]:checked').length;
   const pct = Math.round((checked / total) * 100);
   document.getElementById('progressBar').style.width = pct + '%';
   document.getElementById('progressText').textContent = checked + ' of ' + total + ' completed';
+  saveProgress();
 }
+
+loadProgress();
 updateProgress();
 </script>
 
