@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Startup Partnership Checklist</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #f0ebe3;
+    font-family: 'Inter', sans-serif;
+    padding: 30px 20px;
+    min-height: 100vh;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 20px;
+  }
+
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #2c2c2c;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  .header p {
+    color: #7a7a7a;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .progress-bar-container {
+    max-width: 500px;
+    margin: 20px auto 0;
+    background: #e0d5c7;
+    border-radius: 20px;
+    height: 8px;
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #c9a87c, #a67c52);
+    border-radius: 20px;
+    width: 0%;
+    transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .progress-text {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #999;
+    font-weight: 500;
+  }
+
+  .masonry {
+    columns: 3;
+    column-gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 900px) { .masonry { columns: 2; } }
+  @media (max-width: 580px) { .masonry { columns: 1; } }
+
+  .card {
+    break-inside: avoid;
+    margin-bottom: 24px;
+    border-radius: 20px;
+    padding: 28px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  }
+
+  .card-icon {
+    font-size: 2rem;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: #2c2c2c;
+    margin-bottom: 6px;
+  }
+
+  .card .subtitle {
+    font-size: 0.78rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+    font-weight: 600;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: opacity 0.3s;
+  }
+
+  .check-item:last-child { border-bottom: none; }
+
+  .check-item input[type="checkbox"] {
+    display: none;
+  }
+
+  .check-item label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .custom-check {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin-top: 1px;
+  }
+
+  .custom-check svg {
+    width: 12px;
+    height: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  input[type="checkbox"]:checked + label .custom-check {
+    border-color: #a67c52;
+    background: #a67c52;
+  }
+
+  input[type="checkbox"]:checked + label .custom-check svg {
+    opacity: 1;
+  }
+
+  input[type="checkbox"]:checked + label .check-text {
+    text-decoration: line-through;
+    color: #bbb;
+  }
+
+  .check-text {
+    font-size: 0.92rem;
+    color: #4a4a4a;
+    line-height: 1.5;
+    transition: all 0.3s;
+  }
+
+  /* Card Colors */
+  .card-1 { background: #fff; }
+  .card-2 { background: #fdf6ec; }
+  .card-3 { background: #f4ede4; }
+  .card-4 { background: #e8e0d6; }
+  .card-5 { background: #fff9f0; }
+  .card-6 { background: #f9f3eb; }
+  .card-7 { background: #fff; }
+  .card-8 { background: #f0ebe3; border: 1px solid #e0d5c7; }
+
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+
+  .badge-critical { background: #f5e6d8; color: #a67c52; }
+  .badge-important { background: #e8ddd0; color: #8a7560; }
+  .badge-nice { background: #eee8e0; color: #9a9a9a; }
+
+  .references-section {
+    max-width: 1200px;
+    margin: 50px auto 0;
+  }
+
+  .references-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #2c2c2c;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .references-section .ref-subtitle {
+    text-align: center;
+    font-size: 0.78rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+    font-weight: 600;
+  }
+
+  .ref-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 900px) { .ref-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 580px) { .ref-grid { grid-template-columns: 1fr; } }
+
+  .ref-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    display: block;
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .ref-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+
+  .ref-card .ref-icon {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .ref-card .ref-institute {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: #2c2c2c;
+    margin-bottom: 4px;
+  }
+
+  .ref-card .ref-title {
+    font-size: 0.88rem;
+    color: #a67c52;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .ref-card .ref-desc {
+    font-size: 0.82rem;
+    color: #888;
+    line-height: 1.55;
+  }
+
+  .ref-card .ref-link-label {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #a67c52;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1.5px solid #a67c52;
+    padding-bottom: 1px;
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: #bbb;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Startup Partnership</h1>
+  <p>Your co-founder checklist</p>
+  <div class="progress-bar-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+  <div class="progress-text" id="progressText">0 of 0 completed</div>
+</div>
+
+<div class="masonry">
+
+  <!-- Card 1: Co-Founder Agreement -->
+  <div class="card card-1">
+    <span class="card-icon">&#x1f91d;</span>
+    <span class="badge badge-critical">Do This First</span>
+    <h2>Co-Founder Agreement</h2>
+    <div class="subtitle">Legal Foundation</div>
+
+    <div class="check-item">
+      <input type="checkbox" id="c1" onchange="updateProgress()">
+      <label for="c1">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Define equity split &amp; vesting schedule (4-year vest, 1-year cliff recommended)</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c2" onchange="updateProgress()">
+      <label for="c2">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Assign roles, responsibilities &amp; decision-making authority</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c3" onchange="updateProgress()">
+      <label for="c3">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Define exit clauses &amp; buyout terms</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c4" onchange="updateProgress()">
+      <label for="c4">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">IP assignment — all work belongs to the company</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c5" onchange="updateProgress()">
+      <label for="c5">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Non-compete &amp; confidentiality clauses</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c6" onchange="updateProgress()">
+      <label for="c6">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Hire a startup lawyer to review everything</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Card 2: The Hard Conversation -->
+  <div class="card card-2">
+    <span class="card-icon">&#x2615;</span>
+    <span class="badge badge-critical">Do This First</span>
+    <h2>The Hard Conversation</h2>
+    <div class="subtitle">Alignment Check</div>
+
+    <div class="check-item">
+      <input type="checkbox" id="c7" onchange="updateProgress()">
+      <label for="c7">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Agree on time commitment — full-time or part-time?</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c8" onchange="updateProgress()">
+      <label for="c8">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Discuss financial runway &amp; personal risk tolerance</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c9" onchange="updateProgress()">
+      <label for="c9">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Align on long-term vision — build to sell or build to last?</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c10" onchange="updateProgress()">
+      <label for="c10">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Set conflict resolution process before conflicts arise</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c11" onchange="updateProgress()">
+      <label for="c11">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Discuss salary expectations &amp; when to start paying yourselves</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Card 3: Legal Setup -->
+  <div class="card card-3">
+    <span class="card-icon">&#x2696;&#xfe0f;</span>
+    <span class="badge badge-important">Week 1-2</span>
+    <h2>Legal &amp; Structure</h2>
+    <div class="subtitle">Company Formation</div>
+
+    <div class="check-item">
+      <input type="checkbox" id="c12" onchange="updateProgress()">
+      <label for="c12">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Choose entity type — LLC or C-Corp (C-Corp if raising VC)</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c13" onchange="updateProgress()">
+      <label for="c13">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Register the company (Delaware is standard for startups)</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c14" onchange="updateProgress()">
+      <label for="c14">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Get an EIN from the IRS</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c15" onchange="updateProgress()">
+      <label for="c15">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Draft bylaws / operating agreement</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c16" onchange="updateProgress()">
+      <label for="c16">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Open a business bank account</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c17" onchange="updateProgress()">
+      <label for="c17">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Set up basic accounting (QuickBooks, Xero, etc.)</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Card 4: Validate the Idea -->
+  <div class="card card-5">
+    <span class="card-icon">&#x1f4a1;</span>
+    <span class="badge badge-critical">Do This First</span>
+    <h2>Validate the Idea</h2>
+    <div class="subtitle">Before You Build</div>
+
+    <div class="check-item">
+      <input type="checkbox" id="c18" onchange="updateProgress()">
+      <label for="c18">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Define the problem you're solving in one sentence</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c19" onchange="updateProgress()">
+      <label for="c19">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Talk to 20+ potential customers</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c20" onchange="updateProgress()">
+      <label for="c20">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Research competitors &amp; identify your unique edge</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c21" onchange="updateProgress()">
+      <label for="c21">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Estimate market size (TAM / SAM / SOM)</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c22" onchange="updateProgress()">
+      <label for="c22">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Define your ideal customer persona</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Card 5: Build MVP -->
+  <div class="card card-4">
+    <span class="card-icon">&#x1f6e0;&#xfe0f;</span>
+    <span class="badge badge-important">Month 1</span>
+    <h2>Build Your MVP</h2>
+    <div class="subtitle">Product Development</div>
+
+    <div class="check-item">
+      <input type="checkbox" id="c23" onchange="updateProgress()">
+      <label for="c23">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Define the core feature set — ruthlessly cut scope</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c24" onchange="updateProgress()">
+      <label for="c24">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Choose your tech stack</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c25" onchange="updateProgress()">
+      <label for="c25">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Set a launch deadline &amp; stick to it</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c26" onchange="updateProgress()">
+      <label for="c26">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Get 10 beta users before public launch</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c27" onchange="updateProgress()">
+      <label for="c27">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Set up analytics &amp; feedback loops from day one</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Card 6: Finances -->
+  <div class="card card-6">
+    <span class="card-icon">&#x1f4b0;</span>
+    <span class="badge badge-important">Ongoing</span>
+    <h2>Money Matters</h2>
+    <div class="subtitle">Financial Planning</div>
+
+    <div class="check-item">
+      <input type="checkbox" id="c28" onchange="updateProgress()">
+      <label for="c28">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Calculate personal runway — how long can you go without income?</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c29" onchange="updateProgress()">
+      <label for="c29">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Agree on initial capital contributions</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c30" onchange="updateProgress()">
+      <label for="c30">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Create a simple budget for the first 6 months</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c31" onchange="updateProgress()">
+      <label for="c31">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Decide on funding strategy — bootstrap, angels, or VC?</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c32" onchange="updateProgress()">
+      <label for="c32">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Understand dilution basics if raising investment</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Card 7: Brand & Presence -->
+  <div class="card card-7">
+    <span class="card-icon">&#x2728;</span>
+    <span class="badge badge-nice">Month 1-2</span>
+    <h2>Brand &amp; Presence</h2>
+    <div class="subtitle">Identity Building</div>
+
+    <div class="check-item">
+      <input type="checkbox" id="c33" onchange="updateProgress()">
+      <label for="c33">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Choose a company name &amp; check domain availability</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c34" onchange="updateProgress()">
+      <label for="c34">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Register domain &amp; secure social media handles</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c35" onchange="updateProgress()">
+      <label for="c35">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Create a simple landing page with email capture</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c36" onchange="updateProgress()">
+      <label for="c36">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Set up business email &amp; communication tools</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c37" onchange="updateProgress()">
+      <label for="c37">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Design a minimal logo &amp; brand kit</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Card 8: Working Together -->
+  <div class="card card-8">
+    <span class="card-icon">&#x1f3af;</span>
+    <span class="badge badge-important">Ongoing</span>
+    <h2>Working Together</h2>
+    <div class="subtitle">Operations &amp; Culture</div>
+
+    <div class="check-item">
+      <input type="checkbox" id="c38" onchange="updateProgress()">
+      <label for="c38">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Set up weekly co-founder check-ins</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c39" onchange="updateProgress()">
+      <label for="c39">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Choose project management tools (Notion, Linear, etc.)</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c40" onchange="updateProgress()">
+      <label for="c40">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Define quarterly OKRs together</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c41" onchange="updateProgress()">
+      <label for="c41">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Agree on communication norms &amp; response times</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c42" onchange="updateProgress()">
+      <label for="c42">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Plan a monthly "state of the startup" review</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Card 9: Compliance & Regulatory -->
+  <div class="card card-1">
+    <span class="card-icon">&#x1f6e1;&#xfe0f;</span>
+    <span class="badge badge-critical">Don't Skip</span>
+    <h2>Compliance &amp; Regulatory</h2>
+    <div class="subtitle">Legal Protection</div>
+
+    <div class="check-item">
+      <input type="checkbox" id="c63" onchange="updateProgress()">
+      <label for="c63">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Draft Terms of Service &amp; Privacy Policy for your product</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c64" onchange="updateProgress()">
+      <label for="c64">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Understand GDPR / CCPA if handling user data</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c65" onchange="updateProgress()">
+      <label for="c65">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Check industry-specific licenses &amp; permits</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c66" onchange="updateProgress()">
+      <label for="c66">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Register trademarks for company name &amp; logo</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c67" onchange="updateProgress()">
+      <label for="c67">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Set up cookie consent &amp; data collection disclosures</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c68" onchange="updateProgress()">
+      <label for="c68">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Ensure ADA / accessibility compliance for your product</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Card 10: Insurance & Risk -->
+  <div class="card card-4">
+    <span class="card-icon">&#x2602;&#xfe0f;</span>
+    <span class="badge badge-important">Month 1-2</span>
+    <h2>Insurance &amp; Risk</h2>
+    <div class="subtitle">Protect What You Build</div>
+
+    <div class="check-item">
+      <input type="checkbox" id="c69" onchange="updateProgress()">
+      <label for="c69">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Get general liability insurance</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c70" onchange="updateProgress()">
+      <label for="c70">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">D&amp;O insurance (required before raising investment)</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c71" onchange="updateProgress()">
+      <label for="c71">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Cyber liability insurance if handling user data</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c72" onchange="updateProgress()">
+      <label for="c72">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Errors &amp; omissions (E&amp;O) coverage for your service</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c73" onchange="updateProgress()">
+      <label for="c73">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Create a risk register — identify top 10 threats to the business</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Card 11: Hiring & Team -->
+  <div class="card card-6">
+    <span class="card-icon">&#x1f465;</span>
+    <span class="badge badge-important">When Ready</span>
+    <h2>Hiring &amp; Team</h2>
+    <div class="subtitle">Scaling Beyond Two</div>
+
+    <div class="check-item">
+      <input type="checkbox" id="c74" onchange="updateProgress()">
+      <label for="c74">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Define when &amp; why to make first hire (not just "we need help")</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c75" onchange="updateProgress()">
+      <label for="c75">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Understand contractor vs. employee classification (misclassification = lawsuits)</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c76" onchange="updateProgress()">
+      <label for="c76">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Set up a stock option pool (10-15% is standard pre-seed)</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c77" onchange="updateProgress()">
+      <label for="c77">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Draft employment agreements with IP &amp; non-compete clauses</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c78" onchange="updateProgress()">
+      <label for="c78">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Set up payroll &amp; benefits infrastructure</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c79" onchange="updateProgress()">
+      <label for="c79">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Write down your company culture &amp; values early</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Card 12: Go-to-Market -->
+  <div class="card card-7">
+    <span class="card-icon">&#x1f4e3;</span>
+    <span class="badge badge-critical">Pre-Launch</span>
+    <h2>Go-to-Market Strategy</h2>
+    <div class="subtitle">How You'll Win Customers</div>
+
+    <div class="check-item">
+      <input type="checkbox" id="c80" onchange="updateProgress()">
+      <label for="c80">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Define your pricing model &amp; test willingness to pay</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c81" onchange="updateProgress()">
+      <label for="c81">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Identify your top 3 customer acquisition channels</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c82" onchange="updateProgress()">
+      <label for="c82">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Plan a launch strategy — Product Hunt, community seeding, press, etc.</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c83" onchange="updateProgress()">
+      <label for="c83">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Set key metrics — CAC, LTV, churn, activation rate</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c84" onchange="updateProgress()">
+      <label for="c84">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Build a content / SEO / social strategy for organic growth</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c85" onchange="updateProgress()">
+      <label for="c85">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Create a referral or waitlist program for early traction</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Card 13: Tech Infrastructure & Security -->
+  <div class="card card-8">
+    <span class="card-icon">&#x1f512;</span>
+    <span class="badge badge-critical">From Day One</span>
+    <h2>Tech &amp; Security</h2>
+    <div class="subtitle">Infrastructure That Scales</div>
+
+    <div class="check-item">
+      <input type="checkbox" id="c86" onchange="updateProgress()">
+      <label for="c86">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Set up version control (GitHub/GitLab) with branch protection</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c87" onchange="updateProgress()">
+      <label for="c87">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">CI/CD pipeline for automated testing &amp; deploys</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c88" onchange="updateProgress()">
+      <label for="c88">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Encrypt data at rest &amp; in transit (SSL/TLS everywhere)</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c89" onchange="updateProgress()">
+      <label for="c89">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Automated backups with tested restore process</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c90" onchange="updateProgress()">
+      <label for="c90">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Use 2FA on all company accounts — no exceptions</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c91" onchange="updateProgress()">
+      <label for="c91">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Create an incident response plan for security breaches</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c92" onchange="updateProgress()">
+      <label for="c92">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Set up monitoring &amp; alerting (uptime, errors, performance)</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Card 14: Founder Wellness -->
+  <div class="card card-2">
+    <span class="card-icon">&#x1f9e0;</span>
+    <span class="badge badge-critical">Always</span>
+    <h2>Founder Wellness</h2>
+    <div class="subtitle">You Are the Business</div>
+
+    <div class="check-item">
+      <input type="checkbox" id="c93" onchange="updateProgress()">
+      <label for="c93">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Set non-negotiable personal boundaries (sleep, exercise, time off)</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c94" onchange="updateProgress()">
+      <label for="c94">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Find a mentor or join a founder peer group</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c95" onchange="updateProgress()">
+      <label for="c95">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Agree on vacation &amp; time-off policy for both founders</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c96" onchange="updateProgress()">
+      <label for="c96">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Plan for the emotional lows — have a support system in place</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c97" onchange="updateProgress()">
+      <label for="c97">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Define "what does success look like in 1 year?" together</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c98" onchange="updateProgress()">
+      <label for="c98">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Schedule regular "are we still happy doing this?" check-ins</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Card 15: Funding Strategy -->
+  <div class="card card-5">
+    <span class="card-icon">&#x1f4c8;</span>
+    <span class="badge badge-important">Month 2-3</span>
+    <h2>Funding Strategy</h2>
+    <div class="subtitle">External Capital</div>
+
+    <div class="check-item">
+      <input type="checkbox" id="c43" onchange="updateProgress()">
+      <label for="c43">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Decide funding path — bootstrapping, angel, pre-seed, or VC</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c44" onchange="updateProgress()">
+      <label for="c44">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Build a target investor list (angels, funds, accelerators)</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c45" onchange="updateProgress()">
+      <label for="c45">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Understand SAFE notes, convertible notes &amp; priced rounds</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c46" onchange="updateProgress()">
+      <label for="c46">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Determine how much to raise &amp; at what valuation cap</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c47" onchange="updateProgress()">
+      <label for="c47">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Map out dilution scenarios for both co-founders</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c48" onchange="updateProgress()">
+      <label for="c48">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Apply to accelerators (YC, Techstars, 500 Global, etc.)</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c49" onchange="updateProgress()">
+      <label for="c49">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Start warm intros — never cold-email investors</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Card 16: Investor Readiness -->
+  <div class="card card-6">
+    <span class="card-icon">&#x1f3af;</span>
+    <span class="badge badge-critical">Before Pitching</span>
+    <h2>Investor Readiness</h2>
+    <div class="subtitle">Pitch-Ready Checklist</div>
+
+    <div class="check-item">
+      <input type="checkbox" id="c50" onchange="updateProgress()">
+      <label for="c50">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Create a compelling 10-slide pitch deck</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c51" onchange="updateProgress()">
+      <label for="c51">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Nail your 60-second elevator pitch</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c52" onchange="updateProgress()">
+      <label for="c52">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Prepare a financial model with 18-month projections</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c53" onchange="updateProgress()">
+      <label for="c53">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Have traction metrics ready — users, revenue, or waitlist</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c54" onchange="updateProgress()">
+      <label for="c54">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Build a data room (cap table, financials, legal docs)</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c55" onchange="updateProgress()">
+      <label for="c55">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Practice answering the top 20 investor questions</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c56" onchange="updateProgress()">
+      <label for="c56">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Do 3-5 practice pitches before real investor meetings</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Card 17: Due Diligence Readiness -->
+  <div class="card card-1">
+    <span class="card-icon">&#x1f50d;</span>
+    <span class="badge badge-important">Before Closing</span>
+    <h2>Due Diligence Ready</h2>
+    <div class="subtitle">What Investors Will Check</div>
+
+    <div class="check-item">
+      <input type="checkbox" id="c57" onchange="updateProgress()">
+      <label for="c57">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Clean cap table with no messy equity promises</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c58" onchange="updateProgress()">
+      <label for="c58">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">All IP properly assigned to the company</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c59" onchange="updateProgress()">
+      <label for="c59">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Signed co-founder agreement on file</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c60" onchange="updateProgress()">
+      <label for="c60">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">No outstanding legal issues or liabilities</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c61" onchange="updateProgress()">
+      <label for="c61">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Tax filings up to date &amp; books in order</span>
+      </label>
+    </div>
+    <div class="check-item">
+      <input type="checkbox" id="c62" onchange="updateProgress()">
+      <label for="c62">
+        <div class="custom-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <span class="check-text">Customer contracts &amp; letters of intent organized</span>
+      </label>
+    </div>
+  </div>
+
+</div>
+
+<div class="references-section">
+  <h2>Learn From the Best</h2>
+  <div class="ref-subtitle">Curated resources from top institutes</div>
+
+  <div class="ref-grid">
+
+    <a class="ref-card" href="https://www.ycombinator.com/library" target="_blank">
+      <span class="ref-icon">&#x1f680;</span>
+      <div class="ref-institute">Y Combinator</div>
+      <div class="ref-title">Startup Library</div>
+      <div class="ref-desc">The gold standard for startup advice — covers co-founder dynamics, fundraising, product-market fit, and scaling. Built from thousands of startups.</div>
+      <span class="ref-link-label">Visit &rarr;</span>
+    </a>
+
+    <a class="ref-card" href="https://www.startupschool.org" target="_blank">
+      <span class="ref-icon">&#x1f393;</span>
+      <div class="ref-institute">Y Combinator</div>
+      <div class="ref-title">Startup School (Free Course)</div>
+      <div class="ref-desc">Free online program with video lectures on idea validation, building MVPs, talking to users, and growth. Perfect for first-time founders.</div>
+      <span class="ref-link-label">Visit &rarr;</span>
+    </a>
+
+    <a class="ref-card" href="https://online.stanford.edu/explore?type=course&filter%5B0%5D=topic_business_entrepreneurship" target="_blank">
+      <span class="ref-icon">&#x1f3db;&#xfe0f;</span>
+      <div class="ref-institute">Stanford University</div>
+      <div class="ref-title">Entrepreneurship Courses</div>
+      <div class="ref-desc">Stanford's online courses on entrepreneurship, innovation, and venture design — taught by faculty behind Silicon Valley's biggest success stories.</div>
+      <span class="ref-link-label">Visit &rarr;</span>
+    </a>
+
+    <a class="ref-card" href="https://www.mit.edu/~e40/en-launch/" target="_blank">
+      <span class="ref-icon">&#x1f9ea;</span>
+      <div class="ref-institute">MIT</div>
+      <div class="ref-title">Martin Trust Center for Entrepreneurship</div>
+      <div class="ref-desc">MIT's entrepreneurship hub with frameworks on disciplined entrepreneurship — 24 steps to building a successful startup, backed by research.</div>
+      <span class="ref-link-label">Visit &rarr;</span>
+    </a>
+
+    <a class="ref-card" href="https://hbr.org/topic/subject/entrepreneurship" target="_blank">
+      <span class="ref-icon">&#x1f4d5;</span>
+      <div class="ref-institute">Harvard Business Review</div>
+      <div class="ref-title">Entrepreneurship Articles</div>
+      <div class="ref-desc">In-depth articles on co-founder relationships, equity negotiation, leadership, and the business side of building a startup from scratch.</div>
+      <span class="ref-link-label">Visit &rarr;</span>
+    </a>
+
+    <a class="ref-card" href="https://www.sba.gov/business-guide/launch-your-business" target="_blank">
+      <span class="ref-icon">&#x1f3e2;</span>
+      <div class="ref-institute">U.S. Small Business Administration</div>
+      <div class="ref-title">Launch Your Business Guide</div>
+      <div class="ref-desc">Step-by-step government guide on entity formation, licensing, permits, EIN registration, and legal requirements for starting a business.</div>
+      <span class="ref-link-label">Visit &rarr;</span>
+    </a>
+
+    <a class="ref-card" href="https://www.stripe.com/atlas/guides" target="_blank">
+      <span class="ref-icon">&#x1f4b3;</span>
+      <div class="ref-institute">Stripe Atlas</div>
+      <div class="ref-title">Startup Guides</div>
+      <div class="ref-desc">Practical guides on incorporating, setting up banking, issuing equity, and legal best practices — written for founders by founders.</div>
+      <span class="ref-link-label">Visit &rarr;</span>
+    </a>
+
+    <a class="ref-card" href="https://www.paulgraham.com/articles.html" target="_blank">
+      <span class="ref-icon">&#x270d;&#xfe0f;</span>
+      <div class="ref-institute">Paul Graham</div>
+      <div class="ref-title">Essays on Startups</div>
+      <div class="ref-desc">Legendary essays from the YC co-founder on what makes startups succeed, how to find ideas, and the mindset needed to build something great.</div>
+      <span class="ref-link-label">Visit &rarr;</span>
+    </a>
+
+    <a class="ref-card" href="https://www.ycombinator.com/documents" target="_blank">
+      <span class="ref-icon">&#x1f4c4;</span>
+      <div class="ref-institute">Y Combinator</div>
+      <div class="ref-title">Legal Document Templates</div>
+      <div class="ref-desc">Free, standard legal templates including SAFEs, co-founder agreements, and sales agreements — used by thousands of YC startups.</div>
+      <span class="ref-link-label">Visit &rarr;</span>
+    </a>
+
+  </div>
+</div>
+
+<div class="footer">
+  Made for Disha &amp; Surya &middot; 2026
+</div>
+
+<script>
+function updateProgress() {
+  const total = document.querySelectorAll('.check-item input[type="checkbox"]').length;
+  const checked = document.querySelectorAll('.check-item input[type="checkbox"]:checked').length;
+  const pct = Math.round((checked / total) * 100);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressText').textContent = checked + ' of ' + total + ' completed';
+}
+updateProgress();
+</script>
+
+</body>
+</html>
