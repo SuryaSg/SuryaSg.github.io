@@ -20,6 +20,51 @@
     <meta name="twitter:description" content="Founder & CEO at SpaceMarvel AI. M.Tech IIT Patna. 4 US Patents.">
     <meta name="twitter:image" content="https://suryasg.github.io/1738585006521.jpg">
 
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Surya SG",
+        "url": "https://suryasg.github.io",
+        "image": "https://suryasg.github.io/1738585006521.jpg",
+        "jobTitle": "AI Consultant & Researcher",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "SpaceMarvel AI",
+            "url": "https://spacemarvel.ai"
+        },
+        "alumniOf": [
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "Indian Institute of Technology Patna"
+            },
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "Indian Institute of Management Tiruchirappalli"
+            }
+        ],
+        "sameAs": [
+            "https://github.com/SuryaSg",
+            "https://www.linkedin.com/in/ayrusurya",
+            "https://twitter.com/AISuryaSg",
+            "https://stackoverflow.com/users/7084117/surya-sg",
+            "https://substack.com/@suryasg",
+            "https://patents.google.com/?inventor=Surya+S+G"
+        ],
+        "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Natural Language Processing", "Large Language Models", "Conversational AI"]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CXM084VW2Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CXM084VW2Z');
+    </script>
+
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%238b0000' rx='18' width='100' height='100'/><text x='50' y='68' text-anchor='middle' fill='white' font-family='Georgia' font-size='56' font-weight='bold'>S</text></svg>">
 
@@ -38,6 +83,26 @@
             --accent-light: #a52a2a;
             --border: #e5e5e5;
             --link: #1a5276;
+            --tag-bg: #f0f0ee;
+            --highlight-bg: #f7f5f2;
+            --news-border: #f0f0ee;
+            --exp-border: #e0e0e0;
+        }
+
+        [data-theme="dark"] {
+            --bg: #0f1117;
+            --surface: #1a1d27;
+            --text: #e2e5eb;
+            --text-secondary: #a0a6b4;
+            --text-muted: #6b7280;
+            --accent: #e05555;
+            --accent-light: #f06565;
+            --border: #2a2d3a;
+            --link: #6db3d6;
+            --tag-bg: #1e2130;
+            --highlight-bg: #1a1d27;
+            --news-border: #1e2130;
+            --exp-border: #2a2d3a;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -49,6 +114,7 @@
             line-height: 1.8;
             font-size: 16px;
             -webkit-font-smoothing: antialiased;
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
         /* Fade-in animation */
@@ -63,6 +129,37 @@
             padding: 3rem 2rem;
             animation: fadeIn 0.6s ease-out;
         }
+
+        /* Dark mode toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text-muted);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .theme-toggle:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .theme-toggle .fa-sun { display: none; }
+        [data-theme="dark"] .theme-toggle .fa-sun { display: block; }
+        [data-theme="dark"] .theme-toggle .fa-moon { display: none; }
 
         /* Header */
         .header {
@@ -160,6 +257,9 @@
             margin-bottom: 0.8rem;
             font-family: 'Inter', sans-serif;
             font-size: 0.78rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .section p, .section li {
@@ -179,6 +279,28 @@
             border-bottom-style: solid;
         }
 
+        /* Coming Soon badge */
+        .badge-soon {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.62rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 2px 8px;
+            border-radius: 3px;
+            background: var(--tag-bg);
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+        }
+
+        .coming-soon-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+            padding: 12px 0;
+        }
+
         /* News */
         .news-list {
             list-style: none;
@@ -186,7 +308,7 @@
 
         .news-list li {
             padding: 8px 0;
-            border-bottom: 1px solid #f0f0ee;
+            border-bottom: 1px solid var(--news-border);
             display: flex;
             gap: 14px;
             align-items: baseline;
@@ -233,7 +355,7 @@
             font-family: 'Inter', sans-serif;
             font-size: 0.82rem;
             padding: 5px 14px;
-            background: #f0f0ee;
+            background: var(--tag-bg);
             border: 1px solid var(--border);
             border-radius: 3px;
             color: var(--text-secondary);
@@ -255,17 +377,11 @@
             font-size: 0.92rem;
         }
 
-        .edu-item .year {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.78rem;
-            color: var(--text-muted);
-        }
-
         /* Experience */
         .exp-item {
             margin-bottom: 14px;
             padding-left: 16px;
-            border-left: 2px solid #e0e0e0;
+            border-left: 2px solid var(--exp-border);
         }
 
         .exp-item .role {
@@ -288,7 +404,7 @@
         /* Company highlight */
         .company-highlight {
             padding: 20px 24px;
-            background: #f7f5f2;
+            background: var(--highlight-bg);
             border-left: 3px solid var(--accent);
             border-radius: 0 4px 4px 0;
             margin-bottom: 1rem;
@@ -351,7 +467,7 @@
 
         .patents-link:hover {
             background: var(--text);
-            color: #fff;
+            color: var(--bg);
             border-color: var(--text);
         }
 
@@ -374,7 +490,7 @@
 
         .resume-link:hover {
             background: var(--text);
-            color: #fff;
+            color: var(--bg);
             border-color: var(--text);
         }
 
@@ -384,7 +500,7 @@
             align-items: center;
             gap: 12px;
             padding: 14px 18px;
-            background: #f7f5f2;
+            background: var(--highlight-bg);
             border: 1px solid var(--border);
             border-radius: 4px;
             text-decoration: none;
@@ -422,6 +538,11 @@
             color: var(--text-muted);
         }
 
+        .last-updated {
+            margin-top: 6px;
+            font-size: 0.7rem;
+        }
+
         /* Responsive */
         @media (max-width: 640px) {
             .container { padding: 2rem 1.2rem; }
@@ -440,18 +561,25 @@
             .interests { justify-content: center; }
             .news-list li { flex-direction: column; gap: 2px; }
             .news-date { min-width: auto; }
+            .theme-toggle { top: 12px; right: 12px; width: 36px; height: 36px; font-size: 0.9rem; }
         }
 
         /* Print */
         @media print {
-            body { font-size: 12pt; background: #fff; }
-            .container { padding: 0; max-width: 100%; }
+            body { font-size: 12pt; background: #fff; color: #000; }
+            .container { padding: 0; max-width: 100%; animation: none; }
             .header { border-bottom-color: #000; }
             a { color: #000; }
+            .theme-toggle, .badge-soon { display: none; }
         }
     </style>
 </head>
 <body>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
     <div class="container">
 
         <div class="header">
@@ -528,6 +656,21 @@
         </div>
 
         <div class="section">
+            <h2>Publications & Talks <span class="badge-soon">Coming Soon</span></h2>
+            <p class="coming-soon-text">Conference papers, invited talks, and technical presentations — details arriving shortly.</p>
+        </div>
+
+        <div class="section">
+            <h2>Currently Reading <span class="badge-soon">Coming Soon</span></h2>
+            <p class="coming-soon-text">Books, papers, and articles I'm currently working through — updates on the way.</p>
+        </div>
+
+        <div class="section">
+            <h2>Testimonials <span class="badge-soon">Coming Soon</span></h2>
+            <p class="coming-soon-text">Recommendations and feedback from colleagues and collaborators.</p>
+        </div>
+
+        <div class="section">
             <h2>Patents</h2>
             <p class="patents-note">
                 Inventor on 4 US patents covering AI/ML systems, natural language processing, and intelligent automation.
@@ -587,6 +730,11 @@
         </div>
 
         <div class="section">
+            <h2>Blog Feed <span class="badge-soon">Coming Soon</span></h2>
+            <p class="coming-soon-text">Latest articles from Substack will appear here automatically.</p>
+        </div>
+
+        <div class="section">
             <h2>Links</h2>
             <div class="header-links" style="font-size: 0.88rem; gap: 10px 22px;">
                 <a href="https://github.com/SuryaSg" target="_blank"><i class="fab fa-github"></i> GitHub</a>
@@ -598,8 +746,32 @@
             </div>
         </div>
 
-        <footer>&copy; 2026 Surya SG. All rights reserved.</footer>
+        <footer>
+            &copy; 2026 Surya SG. All rights reserved.
+            <div class="last-updated">Last updated: March 2026</div>
+        </footer>
 
     </div>
+
+    <script>
+        // Dark mode toggle with localStorage persistence
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        }
+
+        // Load saved theme or respect system preference
+        (function() {
+            const saved = localStorage.getItem('theme');
+            if (saved) {
+                document.documentElement.setAttribute('data-theme', saved);
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
 </body>
 </html>
