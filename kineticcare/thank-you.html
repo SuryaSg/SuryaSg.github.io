@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Booking received | KineticCare</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#FAF8F3" id="meta-theme-color">
+<meta name="color-scheme" content="light dark">
+<script>try{const _t=localStorage.getItem('kc-theme');if(_t)document.documentElement.setAttribute('data-theme',_t);}catch(e){}</script>
+<style>
+:root,[data-theme="light"]{
+  --bg:#FAF8F3;--bg1:#F3EBE0;--bg2:#EBE0D0;--card:#FFFFFF;
+  --accent:#C96B4A;--turq:#2BB5A4;--lime:#6A9E3A;
+  --ink:#1C1410;--ink2:#3A2E24;--ink3:#5E4E42;--muted:#9A8C82;--muted2:#786B62;
+  --br:rgba(0,0,0,0.07);--br2:rgba(0,0,0,0.13);
+  --abg:rgba(201,107,74,0.08);--abrd:rgba(201,107,74,0.22);
+  --tbg:rgba(43,181,164,0.09);--tbrd:rgba(43,181,164,0.24);
+  --shadow:0 1px 2px rgba(28,20,16,.04),0 4px 12px rgba(128,64,40,.08),0 16px 32px -8px rgba(201,107,74,.10);
+  --shadow-lg:0 2px 4px rgba(28,20,16,.05),0 12px 28px rgba(128,64,40,.10),0 32px 60px -16px rgba(201,107,74,.16);
+  --shadow-focus:0 0 0 3px rgba(201,107,74,.18),0 0 0 1px rgba(201,107,74,.5);
+  --selection-bg:rgba(201,107,74,.22);
+}
+[data-theme="dark"]{
+  --bg:#0E0B08;--bg1:#141008;--bg2:#1C1710;--card:#1E1912;
+  --accent:#E0896A;--turq:#2DD4BF;--lime:#A0D055;
+  --ink:#F5EDE3;--ink2:#DDD0BE;--ink3:#B09D88;--muted:#8A7A6E;--muted2:#6B5E52;
+  --br:rgba(255,255,255,0.07);--br2:rgba(255,255,255,0.12);
+  --abg:rgba(224,137,106,0.10);--abrd:rgba(224,137,106,0.28);
+  --tbg:rgba(45,212,191,0.09);--tbrd:rgba(45,212,191,0.24);
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3),0 24px 48px -12px rgba(0,0,0,.5);
+  --shadow-lg:0 2px 4px rgba(0,0,0,.45),0 16px 40px rgba(0,0,0,.4),0 40px 80px -20px rgba(0,0,0,.6);
+  --shadow-focus:0 0 0 3px rgba(224,137,106,.22),0 0 0 1px rgba(224,137,106,.6);
+  --selection-bg:rgba(224,137,106,.3);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+button,a,[role="button"],input[type="submit"],label{touch-action:manipulation;}
+:root{color-scheme:light;}
+[data-theme="dark"]{color-scheme:dark;}
+body{
+  background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  min-height:100dvh;display:flex;flex-direction:column;
+  font-feature-settings:"kern","liga","ss01";
+  transition:background-color .4s ease,color .35s ease;
+}
+::selection{background:var(--selection-bg);color:var(--ink);}
+:focus{outline:none;}
+:focus-visible{outline:none;box-shadow:var(--shadow-focus);border-radius:6px;}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;text-underline-offset:3px;}
+.skip-link{
+  position:absolute;top:-48px;left:12px;z-index:9999;
+  background:var(--ink);color:var(--bg);
+  padding:10px 18px;border-radius:8px;
+  font-size:13px;font-weight:500;text-decoration:none;
+  transition:top .2s cubic-bezier(.16,1,.3,1);
+}
+.skip-link:focus{top:12px;text-decoration:none;}
+
+.top{padding:28px 32px;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.5px;color:var(--ink);}
+.nav-logo b{color:var(--accent);}
+.top a.nav-logo{text-decoration:none;}
+
+.wrap{flex:1;max-width:640px;margin:0 auto;padding:36px 32px 64px;width:100%;}
+.check-circle{
+  width:72px;height:72px;border-radius:50%;
+  background:var(--tbg);border:1px solid var(--tbrd);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:28px;
+  animation:pop .5s cubic-bezier(.34,1.56,.64,1) both;
+}
+.check-circle svg{width:32px;height:32px;stroke:var(--turq);}
+@keyframes pop{from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;}}
+
+.eyebrow{
+  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;
+  color:var(--turq);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px;
+}
+h1{
+  font-family:'Syne',sans-serif;font-size:clamp(34px,5.5vw,54px);font-weight:800;
+  letter-spacing:-1.8px;line-height:1.04;color:var(--ink);margin-bottom:14px;
+  text-wrap:balance;
+}
+.lede{font-size:16px;color:var(--ink3);line-height:1.7;margin-bottom:36px;text-wrap:pretty;}
+
+.summary{
+  background:var(--card);border:1px solid var(--br);border-radius:18px;
+  padding:28px 28px 24px;box-shadow:var(--shadow);margin-bottom:32px;
+}
+.ref-line{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-bottom:18px;margin-bottom:18px;border-bottom:1px dashed var(--br2);
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;
+}
+.ref-line b{color:var(--ink);font-weight:500;letter-spacing:.4px;text-transform:none;font-family:inherit;}
+.dl{display:grid;grid-template-columns:140px 1fr;gap:14px 18px;font-size:14px;}
+.dl dt{color:var(--muted2);font-weight:500;}
+.dl dd{color:var(--ink);}
+.dl dd b{font-weight:500;color:var(--accent);}
+
+.next{
+  background:var(--bg1);border:1px solid var(--br);border-radius:14px;
+  padding:22px 24px;margin-bottom:28px;
+}
+.next h3{
+  font-family:'Syne',sans-serif;font-size:15px;font-weight:700;
+  letter-spacing:-.3px;color:var(--ink);margin-bottom:12px;
+}
+.steps{list-style:none;counter-reset:step;display:flex;flex-direction:column;gap:10px;}
+.steps li{
+  counter-increment:step;padding-left:36px;position:relative;
+  font-size:14px;color:var(--ink3);line-height:1.55;
+}
+.steps li::before{
+  content:counter(step);position:absolute;left:0;top:-1px;
+  width:24px;height:24px;border-radius:50%;
+  background:var(--card);border:1px solid var(--br2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:600;color:var(--accent);
+  font-family:'JetBrains Mono',monospace;
+}
+
+.actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{
+  flex:1;min-width:180px;padding:14px 24px;border-radius:100px;border:none;
+  font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;cursor:pointer;
+  text-align:center;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;
+  transition:transform .2s cubic-bezier(.16,1,.3,1),box-shadow .25s ease;
+}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);text-decoration:none;}
+.btn-ghost{background:transparent;color:var(--ink2);border:1px solid var(--br2);}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);text-decoration:none;}
+
+footer{
+  border-top:1px solid var(--br);padding:22px 32px;text-align:center;
+  font-size:12px;color:var(--muted);background:var(--bg1);
+}
+@media(max-width:560px){
+  .wrap{padding:24px 20px 48px;}
+  .top{padding:20px;}
+  .dl{grid-template-columns:110px 1fr;gap:10px 12px;font-size:13px;}
+}
+@media (prefers-reduced-motion: reduce){
+  .check-circle{animation:none;}
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+<div class="top">
+  <a class="nav-logo" href="index.html">Kinetic<b>Care</b></a>
+</div>
+
+<main class="wrap" id="main">
+  <div class="check-circle" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 13l4 4L19 7"/>
+    </svg>
+  </div>
+
+  <div class="eyebrow">Booking received</div>
+  <h1>You're on our list.</h1>
+  <p class="lede">A KineticCare physiotherapist will review your details and reach out within one working day to confirm your slot. No charges until you've had your free assessment.</p>
+
+  <div class="summary" id="no-summary" hidden style="background:var(--bg1);">
+    <p style="font-size:14px;color:var(--ink3);margin:0;line-height:1.65;">
+      We couldn't find booking details in this browser. If you booked on a different device, check your email for the confirmation. Otherwise, <a href="book.html">start a new booking</a>.
+    </p>
+  </div>
+  <div class="summary" id="summary" hidden>
+    <div class="ref-line">
+      <span>Reference</span>
+      <b id="ref-id">—</b>
+    </div>
+    <dl class="dl">
+      <dt>Name</dt><dd id="s-name">—</dd>
+      <dt>Email</dt><dd id="s-email">—</dd>
+      <dt>Phone</dt><dd id="s-phone">—</dd>
+      <dt>Plan</dt><dd><b id="s-plan">—</b></dd>
+      <dt>Concern</dt><dd id="s-concern">—</dd>
+      <dt>Mode</dt><dd id="s-mode">—</dd>
+      <dt>Time</dt><dd id="s-time">—</dd>
+    </dl>
+  </div>
+
+  <div class="next">
+    <h3>What happens next</h3>
+    <ol class="steps">
+      <li>Our front-desk reviews your details within 1 working day.</li>
+      <li>We call you on the phone number provided to confirm your slot.</li>
+      <li>You arrive at our Indiranagar clinic (or log into video) for a 20-minute movement and posture assessment.</li>
+      <li>You leave with a clear diagnosis and a recommended recovery path. No commitment to continue.</li>
+    </ol>
+  </div>
+
+  <div class="actions">
+    <a href="index.html" class="btn btn-primary">Back to home</a>
+    <a href="book.html" class="btn btn-ghost">Book for someone else</a>
+  </div>
+</main>
+
+<footer>
+  © 2026 KineticCare · Indiranagar, Bengaluru · <a href="mailto:hello@kineticcare.in">hello@kineticcare.in</a>
+</footer>
+
+<script>
+/* Theme sync — no toggle on this page, but honour system preference on first visit */
+(()=>{
+  const saved = localStorage.getItem('kc-theme');
+  if(!saved && window.matchMedia('(prefers-color-scheme: dark)').matches){
+    document.documentElement.setAttribute('data-theme','dark');
+  }
+})();
+
+/* ── Pull booking from localStorage and render ─────── */
+const MODES = {clinic:'In-clinic · Indiranagar',online:'Online · Video consult'};
+const CONCERNS = {
+  spine:'Spine, neck or back pain',
+  sports:'Sports injury or rehab',
+  pain:'Chronic pain',
+  neuro:'Neurological recovery',
+  womens:"Women's health",
+  corporate:'Corporate ergonomics',
+  other:'Other / not sure',
+};
+const TIMES = {
+  morning:'Morning (8am – 12pm)',
+  afternoon:'Afternoon (12pm – 4pm)',
+  evening:'Evening (4pm – 8pm)',
+  flex:'Flexible',
+};
+
+try{
+  const raw = localStorage.getItem('kc-booking');
+  const params = new URLSearchParams(location.search);
+  if(raw){
+    const b = JSON.parse(raw);
+    const set = (id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v||'—';};
+    set('ref-id', b.id);
+    set('s-name', b.name);
+    set('s-email', b.email);
+    set('s-phone', '+91 '+(b.phone||'').replace(/(\d{5})(\d{5})/,'$1 $2'));
+    set('s-plan', b.plan);
+    set('s-concern', CONCERNS[b.concern]||b.concern||'—');
+    set('s-mode', MODES[b.mode]||b.mode||'—');
+    set('s-time', TIMES[b.time]||b.time||'—');
+    document.getElementById('summary').hidden = false;
+  } else if(params.get('id')){
+    // Fallback: localStorage unavailable (private/incognito) — show minimal ref from URL
+    const set = (id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v||'—';};
+    set('ref-id', params.get('id'));
+    set('s-name', params.get('name')||'—');
+    document.getElementById('summary').hidden = false;
+  } else {
+    document.getElementById('no-summary').hidden = false;
+  }
+}catch(err){
+  document.getElementById('no-summary').hidden = false;
+}
+</script>
+
+</body>
+</html>

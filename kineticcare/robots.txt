@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you
+Disallow: /404
+
+# AI crawlers (explicitly allow — modern SEO/GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://suryasg.github.io/kineticcare/sitemap.xml

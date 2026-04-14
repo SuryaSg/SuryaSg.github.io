@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Page not found | KineticCare</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#FAF8F3" id="meta-theme-color">
+<meta name="color-scheme" content="light dark">
+<script>try{const _t=localStorage.getItem('kc-theme');if(_t)document.documentElement.setAttribute('data-theme',_t);}catch(e){}</script>
+<style>
+:root,[data-theme="light"]{
+  --bg:#FAF8F3;--bg1:#F3EBE0;--card:#FFFFFF;
+  --accent:#C96B4A;--turq:#2BB5A4;
+  --ink:#1C1410;--ink3:#5E4E42;--muted:#9A8C82;--muted2:#786B62;
+  --br:rgba(0,0,0,0.07);--br2:rgba(0,0,0,0.13);
+  --abg:rgba(201,107,74,0.08);--abrd:rgba(201,107,74,0.22);
+  --shadow-focus:0 0 0 3px rgba(201,107,74,.18),0 0 0 1px rgba(201,107,74,.5);
+  --selection-bg:rgba(201,107,74,.22);
+}
+[data-theme="dark"]{
+  --bg:#0E0B08;--bg1:#141008;--card:#1E1912;
+  --accent:#E0896A;--turq:#2DD4BF;
+  --ink:#F5EDE3;--ink3:#B09D88;--muted:#8A7A6E;--muted2:#6B5E52;
+  --br:rgba(255,255,255,0.07);--br2:rgba(255,255,255,0.12);
+  --abg:rgba(224,137,106,0.10);--abrd:rgba(224,137,106,0.28);
+  --shadow-focus:0 0 0 3px rgba(224,137,106,.22),0 0 0 1px rgba(224,137,106,.6);
+  --selection-bg:rgba(224,137,106,.3);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+button,a,[role="button"],label{touch-action:manipulation;}
+:root{color-scheme:light;}
+[data-theme="dark"]{color-scheme:dark;}
+body{
+  background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  min-height:100dvh;display:flex;flex-direction:column;
+  font-feature-settings:"kern","liga","ss01";
+  transition:background-color .4s ease,color .35s ease;
+}
+::selection{background:var(--selection-bg);color:var(--ink);}
+:focus{outline:none;}
+:focus-visible{outline:none;box-shadow:var(--shadow-focus);border-radius:6px;}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;text-underline-offset:3px;}
+.skip-link{
+  position:absolute;top:-48px;left:12px;z-index:9999;
+  background:var(--ink);color:var(--bg);
+  padding:10px 18px;border-radius:8px;
+  font-size:13px;font-weight:500;text-decoration:none;
+  transition:top .2s cubic-bezier(.16,1,.3,1);
+}
+.skip-link:focus{top:12px;text-decoration:none;}
+
+.top{padding:28px 32px;}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.5px;color:var(--ink);}
+.nav-logo b{color:var(--accent);}
+
+.wrap{
+  flex:1;max-width:640px;margin:0 auto;padding:40px 32px 64px;width:100%;
+  display:flex;flex-direction:column;justify-content:center;
+}
+
+.code{
+  font-family:'JetBrains Mono',monospace;font-size:clamp(72px,14vw,140px);
+  font-weight:500;letter-spacing:-6px;line-height:1;color:var(--ink);
+  font-variant-numeric:tabular-nums;
+  display:flex;align-items:baseline;gap:16px;margin-bottom:8px;
+}
+.code em{
+  color:var(--accent);font-style:normal;
+  animation:pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.5;}}
+.diag{
+  font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:28px;
+}
+
+h1{
+  font-family:'Syne',sans-serif;font-size:clamp(28px,4.5vw,42px);font-weight:800;
+  letter-spacing:-1.4px;line-height:1.08;color:var(--ink);margin-bottom:14px;
+  text-wrap:balance;
+}
+p{font-size:16px;color:var(--ink3);line-height:1.7;margin-bottom:32px;max-width:520px;text-wrap:pretty;}
+
+.actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{
+  padding:13px 28px;border-radius:100px;
+  font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:transform .2s,box-shadow .25s;
+}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,107,74,.25);text-decoration:none;}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--br2);}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);text-decoration:none;}
+
+.quick-links{
+  margin-top:44px;padding-top:28px;border-top:1px solid var(--br);
+  display:flex;flex-wrap:wrap;gap:18px;
+}
+.quick-links span{
+  font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted2);
+  letter-spacing:1.5px;text-transform:uppercase;margin-right:4px;
+}
+
+footer{border-top:1px solid var(--br);padding:22px 32px;text-align:center;font-size:12px;color:var(--muted);background:var(--bg1);}
+@media(max-width:640px){
+  .top{padding:20px;}
+  .wrap{padding:24px 20px 48px;}
+}
+@media (prefers-reduced-motion: reduce){
+  .code em{animation:none;}
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+<div class="top">
+  <a class="nav-logo" href="index.html">Kinetic<b>Care</b></a>
+</div>
+
+<main class="wrap" id="main">
+  <div class="code">4<em>0</em>4</div>
+  <div class="diag">Diagnosis · page not found</div>
+  <h1>This page is out of alignment.</h1>
+  <p>The URL you followed doesn't lead anywhere on our site. Might've been removed, renamed, or mistyped. Let's get you back to something useful.</p>
+
+  <div class="actions">
+    <a href="index.html" class="btn btn-primary">← Back to home</a>
+    <a href="book.html" class="btn btn-ghost">Book assessment</a>
+  </div>
+
+  <div class="quick-links">
+    <span>Try</span>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="mailto:hello@kineticcare.in">Contact</a>
+  </div>
+</main>
+
+<footer>© 2026 KineticCare · Indiranagar, Bengaluru</footer>
+
+</body>
+</html>
