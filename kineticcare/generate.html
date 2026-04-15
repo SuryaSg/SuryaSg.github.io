@@ -464,8 +464,12 @@ footer a{color:var(--muted2);margin:0 10px;}
       </div>
     </div>
     <div class="fallback" id="fallback" hidden>
-      <h3>3D viewer needs WebGL</h3>
-      <p>Your browser doesn't have WebGL enabled. Try a modern browser (Chrome, Safari, Firefox, Edge) or <a href="book.html">book an assessment</a> instead — we'll demo this in clinic.</p>
+      <h3 id="fallback-title">3D viewer couldn't start</h3>
+      <p id="fallback-msg">Loading diagnostic…</p>
+      <p style="margin-top:16px;font-size:12px;color:var(--muted);">
+        Tip: open DevTools (F12) → Console tab to see the exact error.
+      </p>
+      <p style="margin-top:8px;"><a href="book.html">Book an assessment</a> — we'll demo it in clinic.</p>
     </div>
   </section>
 
@@ -509,7 +513,8 @@ footer a{color:var(--muted2);margin:0 10px;}
   <a href="mailto:hello@kineticcare.in">Contact</a>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<!-- Three.js with multi-CDN fallback (cdnjs → jsdelivr → unpkg). Synchronous to preserve ordering. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" onerror="this.onerror=null;console.warn('[generate] cdnjs failed, trying jsdelivr'); var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js';s.onerror=function(){console.warn('[generate] jsdelivr failed, trying unpkg'); var s2=document.createElement('script');s2.src='https://unpkg.com/three@0.128.0/build/three.min.js';document.head.appendChild(s2);};document.head.appendChild(s);"></script>
 <script>
 /* ═══════════════════════════════════════════════════════════════
    THEME TOGGLE
@@ -526,18 +531,50 @@ document.getElementById('theme-btn').addEventListener('click',()=>{
 });
 
 /* ═══════════════════════════════════════════════════════════════
-   WebGL FEATURE DETECT
+   WebGL + THREE.js BOOTSTRAP (distinguish no-WebGL vs no-Three.js)
 ═══════════════════════════════════════════════════════════════ */
 function hasWebGL(){
   try{
     const c = document.createElement('canvas');
     return !!(window.WebGLRenderingContext && (c.getContext('webgl')||c.getContext('experimental-webgl')));
-  }catch(e){ return false; }
+  }catch(e){ console.error('[generate] WebGL probe threw:', e); return false; }
 }
-if(!hasWebGL() || typeof THREE === 'undefined'){
-  document.getElementById('fallback').hidden = false;
-  document.getElementById('anatomy-canvas').hidden = true;
-  document.querySelector('.canvas-overlay').hidden = true;
+
+function showFallback(reason){
+  const fb = document.getElementById('fallback');
+  const cv = document.getElementById('anatomy-canvas');
+  const ov = document.querySelector('.canvas-overlay');
+  if(fb) fb.hidden = false;
+  if(cv) cv.hidden = true;
+  if(ov) ov.hidden = true;
+  const t = document.getElementById('fallback-title');
+  const m = document.getElementById('fallback-msg');
+  if(reason === 'no-webgl'){
+    if(t) t.textContent = '3D viewer needs WebGL';
+    if(m) m.innerHTML = 'Your browser or graphics driver has WebGL disabled. Enable hardware acceleration in browser settings, or <a href="https://get.webgl.org/" target="_blank" rel="noopener">test your WebGL support</a>.';
+  } else {
+    if(t) t.textContent = 'Three.js couldn\'t load';
+    if(m) m.innerHTML = 'The 3D library failed to load from all CDN mirrors. Usually this is an ad blocker, privacy extension, or corporate firewall blocking cdnjs / jsdelivr / unpkg.';
+  }
+  console.error('[generate] 3D init aborted:', reason);
+}
+
+/* Wait up to 6s for THREE to arrive (handles fallback CDN loading async),
+   then call initScene() — defined further down. */
+function waitForThreeThenInit(){
+  if(!hasWebGL()){ showFallback('no-webgl'); return; }
+  if(typeof THREE !== 'undefined'){ initScene(); return; }
+  let tries = 0;
+  const iv = setInterval(()=>{
+    if(typeof THREE !== 'undefined'){
+      clearInterval(iv);
+      console.log('[generate] THREE loaded after', (tries*100)+'ms');
+      initScene();
+    } else if(++tries > 60){
+      clearInterval(iv);
+      showFallback('no-three');
+    }
+  }, 100);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -650,9 +687,9 @@ function renderInterpretation(){
 renderInterpretation();
 
 /* ═══════════════════════════════════════════════════════════════
-   THREE.JS SCENE  (only if WebGL available)
+   THREE.JS SCENE  (invoked by waitForThreeThenInit when ready)
 ═══════════════════════════════════════════════════════════════ */
-if(hasWebGL() && typeof THREE !== 'undefined'){
+function initScene(){
 
 const canvas = document.getElementById('anatomy-canvas');
 const container = document.getElementById('canvas-wrap');
@@ -1164,7 +1201,10 @@ window.applyToState = applyToState;
 /* Initial layout */
 applyToState();
 
-}  /* end if(hasWebGL) */
+} /* end initScene */
+
+/* Kick off the scene bootstrap */
+waitForThreeThenInit();
 
 /* ═══════════════════════════════════════════════════════════════
    INPUT HANDLERS + DEBOUNCED ANNOUNCEMENTS
