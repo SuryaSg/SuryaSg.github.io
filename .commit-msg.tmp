@@ -1,0 +1,52 @@
+Rebuild book / generate / about per kineticcare_claude_code_prompt.md
+
+book.html — 3-step wizard:
+- Step 1: name, email, phone (+91 prefix, 10-digit validation)
+- Step 2: concern (6 icon cards) + consultation mode (2 large toggles)
+- Step 3: time preference pills + optional notes (300 char counter)
+- Progress dots + step label, slide animation between steps
+- Right-column sticky trust panel: SVG clinic illustration, live
+  pill, 3 trust rows (response/address/hours), patient quote,
+  trust badges
+- Formspree hook (FORM_ID placeholder — paste real endpoint later)
+- localStorage fallback if Formspree unreachable
+- Success state with reference ID + booking summary + CTAs
+- beforeunload guard, double-submit protection, aria-busy, aria-live
+- URL param pre-fill: ?plan=essential|pro|corporate, ?concern=X
+- Mobile: single column, trust panel collapses, time pills wrap
+
+generate.html — 2D canvas rewrite (no Three.js):
+- drawSpine(ctx, W, H) with 24 procedural vertebrae (7C + 12T + 5L)
+- Forward lean from desk hours, lumbar lordosis flattening with age,
+  disk compression from age, pelvis scale by gender, pelvic width
+- Ribcage ellipses, pulse rings on strained regions
+- Light-mode opacity multiplier (om = 2.5) + warm radial tint
+- View toggles: Front / 3/4 / Side (rotation offset)
+- Drag to rotate, scroll to zoom, arrow-key orbit when focused
+- Recenter button (click and Space / Enter when focused)
+- Debounced regeneration (200ms), pulse animation on input change
+- Risk badge (Low / Moderate / High) based on desk + age
+- Clinical interpretation list with specific numbers + weeks
+- Recommended service card → services.html#{anchor}
+- CTA → book.html?concern=X
+- Canvas-context fallback (no DevTools text) if 2D unavailable
+- DPR-aware, IntersectionObserver + visibilitychange pause
+
+about.html — editorial layout:
+- Hero: "Our Story · Indiranagar, 2019" eyebrow + 84px display H1
+  with accent "answered the question" + 3 hero pills
+- 2-column story + vertical timeline (5 nodes, 2026 marked current
+  with pulse ring)
+- Principles: 3 full-width alternating-bg cards with 72px Syne
+  numbered step + principle name H3 + body
+- Team: 3-card row with initials avatars (gradient) + role + bio
+- Stats band: 4 counters (12,000K+ / 3x / 94% / 6yr) — uses
+  shared.js IntersectionObserver counter
+- Final CTA: quoted section header + book CTA
+- BreadcrumbList schema (Home → About)
+- Fully responsive, prefers-reduced-motion aware
+
+services.html — already matches the prompt structure; no changes
+needed beyond shared.css/js wiring done in prior commit.
+
+Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>3D Posture Viewer | KineticCare Bengaluru</title>
-<meta name="description" content="Adjust your desk hours, age, height, and concern — watch your personalized 3D anatomy regenerate in real time. Procedural biomechanics visualisation from KineticCare.">
+<meta name="description" content="Adjust your desk hours, age, height, and concern — watch your personalised anatomy regenerate in real time. Procedural biomechanics visualisation from KineticCare Bengaluru.">
 <link rel="canonical" href="https://suryasg.github.io/kineticcare/generate.html">
 
 <!-- SEO: Open Graph -->
@@ -12,168 +12,64 @@
 <meta property="og:url" content="https://suryasg.github.io/kineticcare/generate.html">
 <meta property="og:title" content="See your posture in 3D | KineticCare">
 <meta property="og:description" content="Personalised procedural anatomy visualisation — biomechanics AI given visible form.">
-<meta property="og:image" content="https://suryasg.github.io/kineticcare/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="https://suryasg.github.io/kineticcare/assets/og-cover.svg">
 <meta property="og:locale" content="en_IN">
 <meta property="og:site_name" content="KineticCare">
-<!-- SEO: Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="See your posture in 3D | KineticCare">
 <meta name="twitter:description" content="Personalised procedural anatomy visualisation. Free. No sign-up.">
-<meta name="twitter:image" content="https://suryasg.github.io/kineticcare/og-image.png">
+<meta name="twitter:image" content="https://suryasg.github.io/kineticcare/assets/og-cover.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <meta name="theme-color" content="#FAF8F3" id="meta-theme-color">
 <meta name="color-scheme" content="light dark">
 <script>try{const _t=localStorage.getItem('kc-theme');if(_t)document.documentElement.setAttribute('data-theme',_t);}catch(e){}</script>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="shared.css">
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
-<!-- SoftwareApplication schema — references MedicalBusiness @id from index.html -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"SoftwareApplication",
-  "name":"KineticCare 3D Posture Viewer",
+  "name":"KineticCare Posture Viewer",
   "applicationCategory":"HealthApplication",
-  "operatingSystem":"Any (web browser with WebGL)",
+  "operatingSystem":"Any (web browser)",
   "url":"https://suryasg.github.io/kineticcare/generate.html",
-  "description":"Procedural 3D anatomy visualisation that reacts to desk hours, age, height and primary concern inputs.",
+  "description":"Procedural anatomy visualisation that reacts to desk hours, age, height and primary concern.",
   "isAccessibleForFree":true,
-  "provider":{"@id":"https://suryasg.github.io/kineticcare/#organization"},
   "offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}
 }
 </script>
 
 <style>
-:root,[data-theme="light"]{
-  --bg:#FAF8F3;--bg1:#F3EBE0;--bg2:#EBE0D0;--card:#FFFFFF;--card2:#FDF6EE;
-  --accent:#C96B4A;--accent2:#E8896A;--turq:#2BB5A4;--red:#C94040;--lime:#6A9E3A;
-  --ink:#1C1410;--ink2:#3A2E24;--ink3:#5E4E42;--muted:#9A8C82;--muted2:#786B62;
-  --br:rgba(0,0,0,0.07);--br2:rgba(0,0,0,0.13);
-  --abg:rgba(201,107,74,0.08);--abrd:rgba(201,107,74,0.22);
-  --tbg:rgba(43,181,164,0.09);--tbrd:rgba(43,181,164,0.24);
-  --stuck-bg:rgba(250,248,243,0.93);
-  --shadow:0 1px 2px rgba(28,20,16,.04),0 4px 12px rgba(128,64,40,.08),0 16px 32px -8px rgba(201,107,74,.10);
-  --shadow-lg:0 2px 4px rgba(28,20,16,.05),0 12px 28px rgba(128,64,40,.10),0 32px 60px -16px rgba(201,107,74,.16);
-  --shadow-focus:0 0 0 3px rgba(201,107,74,.18),0 0 0 1px rgba(201,107,74,.5);
-  --selection-bg:rgba(201,107,74,.22);
-  --nav-h:64px;
-  color-scheme:light;
+main#main{padding-top:calc(var(--nav-h) + 32px);}
+.page-head{max-width:1200px;margin:0 auto;padding:0 32px 28px;}
+.page-head .eyebrow{font-size:11px;margin-bottom:14px;}
+.page-head h1{
+  font-family:'Syne',sans-serif;font-size:clamp(34px,5vw,52px);
+  font-weight:800;letter-spacing:-1.8px;line-height:1.04;color:var(--ink);
+  margin-bottom:14px;text-wrap:balance;
 }
-[data-theme="dark"]{
-  --bg:#0E0B08;--bg1:#141008;--bg2:#1C1710;--card:#1E1912;--card2:#271E14;
-  --accent:#E0896A;--accent2:#F4AD8C;--turq:#2DD4BF;--red:#FF5252;--lime:#A0D055;
-  --ink:#F5EDE3;--ink2:#DDD0BE;--ink3:#B09D88;--muted:#8A7A6E;--muted2:#6B5E52;
-  --br:rgba(255,255,255,0.07);--br2:rgba(255,255,255,0.12);
-  --abg:rgba(224,137,106,0.10);--abrd:rgba(224,137,106,0.28);
-  --tbg:rgba(45,212,191,0.09);--tbrd:rgba(45,212,191,0.24);
-  --stuck-bg:rgba(14,11,8,0.92);
-  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3),0 24px 48px -12px rgba(0,0,0,.5);
-  --shadow-lg:0 2px 4px rgba(0,0,0,.45),0 16px 40px rgba(0,0,0,.4),0 40px 80px -20px rgba(0,0,0,.6);
-  --shadow-focus:0 0 0 3px rgba(224,137,106,.22),0 0 0 1px rgba(224,137,106,.6);
-  --selection-bg:rgba(224,137,106,.3);
-  color-scheme:dark;
-}
-*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-button,a,[role="button"],input,label,select{touch-action:manipulation;}
-html{scroll-behavior:smooth;}
-body{
-  background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;
-  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
-  text-rendering:optimizeLegibility;font-feature-settings:"kern","liga","ss01";
-  font-kerning:normal;caret-color:var(--accent);min-height:100dvh;
-  transition:background-color .4s ease,color .35s ease;
-}
-::selection{background:var(--selection-bg);color:var(--ink);}
-::-moz-selection{background:var(--selection-bg);color:var(--ink);}
-html{scrollbar-width:thin;scrollbar-color:var(--br2) transparent;}
-::-webkit-scrollbar{width:10px;height:10px;}
-::-webkit-scrollbar-thumb{background:var(--br2);border-radius:10px;border:2px solid var(--bg);}
-::-webkit-scrollbar-thumb:hover{background:var(--muted);}
-:focus{outline:none;}
-:focus-visible{outline:none;box-shadow:var(--shadow-focus);border-radius:8px;transition:box-shadow .15s ease;}
-a{color:var(--accent);text-decoration:none;}
-a:hover{text-decoration:underline;text-underline-offset:3px;}
-
-.skip-link{
-  position:absolute;top:-48px;left:12px;z-index:9999;
-  background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:8px;
-  font-size:13px;font-weight:500;text-decoration:none;
-  transition:top .2s cubic-bezier(.16,1,.3,1);
-}
-.skip-link:focus{top:12px;text-decoration:none;}
-
-/* NAV */
-#nav{
-  position:sticky;top:0;z-index:500;height:var(--nav-h);
-  display:flex;justify-content:space-between;align-items:center;padding:0 32px;
-  background:var(--stuck-bg);backdrop-filter:blur(24px) saturate(1.5);
-  border-bottom:1px solid var(--br);
-}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.5px;color:var(--ink);}
-.nav-logo b{color:var(--accent);}
-.nav-center{display:flex;gap:28px;list-style:none;}
-.nav-center a{color:var(--muted2);font-size:14px;}
-.nav-center a:hover{color:var(--ink);text-decoration:none;}
-.nav-right{display:flex;align-items:center;gap:14px;}
-.nav-cta{
-  background:var(--accent);color:#fff;padding:9px 22px;border-radius:100px;
-  font-size:13px;font-weight:500;display:inline-flex;align-items:center;
-  transition:transform .2s,box-shadow .25s;
-}
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 28px rgba(201,107,74,.35);text-decoration:none;}
-#theme-btn{
-  width:44px;height:28px;background:var(--bg2);border:1px solid var(--br2);
-  border-radius:100px;cursor:pointer;position:relative;flex-shrink:0;
-}
-#theme-btn::after{
-  content:'';position:absolute;top:4px;left:4px;width:18px;height:18px;border-radius:50%;
-  background:var(--accent);transition:transform .35s cubic-bezier(.16,1,.3,1),background .35s;
-}
-[data-theme="dark"] #theme-btn::after{transform:translateX(16px);background:var(--turq);}
-.theme-icon{position:absolute;top:50%;transform:translateY(-50%);font-size:10px;line-height:1;pointer-events:none;}
-.theme-icon.sun{left:6px;}.theme-icon.moon{right:5px;}
-[data-theme="light"] .theme-icon.moon{opacity:.4;}
-[data-theme="dark"] .theme-icon.sun{opacity:.4;}
-
-/* HEADER */
-.page-head{max-width:1200px;margin:0 auto;padding:56px 32px 36px;}
-.eyebrow{
-  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;
-  color:var(--accent);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px;
-}
-h1{
-  font-family:'Syne',sans-serif;font-size:clamp(34px,5vw,52px);font-weight:800;
-  letter-spacing:-1.8px;line-height:1.04;color:var(--ink);margin-bottom:14px;
-  text-wrap:balance;
-}
-h1 em{color:var(--accent);font-style:normal;}
+.page-head h1 em{color:var(--accent);font-style:normal;}
 .lede{font-size:16px;color:var(--ink3);line-height:1.7;max-width:620px;text-wrap:pretty;}
 
-/* LAYOUT */
 .gen-layout{
   max-width:1200px;margin:0 auto;padding:0 32px 40px;
-  display:grid;grid-template-columns:360px minmax(0,1fr);gap:28px;
+  display:grid;grid-template-columns:340px minmax(0,1fr);gap:24px;
   align-items:start;
 }
-.gen-output-wrap{
-  grid-column:1 / -1;
-  display:grid;grid-template-columns:360px minmax(0,1fr);gap:28px;
-  padding-top:28px;border-top:1px solid var(--br);margin-top:4px;
-}
 
-/* INPUTS */
+/* ─── INPUTS ─────────────────────────────── */
 .gen-inputs{
   background:var(--card);border:1px solid var(--br);border-radius:16px;
-  padding:24px;box-shadow:var(--shadow);position:sticky;top:calc(var(--nav-h) + 16px);
+  padding:22px;box-shadow:var(--shadow);
+  position:sticky;top:calc(var(--nav-h) + 16px);
 }
 .gen-inputs h2{
   font-family:'Syne',sans-serif;font-size:14px;font-weight:700;letter-spacing:-.2px;
-  color:var(--ink);margin-bottom:20px;
+  color:var(--ink);margin-bottom:18px;
   display:flex;justify-content:space-between;align-items:center;
 }
 .gen-inputs h2 .reset-btn{
@@ -183,7 +79,7 @@ h1 em{color:var(--accent);font-style:normal;}
   transition:color .2s,background .2s;
 }
 .gen-inputs h2 .reset-btn:hover{color:var(--accent);background:var(--abg);}
-.field{margin-bottom:18px;}
+.field{margin-bottom:16px;}
 .field:last-child{margin-bottom:0;}
 .field-label{
   display:flex;justify-content:space-between;align-items:baseline;
@@ -193,29 +89,19 @@ h1 em{color:var(--accent);font-style:normal;}
   font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;
   color:var(--accent);font-variant-numeric:tabular-nums;
 }
-
-/* Slider */
 .slider{
   -webkit-appearance:none;appearance:none;
-  width:100%;height:4px;background:var(--bg2);border-radius:2px;outline:none;
-  cursor:pointer;
+  width:100%;height:4px;background:var(--bg2);border-radius:2px;outline:none;cursor:pointer;
 }
 .slider::-webkit-slider-thumb{
   -webkit-appearance:none;appearance:none;
-  width:18px;height:18px;border-radius:50%;
-  background:var(--accent);cursor:pointer;
+  width:18px;height:18px;border-radius:50%;background:var(--accent);cursor:pointer;
   box-shadow:0 2px 6px rgba(201,107,74,.3);
   transition:transform .15s ease,box-shadow .2s ease;
 }
 .slider::-webkit-slider-thumb:hover{transform:scale(1.15);box-shadow:0 3px 10px rgba(201,107,74,.45);}
-.slider::-moz-range-thumb{
-  width:18px;height:18px;border-radius:50%;
-  background:var(--accent);cursor:pointer;border:none;
-  box-shadow:0 2px 6px rgba(201,107,74,.3);
-}
+.slider::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--accent);cursor:pointer;border:none;}
 .slider:focus-visible{box-shadow:var(--shadow-focus);border-radius:100px;}
-
-/* Select */
 .select{
   width:100%;padding:10px 14px;
   background:var(--bg);border:1px solid var(--br2);border-radius:8px;
@@ -224,84 +110,110 @@ h1 em{color:var(--accent);font-style:normal;}
 }
 .select:hover{border-color:var(--muted);}
 .select:focus-visible{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--abg);}
-
-/* Radio row */
 .radio-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 .radio-row input{position:absolute;opacity:0;pointer-events:none;}
 .radio-row label{
-  display:block;padding:8px 12px;border:1px solid var(--br2);border-radius:8px;
-  cursor:pointer;background:var(--bg);font-size:13px;font-weight:500;color:var(--ink2);
-  text-align:center;transition:all .2s;
+  display:block;padding:8px 12px;cursor:pointer;
+  background:var(--bg);border:1px solid var(--br2);border-radius:8px;
+  text-align:center;font-size:13px;font-weight:500;color:var(--ink2);transition:all .2s;
 }
 .radio-row label:hover{border-color:var(--muted);}
 .radio-row input:checked + label{border-color:var(--accent);background:var(--abg);color:var(--ink);}
 .radio-row input:focus-visible + label{box-shadow:var(--shadow-focus);}
 
-/* CANVAS */
-.gen-canvas{
+/* ─── CANVAS ─────────────────────────────── */
+.gen-canvas-wrap{
   position:relative;aspect-ratio:1/1;width:100%;
   background:var(--card);border:1px solid var(--br);border-radius:16px;
   box-shadow:var(--shadow);overflow:hidden;
   background-image:
-    radial-gradient(ellipse 70% 60% at 50% 50%, var(--abg) 0%, transparent 70%),
-    linear-gradient(var(--grid-line,rgba(0,0,0,0.04)) 1px,transparent 1px),
-    linear-gradient(90deg,var(--grid-line,rgba(0,0,0,0.04)) 1px,transparent 1px);
+    radial-gradient(ellipse 60% 60% at 50% 50%, var(--abg) 0%, transparent 70%),
+    linear-gradient(var(--grid-line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
   background-size:100% 100%, 40px 40px, 40px 40px;
 }
-[data-theme="dark"] .gen-canvas{
-  background-image:
-    radial-gradient(ellipse 70% 60% at 50% 50%, rgba(224,137,106,.12) 0%, transparent 70%),
-    linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
-  background-size:100% 100%, 40px 40px, 40px 40px;
-}
-.gen-canvas canvas{
-  display:block;width:100%;height:100%;outline:none;
-}
-.gen-canvas canvas:focus-visible{box-shadow:var(--shadow-focus);border-radius:16px;}
+#spine-canvas{display:block;width:100%;height:100%;outline:none;cursor:grab;}
+#spine-canvas:active{cursor:grabbing;}
+#spine-canvas:focus-visible{box-shadow:var(--shadow-focus);border-radius:16px;}
 .canvas-overlay{
   position:absolute;inset:0;pointer-events:none;padding:16px;
   display:flex;flex-direction:column;justify-content:space-between;
-  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.2px;
-  color:var(--muted2);text-transform:uppercase;
 }
-.canvas-overlay-top{display:flex;justify-content:space-between;align-items:flex-start;}
-.canvas-overlay-bottom{display:flex;justify-content:space-between;align-items:flex-end;}
-.canvas-overlay .tag{
+.canvas-overlay-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+.canvas-overlay-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;flex-wrap:wrap;}
+.canvas-tag{
   background:var(--card);border:1px solid var(--br);border-radius:100px;
-  padding:5px 11px;font-size:10px;letter-spacing:1.5px;
+  padding:5px 11px;font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:1.5px;color:var(--muted2);text-transform:uppercase;
   display:inline-flex;align-items:center;gap:6px;
 }
-.canvas-overlay .tag .dot{width:5px;height:5px;border-radius:50%;background:var(--lime);animation:pulse-dot 2s ease-in-out infinite;}
-@keyframes pulse-dot{0%,100%{opacity:1;}50%{opacity:.35;}}
-.canvas-overlay .hint{
-  pointer-events:auto;cursor:pointer;
-  background:var(--card);border:1px solid var(--br);border-radius:6px;
-  padding:6px 10px;font-size:10px;color:var(--muted2);
-  transition:color .2s,border-color .2s;
-  font-family:inherit;
+.canvas-tag .dot{width:5px;height:5px;border-radius:50%;background:var(--lime);animation:cdot 2.2s ease-in-out infinite;}
+@keyframes cdot{0%,100%{opacity:1;}50%{opacity:.35;}}
+.view-toggles{
+  display:inline-flex;gap:2px;pointer-events:auto;
+  background:var(--card);border:1px solid var(--br);border-radius:100px;padding:3px;
 }
-.canvas-overlay .hint:hover{color:var(--accent);border-color:var(--abrd);}
-.fallback{
-  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+.view-toggles button{
+  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.2px;
+  color:var(--muted2);background:none;border:none;cursor:pointer;
+  padding:6px 12px;border-radius:100px;transition:all .2s;
+  text-transform:uppercase;
+}
+.view-toggles button:hover{color:var(--ink);}
+.view-toggles button.on{background:var(--abg);color:var(--accent);}
+.view-toggles button:focus-visible{box-shadow:var(--shadow-focus);}
+.canvas-help{
+  pointer-events:none;font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:1px;color:var(--muted2);text-transform:uppercase;
+  padding:6px 0;
+}
+.recenter-btn{
+  pointer-events:auto;cursor:pointer;
+  background:var(--card);border:1px solid var(--br);border-radius:100px;
+  padding:6px 12px;font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:1.2px;color:var(--muted2);transition:color .2s,border-color .2s;
+}
+.recenter-btn:hover{color:var(--accent);border-color:var(--abrd);}
+.canvas-fallback{
+  position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;padding:32px;color:var(--ink3);font-size:14px;line-height:1.6;
 }
-.fallback h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:10px;}
+.canvas-fallback.show{display:flex;}
+.canvas-fallback h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:10px;}
+.canvas-fallback a{
+  display:inline-flex;margin-top:16px;background:var(--accent);color:#fff;
+  padding:10px 22px;border-radius:100px;font-size:14px;font-weight:500;text-decoration:none;
+  transition:transform .2s,box-shadow .25s;
+}
+.canvas-fallback a:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);color:#fff;}
 
-/* OUTPUT */
+/* ─── OUTPUT ─────────────────────────────── */
+.gen-output-wrap{
+  grid-column:1 / -1;padding-top:24px;border-top:1px solid var(--br);
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;
+}
 .gen-output{
   background:var(--card);border:1px solid var(--br);border-radius:16px;
-  padding:24px;box-shadow:var(--shadow);
+  padding:22px;box-shadow:var(--shadow);
 }
 .gen-output h2{
-  font-family:'Syne',sans-serif;font-size:15px;font-weight:700;letter-spacing:-.2px;
-  color:var(--ink);margin-bottom:14px;
+  font-family:'Syne',sans-serif;font-size:14px;font-weight:700;letter-spacing:-.2px;
+  color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:10px;
 }
-.interpret-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:22px;}
+.risk-badge{
+  font-family:'JetBrains Mono',monospace;font-size:10px;
+  padding:3px 10px;border-radius:100px;letter-spacing:1.5px;font-weight:500;
+  text-transform:uppercase;
+}
+.risk-low{background:var(--tbg);color:var(--turq);border:1px solid var(--tbrd);}
+.risk-mod{background:var(--abg);color:var(--accent);border:1px solid var(--abrd);}
+.risk-high{background:rgba(201,64,64,.12);color:var(--red);border:1px solid rgba(201,64,64,.3);}
+[data-theme="dark"] .risk-high{background:rgba(255,82,82,.12);color:var(--red);border-color:rgba(255,82,82,.3);}
+
+.interpret-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
 .interpret-list li{
   font-size:13px;color:var(--ink3);line-height:1.6;
-  padding-left:22px;position:relative;font-family:'DM Sans',sans-serif;
-  font-variant-numeric:tabular-nums;
+  padding-left:22px;position:relative;font-variant-numeric:tabular-nums;
 }
 .interpret-list li::before{
   content:'→';position:absolute;left:0;top:0;color:var(--accent);
@@ -311,61 +223,36 @@ h1 em{color:var(--accent);font-style:normal;}
 .interpret-list li em{color:var(--accent);font-style:normal;font-weight:500;}
 .interpret-list li.warn::before{color:var(--red);}
 
-.recommended{
-  margin-bottom:18px;padding:14px 16px;
-  background:var(--bg1);border:1px solid var(--br);border-radius:10px;
+.rec-card{
+  padding:14px 16px;background:var(--bg1);border:1px solid var(--br);border-radius:10px;
+  margin-bottom:14px;
 }
-.recommended .eyebrow{margin-bottom:6px;font-size:10px;}
-.recommended a{
+.rec-card .eyebrow{margin-bottom:6px;font-size:10px;}
+.rec-card a{
   display:block;font-family:'Syne',sans-serif;font-size:15px;font-weight:700;
-  color:var(--ink);letter-spacing:-.2px;
+  color:var(--ink);letter-spacing:-.2px;text-decoration:none;
 }
-.recommended a:hover{color:var(--accent);text-decoration:none;}
+.rec-card a:hover{color:var(--accent);}
 
 .gen-cta{
   display:block;width:100%;padding:13px;border-radius:100px;
   background:var(--accent);color:#fff;font-size:14px;font-weight:500;
-  font-family:'DM Sans',sans-serif;text-align:center;
+  text-align:center;text-decoration:none;
   transition:transform .2s cubic-bezier(.16,1,.3,1),box-shadow .25s ease;
 }
-.gen-cta:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);text-decoration:none;}
-.gen-cta:active{transform:translateY(1px);}
-.disclaimer{
-  font-size:11px;color:var(--muted);margin-top:14px;text-align:center;line-height:1.5;
-}
+.gen-cta:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);color:#fff;}
+.disclaimer{font-size:11px;color:var(--muted);margin-top:14px;text-align:center;line-height:1.5;}
 
-/* FOOTER */
-footer{
-  border-top:1px solid var(--br);padding:28px 32px;text-align:center;
-  font-size:12px;color:var(--muted);background:var(--bg1);margin-top:40px;
-}
-footer a{color:var(--muted2);margin:0 10px;}
-
-/* RESPONSIVE */
 @media(max-width:960px){
-  :root{--nav-h:60px;}
-  #nav{padding:0 20px;}
-  .nav-center{display:none;}
-  .page-head{padding:40px 20px 28px;}
-  .gen-layout{padding:0 20px 32px;grid-template-columns:1fr;gap:20px;}
-  .gen-output-wrap{grid-template-columns:1fr;padding-top:20px;}
+  .gen-layout{grid-template-columns:1fr;padding:0 20px 32px;gap:18px;}
   .gen-inputs{position:static;}
-  .gen-canvas{aspect-ratio:auto;height:min(60dvh,480px);}
+  .gen-canvas-wrap{aspect-ratio:auto;height:min(60dvh,440px);}
+  .gen-output-wrap{grid-template-columns:1fr;}
+  .page-head{padding:0 20px 20px;}
+  main#main{padding-top:calc(var(--nav-h) + 20px);}
 }
 @media(max-width:480px){
-  .radio-row{grid-template-columns:1fr 1fr 1fr 1fr;font-size:12px;}
-  .radio-row label{padding:8px 4px;font-size:12px;}
-}
-
-@media (prefers-reduced-motion: reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}
-  .canvas-overlay .tag .dot{animation:none;}
-}
-
-/* Print */
-@media print{
-  #nav,footer,.gen-inputs .reset-btn,.gen-cta{display:none;}
-  .gen-layout{grid-template-columns:1fr;}
+  .canvas-help{display:none;}
 }
 </style>
 </head>
@@ -377,6 +264,7 @@ footer a{color:var(--muted2);margin:0 10px;}
   <a href="index.html" class="nav-logo">Kinetic<b>Care</b></a>
   <ul class="nav-center">
     <li><a href="services.html">Services</a></li>
+    <li><a href="generate.html" aria-current="page">3D Viewer</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="index.html#pricing">Pricing</a></li>
     <li><a href="index.html#faq">FAQ</a></li>
@@ -388,14 +276,34 @@ footer a{color:var(--muted2);margin:0 10px;}
     </button>
     <a href="book.html" class="nav-cta">Book Assessment</a>
   </div>
+  <button class="burger" id="burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="drawer">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div id="drawer" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="drawer-nav">
+    <a href="index.html" class="dl">Home</a>
+    <a href="services.html" class="dl">Services</a>
+    <a href="generate.html" class="dl">3D Viewer</a>
+    <a href="about.html" class="dl">About</a>
+    <a href="index.html#faq" class="dl">FAQ</a>
+  </div>
+  <div class="drawer-foot">
+    <a href="book.html">Book Free Assessment →</a>
+    <div class="drawer-toggle">
+      <span>Theme</span>
+      <button id="drawer-theme" aria-label="Toggle light and dark theme" style="background:var(--bg2);border:1px solid var(--br2);border-radius:100px;padding:5px 14px;font-size:12px;color:var(--ink2);cursor:pointer;font-family:'DM Sans',sans-serif;">Toggle <span aria-hidden="true">☀ / ◐</span></button>
+    </div>
+  </div>
+</div>
 
 <main id="main">
 
 <header class="page-head">
   <div class="eyebrow">3D Viewer · Beta</div>
   <h1>See your posture <em>in 3D.</em></h1>
-  <p class="lede">Adjust the inputs below. A personalised anatomical model regenerates in real time — posture, vertebral load, and strain zones, rendered procedurally from your numbers. Not a diagnosis. A starting point for the conversation.</p>
+  <p class="lede">Adjust the inputs. A personalised anatomical model regenerates live — posture angle, vertebral load, and strain zones rendered procedurally from your numbers. Not a diagnosis. A starting point.</p>
 </header>
 
 <div class="gen-layout">
@@ -411,7 +319,7 @@ footer a{color:var(--muted2);margin:0 10px;}
         <label for="desk">Desk hours / day</label>
         <span class="field-val" id="desk-val">8</span>
       </div>
-      <input class="slider" type="range" id="desk" min="0" max="14" value="8" step="1" aria-valuemin="0" aria-valuemax="14" aria-valuenow="8">
+      <input class="slider" type="range" id="desk" min="0" max="14" value="8" step="1">
     </div>
 
     <div class="field">
@@ -419,7 +327,7 @@ footer a{color:var(--muted2);margin:0 10px;}
         <label for="age">Age</label>
         <span class="field-val" id="age-val">32</span>
       </div>
-      <input class="slider" type="range" id="age" min="18" max="75" value="32" step="1" aria-valuemin="18" aria-valuemax="75" aria-valuenow="32">
+      <input class="slider" type="range" id="age" min="18" max="75" value="32" step="1">
     </div>
 
     <div class="field">
@@ -427,7 +335,7 @@ footer a{color:var(--muted2);margin:0 10px;}
         <label for="height">Height</label>
         <span class="field-val"><span id="height-val">175</span> cm</span>
       </div>
-      <input class="slider" type="range" id="height" min="140" max="210" value="175" step="1" aria-valuemin="140" aria-valuemax="210" aria-valuenow="175">
+      <input class="slider" type="range" id="height" min="140" max="210" value="175" step="1">
     </div>
 
     <div class="field">
@@ -436,7 +344,7 @@ footer a{color:var(--muted2);margin:0 10px;}
         <option value="none">None — just exploring</option>
         <option value="spine" selected>Spine, neck or back pain</option>
         <option value="sports">Sports injury or rehab</option>
-        <option value="pain">Chronic pain</option>
+        <option value="chronic">Chronic pain</option>
         <option value="neuro">Neurological recovery</option>
         <option value="womens">Women's health</option>
         <option value="corporate">Corporate ergonomics</option>
@@ -446,45 +354,54 @@ footer a{color:var(--muted2);margin:0 10px;}
     <fieldset class="field" style="border:none;padding:0;">
       <legend class="field-label" style="width:100%;"><span>Build</span></legend>
       <div class="radio-row" role="radiogroup" aria-label="Build">
-        <div><input type="radio" id="g-f" name="gender" value="female"><label for="g-f">Female</label></div>
-        <div><input type="radio" id="g-m" name="gender" value="male" checked><label for="g-m">Male</label></div>
+        <div><input type="radio" id="b-female" name="body" value="female"><label for="b-female">Female</label></div>
+        <div><input type="radio" id="b-male"   name="body" value="male" checked><label for="b-male">Male</label></div>
       </div>
     </fieldset>
   </aside>
 
-  <section class="gen-canvas" id="canvas-wrap">
-    <canvas id="anatomy-canvas" tabindex="0" role="img"
-      aria-label="Interactive 3D anatomical model. Use arrow keys to rotate when focused. Updates when inputs change."></canvas>
+  <section class="gen-canvas-wrap" id="canvas-wrap">
+    <canvas id="spine-canvas" tabindex="0" role="img"
+      aria-label="Interactive anatomical model. Drag to rotate. Arrow keys rotate when focused. Updates when inputs change."></canvas>
+
     <div class="canvas-overlay" aria-hidden="true">
       <div class="canvas-overlay-top">
-        <span class="tag"><span class="dot"></span>GENERATING</span>
-        <span class="tag" id="view-tag">3/4 VIEW</span>
+        <span class="canvas-tag"><span class="dot"></span>GENERATING</span>
+        <div class="view-toggles" role="group" aria-label="View angle">
+          <button type="button" class="on" data-view="front">Front</button>
+          <button type="button" data-view="quarter">3/4</button>
+          <button type="button" data-view="side">Side</button>
+        </div>
       </div>
       <div class="canvas-overlay-bottom">
-        <span style="pointer-events:none;">DRAG · ROTATE &nbsp;·&nbsp; SCROLL · ZOOM &nbsp;·&nbsp; ARROW KEYS WHEN FOCUSED</span>
-        <button type="button" class="hint" id="recenter-btn">RECENTER ⟳</button>
+        <span class="canvas-help">DRAG · ROTATE &nbsp;·&nbsp; SCROLL · ZOOM &nbsp;·&nbsp; ARROWS WHEN FOCUSED</span>
+        <button type="button" class="recenter-btn" id="recenter-btn">RECENTER ⟳</button>
       </div>
     </div>
-    <div class="fallback" id="fallback" hidden>
-      <h3 id="fallback-title">3D viewer couldn't start here</h3>
-      <p id="fallback-msg">Your browser couldn't render the live 3D model. No problem — we'll show you the same posture analysis at your free in-clinic assessment.</p>
-      <p style="margin-top:18px;"><a href="book.html" class="fallback-cta">Book a free assessment →</a></p>
+
+    <div class="canvas-fallback" id="canvas-fallback">
+      <h3>Canvas rendering not supported here</h3>
+      <p>Your browser can't render the live model. No problem — we'll show you the same posture analysis at your free in-clinic assessment.</p>
+      <a href="book.html">Book a free assessment →</a>
     </div>
   </section>
 
   <div class="gen-output-wrap">
     <aside class="gen-output" aria-live="polite" aria-atomic="true">
-      <h2>Clinical interpretation</h2>
+      <h2>
+        <span>Clinical interpretation</span>
+        <span class="risk-badge risk-low" id="risk-badge">LOW</span>
+      </h2>
       <ul class="interpret-list" id="interpret"></ul>
 
-      <div class="recommended">
+      <div class="rec-card">
         <div class="eyebrow">Recommended service</div>
         <a id="rec-link" href="services.html#spine">Spine &amp; Posture →</a>
       </div>
 
-      <a class="gen-cta" id="book-cta" href="book.html?concern=spine">Book a free assessment →</a>
+      <a class="gen-cta" id="book-cta" href="book.html?concern=spine">See this live with AI motion capture →</a>
       <p class="disclaimer">
-        Informational only. Not a medical diagnosis. Procedural model based on population-average biomechanical data.
+        Informational only. Not a medical diagnosis. Procedural model from population-average biomechanical data.
       </p>
     </aside>
 
@@ -492,10 +409,10 @@ footer a{color:var(--muted2);margin:0 10px;}
       <h2>How to read this</h2>
       <ul class="interpret-list">
         <li><b>Terracotta</b> vertebrae are within typical range for your inputs.</li>
-        <li class="warn"><b>Red</b> vertebrae are flagged — either excessive curvature, compression, or concern-specific strain.</li>
-        <li>Pulse rings indicate regions where a physiotherapist would likely focus the first assessment.</li>
+        <li class="warn"><b>Red</b> vertebrae indicate excessive curvature, compression, or concern-specific strain.</li>
+        <li>Pulse rings show where a physiotherapist would likely focus the first assessment.</li>
         <li><b>Cervical</b> = neck · <b>Thoracic</b> = mid-back · <b>Lumbar</b> = lower back · <b>Pelvis</b> = base.</li>
-        <li>This is procedural — it doesn't use your real photo or medical history. A live assessment uses AI motion capture and force-plate data.</li>
+        <li>This is procedural — it doesn't use your real photo or records. A live assessment uses AI motion capture and force-plate data.</li>
       </ul>
     </aside>
   </div>
@@ -504,738 +421,530 @@ footer a{color:var(--muted2);margin:0 10px;}
 </main>
 
 <footer>
-  © 2026 KineticCare · Indiranagar, Bengaluru ·
-  <a href="index.html">Home</a> ·
-  <a href="services.html">Services</a> ·
-  <a href="about.html">About</a> ·
-  <a href="book.html">Book</a> ·
-  <a href="mailto:hello@kineticcare.in">Contact</a>
+  <div class="f-logo">Kinetic<b>Care</b></div>
+  <nav class="f-links" aria-label="Footer">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="book.html">Book</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="mailto:hello@kineticcare.in">Contact</a>
+  </nav>
+  <address class="f-copy">© 2026 KineticCare · Indiranagar, Bengaluru 560038, India</address>
 </footer>
 
-<!-- Three.js with multi-CDN fallback (cdnjs → jsdelivr → unpkg). Synchronous to preserve ordering. -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" onerror="this.onerror=null;console.warn('[generate] cdnjs failed, trying jsdelivr'); var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js';s.onerror=function(){console.warn('[generate] jsdelivr failed, trying unpkg'); var s2=document.createElement('script');s2.src='https://unpkg.com/three@0.128.0/build/three.min.js';document.head.appendChild(s2);};document.head.appendChild(s);"></script>
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   THEME TOGGLE — owned by shared.js. Register a callback so the 3D
-   scene can re-colour materials when the theme flips.
+   KINETICCARE PROCEDURAL SPINE — 2D CANVAS
 ═══════════════════════════════════════════════════════════════ */
-const html = document.documentElement;
-const isDark = ()=>html.getAttribute('data-theme')==='dark';
-// Defer registration until shared.js has set up window.KC
-document.addEventListener('DOMContentLoaded',()=>{
-  if(window.KC && window.KC.onTheme){
-    window.KC.onTheme.add(()=>{ if(window.KC_onTheme) window.KC_onTheme(); });
-  }
-});
 
-/* ═══════════════════════════════════════════════════════════════
-   WebGL + THREE.js BOOTSTRAP (distinguish no-WebGL vs no-Three.js)
-═══════════════════════════════════════════════════════════════ */
-function hasWebGL(){
-  try{
-    const c = document.createElement('canvas');
-    return !!(window.WebGLRenderingContext && (c.getContext('webgl')||c.getContext('experimental-webgl')));
-  }catch(e){ console.error('[generate] WebGL probe threw:', e); return false; }
+const canvas = document.getElementById('spine-canvas');
+const wrap   = document.getElementById('canvas-wrap');
+const fallbackEl = document.getElementById('canvas-fallback');
+
+// Feature detect 2D canvas
+let ctx;
+try{ ctx = canvas.getContext('2d'); }catch(e){ ctx = null; }
+if(!ctx){
+  canvas.style.display = 'none';
+  document.querySelector('.canvas-overlay').style.display = 'none';
+  fallbackEl.classList.add('show');
 }
 
-function showFallback(reason){
-  const fb = document.getElementById('fallback');
-  const cv = document.getElementById('anatomy-canvas');
-  const ov = document.querySelector('.canvas-overlay');
-  if(fb) fb.hidden = false;
-  if(cv) cv.hidden = true;
-  if(ov) ov.hidden = true;
-  const t = document.getElementById('fallback-title');
-  const m = document.getElementById('fallback-msg');
-  if(reason === 'no-webgl'){
-    if(t) t.textContent = '3D viewer needs WebGL';
-    if(m) m.innerHTML = 'Your browser or graphics driver has WebGL disabled. Enable hardware acceleration in browser settings, or <a href="https://get.webgl.org/" target="_blank" rel="noopener">test your WebGL support</a>.';
-  } else {
-    if(t) t.textContent = 'Three.js couldn\'t load';
-    if(m) m.innerHTML = 'The 3D library failed to load from all CDN mirrors. Usually this is an ad blocker, privacy extension, or corporate firewall blocking cdnjs / jsdelivr / unpkg.';
-  }
-  console.error('[generate] 3D init aborted:', reason);
-}
-
-/* Wait up to 6s for THREE to arrive (handles fallback CDN loading async),
-   then call initScene() — defined further down. */
-function waitForThreeThenInit(){
-  if(!hasWebGL()){ showFallback('no-webgl'); return; }
-  if(typeof THREE !== 'undefined'){ initScene(); return; }
-  let tries = 0;
-  const iv = setInterval(()=>{
-    if(typeof THREE !== 'undefined'){
-      clearInterval(iv);
-      console.log('[generate] THREE loaded after', (tries*100)+'ms');
-      initScene();
-    } else if(++tries > 60){
-      clearInterval(iv);
-      showFallback('no-three');
-    }
-  }, 100);
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   STATE + DEFAULTS
-═══════════════════════════════════════════════════════════════ */
 const prefersReducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const DEFAULTS = { desk:8, age:32, height:175, concern:'spine', gender:'male' };
+const isDark = () => document.documentElement.getAttribute('data-theme') === 'dark';
+
+/* ─── STATE ─────────────────────────────── */
+const DEFAULTS = { desk:8, age:32, height:175, concern:'spine', body:'male' };
 const state = {...DEFAULTS};
 
-/* Read URL params */
+/* URL param pre-fill */
 (()=>{
   const p = new URLSearchParams(location.search);
-  const n = (k,lo,hi,def)=>{const v=+p.get(k);return isFinite(v)?Math.min(hi,Math.max(lo,v)):def;};
-  state.desk   = n('deskHours',0,14,DEFAULTS.desk);
-  state.age    = n('age',18,75,DEFAULTS.age);
-  state.height = n('height',140,210,DEFAULTS.height);
+  const num = (k, lo, hi, def) => { const v = +p.get(k); return isFinite(v) ? Math.min(hi, Math.max(lo, v)) : def; };
+  state.desk   = num('deskHours', 0, 14, DEFAULTS.desk);
+  state.age    = num('age', 18, 75, DEFAULTS.age);
+  state.height = num('height', 140, 210, DEFAULTS.height);
   const c = p.get('concern');
-  if(c && ['none','spine','sports','pain','neuro','womens','corporate'].includes(c)) state.concern = c;
-  const g = p.get('gender');
-  if(g==='female'||g==='male') state.gender = g;
+  if(c && ['none','spine','sports','chronic','neuro','womens','corporate'].includes(c)) state.concern = c;
+  const b = p.get('body');
+  if(b === 'female' || b === 'male') state.body = b;
 })();
 
-/* ═══════════════════════════════════════════════════════════════
-   INPUT BINDING
-═══════════════════════════════════════════════════════════════ */
-const deskEl=document.getElementById('desk'),ageEl=document.getElementById('age'),heightEl=document.getElementById('height');
-const concernEl=document.getElementById('concern');
-const deskVal=document.getElementById('desk-val'),ageVal=document.getElementById('age-val'),heightVal=document.getElementById('height-val');
-function writeInputs(){
-  deskEl.value=state.desk;deskEl.setAttribute('aria-valuenow',state.desk);deskVal.textContent=state.desk;
-  ageEl.value=state.age;ageEl.setAttribute('aria-valuenow',state.age);ageVal.textContent=state.age;
-  heightEl.value=state.height;heightEl.setAttribute('aria-valuenow',state.height);heightVal.textContent=state.height;
-  concernEl.value=state.concern;
-  document.getElementById('g-'+state.gender[0]).checked=true;
-}
-writeInputs();
+/* ─── VIEW + INTERACTION STATE ─────────── */
+let view = 'front';    // 'front' | 'quarter' | 'side'
+let rotYOffset = 0;    // user drag rotation (radians)
+let rotXOffset = 0;
+let targetRotYOffset = 0;
+let targetRotXOffset = 0;
+let zoom = 1.0, targetZoom = 1.0;
+let pulse = 0;         // on-change pulse amplitude
+const VIEW_ROT = { front: 0, quarter: Math.PI / 6, side: Math.PI / 2 };
 
-/* ═══════════════════════════════════════════════════════════════
-   INTERPRETATION GENERATOR
-═══════════════════════════════════════════════════════════════ */
+/* ─── DPR FIT ─────────────────────────── */
+const dpr = Math.min(window.devicePixelRatio || 1, 2);
+let cssW = 600, cssH = 600;
+function fit(){
+  if(!ctx) return;
+  const rect = wrap.getBoundingClientRect();
+  cssW = Math.max(200, rect.width);
+  cssH = Math.max(200, rect.height);
+  canvas.width  = Math.round(cssW * dpr);
+  canvas.height = Math.round(cssH * dpr);
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+if(ctx){
+  fit();
+  window.addEventListener('resize', fit, {passive:true});
+}
+
+/* ═══════════════════════════════════════
+   SPINE PARAMS FROM INPUTS
+═══════════════════════════════════════ */
+function computeSpineParams(s){
+  const lean = Math.min(1, s.desk / 14);
+
+  let painZone = 0;
+  if(s.desk > 6) painZone = (s.desk - 6) / 10;
+  if(s.age > 40) painZone = Math.min(1, painZone + (s.age - 40) / 40);
+
+  const HL = {
+    spine:    {lumbar:1.0, cervical:0.8, pelvis:0,   thoracic:0.3},
+    sports:   {lumbar:0.3, cervical:0,   pelvis:1.0, thoracic:0},
+    chronic:  {lumbar:0.7, cervical:0.7, pelvis:0.5, thoracic:0.6},
+    neuro:    {lumbar:0,   cervical:1.0, pelvis:0,   thoracic:0.2},
+    womens:   {lumbar:0.4, cervical:0,   pelvis:1.0, thoracic:0},
+    corporate:{lumbar:0.2, cervical:1.0, pelvis:0,   thoracic:0.6},
+    none:     {lumbar:0,   cervical:0,   pelvis:0,   thoracic:0},
+  };
+  const highlights = HL[s.concern] || HL.none;
+
+  // Desk hours amplify upper-spine strain
+  const deskBoost = Math.min(1, Math.max(0, (s.desk - 4) / 8));
+  highlights.cervical = Math.min(1, highlights.cervical + deskBoost * 0.5);
+  highlights.thoracic = Math.min(1, highlights.thoracic + deskBoost * 0.35);
+
+  const pelvisScale = s.body === 'female' ? 1.15 : 0.95;
+  const heightScale = s.height / 175;
+  const ageFactor = Math.max(0, s.age - 40) / 35;
+  const diskCompress = 1 - ageFactor * 0.12;
+
+  return { lean, painZone, highlights, pelvisScale, heightScale, ageFactor, diskCompress };
+}
+
+/* ═══════════════════════════════════════
+   DRAW — 2D CANVAS PROCEDURAL SKELETON
+═══════════════════════════════════════ */
+function drawSpine(){
+  if(!ctx) return;
+  ctx.clearRect(0, 0, cssW, cssH);
+
+  const p = computeSpineParams(state);
+  const dark = isDark();
+
+  // Rotation applied to the horizontal ellipse squeeze (simulates yaw)
+  const totalRotY = VIEW_ROT[view] + rotYOffset;
+  const rotYCos = Math.cos(totalRotY);
+  const totalRotX = rotXOffset;
+
+  // Scale to fit (reference design size 560)
+  const baseScale = Math.min(cssW, cssH) / 560;
+  const sc = baseScale * zoom * p.heightScale;
+
+  ctx.save();
+  ctx.translate(cssW / 2, cssH / 2);
+  // Subtle tilt from rotX
+  ctx.rotate(totalRotX * 0.15);
+  ctx.scale(sc, sc);
+
+  // Opacity multiplier — 2.5x in light mode per prompt
+  const om = dark ? 1 : 2.5;
+
+  // Light-mode warm tint backing the spine
+  if(!dark){
+    const tint = ctx.createRadialGradient(0, 0, 0, 0, 0, 200);
+    tint.addColorStop(0, 'rgba(240,220,205,0.55)');
+    tint.addColorStop(0.5, 'rgba(240,220,205,0.2)');
+    tint.addColorStop(1, 'transparent');
+    ctx.fillStyle = tint;
+    ctx.beginPath(); ctx.arc(0, 0, 200, 0, Math.PI * 2); ctx.fill();
+  }
+
+  // Theme colors
+  const pC   = dark ? [224,137,106] : [180,80,45];   // primary bone / accent
+  const tC   = dark ? [45,212,191]  : [30,150,138];  // turquoise (healthy accent)
+  const rC   = dark ? [255,82,82]   : [190,50,50];   // red (strain)
+  const ribC = dark ? [120,100,220] : [80,100,140];  // ribs
+
+  // ── Forward lean transform (desk hours) ──
+  const leanAngle = p.lean * 0.32; // up to ~18°
+  ctx.rotate(leanAngle);
+
+  // Pulse on change (fade quickly)
+  if(pulse > 0){
+    const glow = ctx.createRadialGradient(0, 0, 10, 0, 0, 180);
+    glow.addColorStop(0, `rgba(${pC.join(',')},${Math.min(1, 0.18 * pulse * om)})`);
+    glow.addColorStop(1, 'transparent');
+    ctx.fillStyle = glow;
+    ctx.beginPath(); ctx.arc(0, 0, 180, 0, Math.PI * 2); ctx.fill();
+  }
+
+  // ── SKULL ──
+  const skullY = -210;
+  const skullA = Math.min(1, 0.55 * om);
+  ctx.strokeStyle = `rgba(${pC.join(',')},${skullA})`;
+  ctx.lineWidth = dark ? 1.2 : 1.8;
+  ctx.beginPath(); ctx.arc(0, skullY, 32, 0, Math.PI * 2); ctx.stroke();
+  // Jaw curve
+  ctx.beginPath(); ctx.moveTo(-18, skullY + 20); ctx.quadraticCurveTo(0, skullY + 32, 18, skullY + 20); ctx.stroke();
+
+  // Neck connector
+  ctx.strokeStyle = `rgba(${pC.join(',')},${Math.min(1, 0.35 * om)})`;
+  ctx.lineWidth = dark ? 1.5 : 2.2;
+  ctx.beginPath(); ctx.moveTo(0, skullY + 32); ctx.lineTo(0, skullY + 58); ctx.stroke();
+
+  // ── SPINE: 24 vertebrae = 7 cervical + 12 thoracic + 5 lumbar ──
+  const spineTop = skullY + 58;
+  const vertebraData = [
+    // {yOffset, width, isRegion}
+  ];
+  let yCursor = spineTop;
+  // 7 Cervical (small)
+  for(let i = 0; i < 7; i++){
+    vertebraData.push({y: yCursor, w: 18 + i * 0.8, h: 9, region: 'cervical', idx: i});
+    yCursor += 13;
+  }
+  // 12 Thoracic (medium)
+  for(let i = 0; i < 12; i++){
+    vertebraData.push({y: yCursor, w: 24 + i * 0.6, h: 11, region: 'thoracic', idx: i});
+    yCursor += 16;
+  }
+  // 5 Lumbar (large)
+  for(let i = 0; i < 5; i++){
+    vertebraData.push({y: yCursor, w: 34, h: 14, region: 'lumbar', idx: i});
+    yCursor += 19;
+  }
+
+  // Background spine curvature line
+  const cv = p.lean * 14;
+  ctx.strokeStyle = `rgba(${tC.join(',')},${Math.min(1, 0.18 * om)})`;
+  ctx.lineWidth = dark ? 1.2 : 1.8;
+  ctx.beginPath();
+  ctx.moveTo(0, spineTop);
+  ctx.bezierCurveTo(cv, spineTop + 80, -cv * 0.5, spineTop + 200, cv * 0.6, yCursor);
+  ctx.stroke();
+
+  // ── RIBCAGE (around thoracic vertebrae) — ellipses with view rotation squeeze ──
+  const thoracicStart = 7;
+  const thoracicCount = 12;
+  for(let i = 0; i < thoracicCount; i++){
+    const v = vertebraData[thoracicStart + i];
+    const t = i / (thoracicCount - 1);
+    const rw = (52 - Math.abs(i - 5) * 2.2) * Math.abs(rotYCos) * 0.9 + 5;
+    const rh = 18 - Math.abs(i - 5) * 0.8;
+    const ribA = Math.min(1, Math.max(0.08, 0.35 - p.highlights.thoracic * 0.15) * om);
+    ctx.strokeStyle = `rgba(${ribC.join(',')},${ribA})`;
+    ctx.lineWidth = dark ? 0.7 : 1.1;
+    ctx.beginPath();
+    ctx.ellipse(0, v.y, rw, rh, 0, 0, Math.PI * 2);
+    ctx.stroke();
+  }
+
+  // ── VERTEBRAE ──
+  vertebraData.forEach(v => {
+    const h = v.region === 'cervical' && p.highlights.cervical > 0.3 ? p.highlights.cervical
+           : v.region === 'thoracic' && p.highlights.thoracic > 0.3 ? p.highlights.thoracic
+           : v.region === 'lumbar'   && p.highlights.lumbar   > 0.3 ? p.highlights.lumbar
+           : 0;
+
+    // Color interpolation toward red based on strain
+    const mix = h;
+    const r  = Math.round(pC[0] * (1 - mix) + rC[0] * mix);
+    const gv = Math.round(pC[1] * (1 - mix) + rC[1] * mix);
+    const bv = Math.round(pC[2] * (1 - mix) + rC[2] * mix);
+    const a  = Math.min(1, (0.7 + mix * 0.3) * om);
+
+    // Apply forward displacement for lower-lumbar strain
+    let xOff = 0;
+    if(v.region === 'lumbar' && p.highlights.lumbar > 0.45){
+      xOff = (p.highlights.lumbar - 0.45) * 6 * Math.sin(v.idx * 1.1);
+    }
+
+    // Compress y when age factor active (disk height reduction)
+    const h2 = v.h * p.diskCompress;
+    // View rotation: narrow the vertebra on side view
+    const w2 = v.w * (Math.abs(rotYCos) * 0.55 + 0.45);
+
+    ctx.fillStyle = `rgba(${r},${gv},${bv},${Math.min(1, a * 0.25)})`;
+    ctx.strokeStyle = `rgba(${r},${gv},${bv},${a})`;
+    ctx.lineWidth = dark ? 1.1 : 1.6;
+    ctx.beginPath();
+    if(ctx.roundRect) ctx.roundRect(xOff - w2 / 2, v.y - h2 / 2, w2, h2, 2);
+    else ctx.rect(xOff - w2 / 2, v.y - h2 / 2, w2, h2);
+    ctx.fill(); ctx.stroke();
+
+    // Pulse ring on strained vertebrae (subtle breath)
+    if(h > 0.5 && !prefersReducedMotion){
+      const pulseAmt = (Math.sin(Date.now() * 0.0038 + v.idx * 0.9) + 1) / 2;
+      const pa = pulseAmt * 0.45 * h;
+      ctx.strokeStyle = `rgba(${rC.join(',')},${pa})`;
+      ctx.lineWidth = dark ? 0.8 : 1.2;
+      ctx.beginPath();
+      if(ctx.roundRect) ctx.roundRect(xOff - w2 / 2 - 5, v.y - h2 / 2 - 4, w2 + 10, h2 + 8, 4);
+      else ctx.rect(xOff - w2 / 2 - 5, v.y - h2 / 2 - 4, w2 + 10, h2 + 8);
+      ctx.stroke();
+    }
+  });
+
+  // ── PELVIS ──
+  const pelvisY = yCursor + 6;
+  const pelColor = p.highlights.pelvis > 0.55 ? rC : tC;
+  const pelA = p.highlights.pelvis > 0.55 ? Math.min(1, 0.55 * om) : Math.min(1, 0.48 * om);
+  ctx.strokeStyle = `rgba(${pelColor.join(',')},${pelA})`;
+  ctx.lineWidth = dark ? 1.5 : 2.2;
+  ctx.beginPath();
+  ctx.ellipse(0, pelvisY, 46 * p.pelvisScale * Math.abs(rotYCos * 0.7 + 0.3), 28, 0, 0, Math.PI * 2);
+  ctx.stroke();
+
+  // Pelvis pulse ring
+  if(p.highlights.pelvis > 0.5 && !prefersReducedMotion){
+    const pa = (Math.sin(Date.now() * 0.003) + 1) / 2 * 0.4 * p.highlights.pelvis;
+    ctx.strokeStyle = `rgba(${rC.join(',')},${pa})`;
+    ctx.lineWidth = dark ? 0.9 : 1.4;
+    ctx.beginPath();
+    ctx.ellipse(0, pelvisY, 52 * p.pelvisScale * Math.abs(rotYCos * 0.7 + 0.3), 34, 0, 0, Math.PI * 2);
+    ctx.stroke();
+  }
+
+  // ── PAIN HEAT OVERLAY (concern-driven) ──
+  if(p.painZone > 0.55){
+    const pi = (p.painZone - 0.55) / 0.45;
+    const zones = [];
+    if(p.highlights.cervical > 0.4) zones.push([0, skullY + 70, 50]);
+    if(p.highlights.lumbar > 0.4)   zones.push([0, yCursor - 30, 55]);
+    if(p.highlights.pelvis > 0.4)   zones.push([0, pelvisY, 42]);
+    zones.forEach(([x, y, r2]) => {
+      const gr = ctx.createRadialGradient(x, y, 2, x, y, r2);
+      gr.addColorStop(0, `rgba(${rC.join(',')},${Math.min(1, pi * 0.22 * om)})`);
+      gr.addColorStop(1, 'transparent');
+      ctx.fillStyle = gr;
+      ctx.beginPath(); ctx.arc(x, y, r2, 0, Math.PI * 2); ctx.fill();
+    });
+  }
+
+  ctx.restore();
+}
+
+/* ═══════════════════════════════════════
+   INTERPRETATION
+═══════════════════════════════════════ */
 const SERVICES = {
-  spine:{name:'Spine & Posture',anchor:'spine'},
-  sports:{name:'Sports Rehabilitation',anchor:'sports'},
-  pain:{name:'Pain Neuroscience',anchor:'pain'},
-  neuro:{name:'Neurological Recovery',anchor:'neuro'},
-  womens:{name:"Women's Health",anchor:'womens'},
-  corporate:{name:'Corporate Wellness',anchor:'corporate'},
-  none:{name:'Spine & Posture',anchor:'spine'},
+  spine:    {name:'Spine & Posture',         anchor:'spine'},
+  sports:   {name:'Sports Rehabilitation',   anchor:'sports'},
+  chronic:  {name:'Pain Neuroscience',       anchor:'pain'},
+  neuro:    {name:'Neurological Recovery',   anchor:'neuro'},
+  womens:   {name:"Women's Health",          anchor:'womens'},
+  corporate:{name:'Corporate Wellness',      anchor:'corporate'},
+  none:     {name:'Spine & Posture',         anchor:'spine'},
 };
 
 function recommendedService(){
-  if(state.concern!=='none') return SERVICES[state.concern];
-  if(state.desk>=8) return SERVICES.corporate;
-  if(state.age>=55) return SERVICES.pain;
+  if(state.concern !== 'none') return SERVICES[state.concern];
+  if(state.desk >= 8) return SERVICES.corporate;
+  if(state.age >= 55) return SERVICES.chronic;
   return SERVICES.spine;
 }
 
-function buildInterpretation(){
+function generateInterpretation(){
   const lines = [];
-  const headAngle = Math.max(0, Math.round(state.desk*3 - 4));
-  if(state.desk>=6){
-    lines.push({warn:headAngle>20, html:`Forward head carriage: <em>+${headAngle}°</em> beyond postural baseline.`});
+  const risk = (state.desk > 10 || state.age > 50) ? 'High'
+            : (state.desk > 6  || state.age > 35) ? 'Moderate'
+            : 'Low';
+
+  if(state.desk >= 6){
+    const force = Math.round(state.desk * 2.5);
+    lines.push({warn: state.desk >= 10, html: `<b>${state.desk}</b> hrs/day desk load adds ~<em>${force}kg</em> of cervical force.`});
   }
-  if(state.age>50){
-    const pct = Math.min(24, Math.round((state.age-48)*1.3));
-    lines.push({warn:pct>=15, html:`Lumbar disc height: estimated <em>−${pct}%</em> from age-related desiccation.`});
+  if(state.age > 40){
+    const pct = Math.min(24, Math.round((state.age - 48) * 1.3));
+    if(pct > 0) lines.push({warn: pct >= 12, html: `After 40, disc hydration decreases — estimated <em>−${pct}%</em> lumbar disc height.`});
   }
-  if(state.concern==='spine'){
-    lines.push({warn:true, html:`L4–L5 compression risk: <b>moderate</b>. Targeted loading with neutral-spine protocols indicated.`});
-  } else if(state.concern==='sports'){
-    lines.push({warn:false, html:`Force-plate asymmetry likely. Full gait analysis and return-to-sport criteria recommended before load progression.`});
-  } else if(state.concern==='pain'){
-    lines.push({warn:true, html:`Central sensitization indicators present. <b>Pain neuroscience education</b> often outperforms tissue-focused rehab for chronic presentations.`});
-  } else if(state.concern==='neuro'){
-    lines.push({warn:true, html:`Proprioceptive deficit screening indicated. Balance retraining + task-specific motor learning.`});
-  } else if(state.concern==='womens'){
-    lines.push({warn:false, html:`Pelvic floor and core canister integration assessment recommended. Female physiotherapist available.`});
-  } else if(state.concern==='corporate'){
-    lines.push({warn:false, html:`Ergonomic audit + group mobility program recommended for teams of 20+.`});
+  if(state.concern === 'spine'){
+    lines.push({warn: true, html: `L4–L5 compression risk: <b>moderate</b>. Neutral-spine protocols + progressive loading indicated.`});
+  } else if(state.concern === 'sports'){
+    lines.push({warn: false, html: `Force-plate asymmetry likely. Return-to-sport typically <b>16–20 weeks</b> for ligament injuries.`});
+  } else if(state.concern === 'chronic'){
+    lines.push({warn: true, html: `Central sensitization indicators present. <b>Pain neuroscience education</b> often outperforms tissue-focused rehab here.`});
+  } else if(state.concern === 'neuro'){
+    lines.push({warn: true, html: `Proprioceptive deficit screening indicated. Balance retraining + task-specific motor learning.`});
+  } else if(state.concern === 'womens'){
+    lines.push({warn: false, html: `Pelvic floor + core canister assessment recommended. Female physiotherapist on request.`});
+  } else if(state.concern === 'corporate'){
+    lines.push({warn: false, html: `Ergonomic audit + group mobility recommended for teams of 20+.`});
   }
-  if(state.height>=185 && state.desk>=6){
-    lines.push({warn:false, html:`Taller builds at long-sit durations: monitor for <em>scapular protraction</em> and <em>thoracic kyphosis</em>.`});
+  if(state.height >= 185 && state.desk >= 6){
+    lines.push({warn: false, html: `Taller build at long-sit: monitor <em>scapular protraction</em> + <em>thoracic kyphosis</em>.`});
   }
-  if(state.age<25 && state.concern==='spine'){
-    lines.push({warn:false, html:`Young onset — highly responsive to movement-based protocols. Strong recovery trajectory.`});
-  }
-  const weeks = state.concern==='neuro' ? '24+'
-             : state.concern==='pain' ? '10–16'
-             : state.concern==='womens' ? '8–16'
-             : state.concern==='sports' ? '12–24'
+  const weeks = state.concern === 'neuro' ? '24+'
+             : state.concern === 'chronic' ? '10–16'
+             : state.concern === 'womens' ? '8–16'
+             : state.concern === 'sports' ? '12–24'
              : '4–12';
-  lines.push({warn:false, html:`Recovery trajectory: <b>${weeks} weeks</b> with evidence-based protocol. <em>3.2×</em> KineticCare median vs. conventional PT.`});
-  return lines.slice(0, 6);
+  lines.push({warn: false, html: `Recovery trajectory: <b>${weeks} weeks</b> with evidence-based protocol. <em>3.2×</em> KineticCare median.`});
+
+  return { risk, lines: lines.slice(0, 5) };
 }
 
 function renderInterpretation(){
-  const list = document.getElementById('interpret');
-  list.innerHTML = '';
-  buildInterpretation().forEach(line=>{
+  const { risk, lines } = generateInterpretation();
+  const listEl = document.getElementById('interpret');
+  listEl.innerHTML = '';
+  lines.forEach(line => {
     const li = document.createElement('li');
     if(line.warn) li.classList.add('warn');
     li.innerHTML = line.html;
-    list.appendChild(li);
+    listEl.appendChild(li);
   });
+  const badge = document.getElementById('risk-badge');
+  badge.textContent = risk.toUpperCase();
+  badge.className = 'risk-badge ' + (risk === 'High' ? 'risk-high' : risk === 'Moderate' ? 'risk-mod' : 'risk-low');
+
   const rec = recommendedService();
   document.getElementById('rec-link').href = `services.html#${rec.anchor}`;
   document.getElementById('rec-link').textContent = `${rec.name} →`;
-  document.getElementById('book-cta').href = `book.html?concern=${state.concern==='none'?'':state.concern}`;
-}
-renderInterpretation();
-
-/* ═══════════════════════════════════════════════════════════════
-   THREE.JS SCENE  (invoked by waitForThreeThenInit when ready)
-═══════════════════════════════════════════════════════════════ */
-function initScene(){
-
-const canvas = document.getElementById('anatomy-canvas');
-const container = document.getElementById('canvas-wrap');
-
-const renderer = new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'low-power'});
-renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
-camera.position.set(3.5, 1.2, 7.5);
-camera.lookAt(0, 0, 0);
-
-/* Theme-aware color holders */
-let colors = {
-  bone: 0xC96B4A,
-  boneDim: 0xE8896A,
-  strain: 0xC94040,
-  turq: 0x2BB5A4,
-  purple: 0x8B6FE8,
-};
-function refreshColors(){
-  if(isDark()){
-    colors = {bone:0xE0896A, boneDim:0xF4AD8C, strain:0xFF5252, turq:0x2DD4BF, purple:0x8B6FE8};
-  } else {
-    colors = {bone:0xC96B4A, boneDim:0xE8896A, strain:0xC94040, turq:0x2BB5A4, purple:0x8B6FE8};
-  }
-}
-refreshColors();
-
-/* Lights */
-const amb = new THREE.AmbientLight(colors.bone, 0.25);
-const key = new THREE.PointLight(colors.bone, 2.5, 30); key.position.set(5,5,5);
-const fill = new THREE.PointLight(colors.purple, 1.2, 30); fill.position.set(-5,-3,3);
-const rim = new THREE.PointLight(colors.turq, 1.0, 20); rim.position.set(0,-6,2);
-scene.add(amb, key, fill, rim);
-
-/* Particles — ambient dust */
-(()=>{
-  const n = 80;
-  const g = new THREE.BufferGeometry();
-  const pos = new Float32Array(n*3);
-  for(let i=0;i<n;i++){pos[i*3]=(Math.random()-.5)*12;pos[i*3+1]=(Math.random()-.5)*10;pos[i*3+2]=(Math.random()-.5)*8-2;}
-  g.setAttribute('position', new THREE.BufferAttribute(pos,3));
-  scene.add(new THREE.Points(g, new THREE.PointsMaterial({color:colors.boneDim,size:.04,transparent:true,opacity:.3,sizeAttenuation:true})));
-})();
-
-/* ═══════════════════════════════════════════════════════════════
-   SKELETON BUILDER
-   Hierarchy:
-   root
-   ├── skull
-   ├── cervical (C1–C7)    7 vertebrae, small
-   ├── thoracic (T1–T12)   12 vertebrae, medium + 12 ribcage lines
-   ├── lumbar   (L1–L5)    5 vertebrae, large
-   ├── pelvis
-   ├── armL, armR          (humerus + forearm cylinders)
-   └── legL, legR          (femur + tibia + foot)
-═══════════════════════════════════════════════════════════════ */
-
-const root = new THREE.Group();
-scene.add(root);
-
-/* Tracked regions for color/transform updates */
-const regions = {
-  cervical: [], thoracic: [], lumbar: [], pelvis: null, skull: null,
-  ribs: [], armL: null, armR: null, legL: null, legR: null,
-  pulseRings: [],
-};
-
-function vertMaterial(color, emissive){
-  return new THREE.MeshPhongMaterial({
-    color: color, emissive: emissive||color, emissiveIntensity:0.15,
-    transparent:true, opacity:0.35
-  });
-}
-function wireMaterial(color){
-  return new THREE.MeshBasicMaterial({color:color, wireframe:true, transparent:true, opacity:0.7});
-}
-function lineMaterial(color, opacity){
-  return new THREE.LineBasicMaterial({color:color, transparent:true, opacity:opacity||0.4});
+  document.getElementById('book-cta').href = `book.html?concern=${state.concern === 'none' ? '' : state.concern}`;
 }
 
-function makeVertebra(w, h, d){
-  const g = new THREE.Group();
-  const geo = new THREE.BoxGeometry(w, h, d);
-  const fill = new THREE.Mesh(geo, vertMaterial(colors.bone));
-  const wire = new THREE.Mesh(geo, wireMaterial(colors.bone));
-  g.add(fill, wire);
-  g.userData.mats = {fill: fill.material, wire: wire.material};
-  return g;
+/* ═══════════════════════════════════════
+   INPUT BINDING
+═══════════════════════════════════════ */
+const deskEl    = document.getElementById('desk');
+const ageEl     = document.getElementById('age');
+const heightEl  = document.getElementById('height');
+const concernEl = document.getElementById('concern');
+const deskVal   = document.getElementById('desk-val');
+const ageVal    = document.getElementById('age-val');
+const heightVal = document.getElementById('height-val');
+
+function writeInputs(){
+  deskEl.value = state.desk;       deskVal.textContent = state.desk;   deskEl.setAttribute('aria-valuenow', state.desk);
+  ageEl.value = state.age;          ageVal.textContent = state.age;     ageEl.setAttribute('aria-valuenow', state.age);
+  heightEl.value = state.height;    heightVal.textContent = state.height; heightEl.setAttribute('aria-valuenow', state.height);
+  concernEl.value = state.concern;
+  const bodyRadio = document.getElementById('b-' + state.body);
+  if(bodyRadio) bodyRadio.checked = true;
 }
+writeInputs();
 
-function makeRib(radiusX, radiusY){
-  const curve = new THREE.EllipseCurve(0, 0, radiusX, radiusY, 0, Math.PI*2);
-  const pts = curve.getPoints(40);
-  const geo = new THREE.BufferGeometry().setFromPoints(pts);
-  const mat = lineMaterial(colors.purple, 0.35);
-  const line = new THREE.Line(geo, mat);
-  line.rotation.x = Math.PI/2;
-  line.userData.mat = mat;
-  return line;
-}
-
-function makeBone(length, radius){
-  const g = new THREE.Group();
-  const geo = new THREE.CylinderGeometry(radius*0.7, radius, length, 8, 1);
-  const fill = new THREE.Mesh(geo, vertMaterial(colors.bone));
-  const wire = new THREE.Mesh(geo, wireMaterial(colors.bone));
-  g.add(fill, wire);
-  g.userData.mats = {fill: fill.material, wire: wire.material};
-  return g;
-}
-
-function makeJoint(radius){
-  const geo = new THREE.SphereGeometry(radius, 12, 12);
-  const mat = wireMaterial(colors.bone);
-  const m = new THREE.Mesh(geo, mat);
-  m.userData.mat = mat;
-  return m;
-}
-
-function makePulseRing(radius){
-  const geo = new THREE.TorusGeometry(radius, 0.015, 6, 32);
-  const mat = new THREE.MeshBasicMaterial({color:colors.strain, transparent:true, opacity:0});
-  const m = new THREE.Mesh(geo, mat);
-  m.rotation.x = Math.PI/2;
-  m.userData.mat = mat;
-  m.userData.isPulse = true;
-  return m;
-}
-
-/* Skull */
-regions.skull = (()=>{
-  const g = new THREE.Group();
-  const geo = new THREE.SphereGeometry(0.32, 16, 12);
-  const wire = new THREE.Mesh(geo, wireMaterial(colors.bone));
-  const fill = new THREE.Mesh(geo, vertMaterial(colors.bone));
-  g.add(fill, wire);
-  g.userData.mats = {fill:fill.material, wire:wire.material};
-  /* Jaw */
-  const jawGeo = new THREE.BoxGeometry(0.22, 0.07, 0.2);
-  const jaw = new THREE.Mesh(jawGeo, wireMaterial(colors.bone));
-  jaw.position.set(0, -0.28, 0.02);
-  jaw.userData.mat = jaw.material;
-  g.add(jaw);
-  g.position.y = 2.8;
-  return g;
-})();
-root.add(regions.skull);
-
-/* Cervical vertebrae — C1..C7 at top of spine */
-for(let i=0;i<7;i++){
-  const v = makeVertebra(0.20, 0.07, 0.15);
-  v.position.y = 2.35 - i*0.11;
-  v.userData.region = 'cervical';
-  v.userData.index = i;
-  regions.cervical.push(v);
-  root.add(v);
-}
-
-/* Thoracic vertebrae — T1..T12 */
-for(let i=0;i<12;i++){
-  const t = i/11;
-  const v = makeVertebra(0.26 + t*0.06, 0.09, 0.18 + t*0.04);
-  v.position.y = 1.50 - i*0.15;
-  v.userData.region = 'thoracic';
-  v.userData.index = i;
-  regions.thoracic.push(v);
-  root.add(v);
-  /* Rib at this level */
-  const rw = 0.85 - Math.abs(i-5)*0.04;
-  const rh = 0.45 - Math.abs(i-5)*0.02;
-  const rib = makeRib(rw, rh);
-  rib.position.y = v.position.y;
-  regions.ribs.push(rib);
-  root.add(rib);
-}
-
-/* Lumbar vertebrae — L1..L5 */
-for(let i=0;i<5;i++){
-  const v = makeVertebra(0.36, 0.12, 0.25);
-  v.position.y = -0.40 - i*0.18;
-  v.userData.region = 'lumbar';
-  v.userData.index = i;
-  regions.lumbar.push(v);
-  root.add(v);
-}
-
-/* Pelvis */
-regions.pelvis = (()=>{
-  const g = new THREE.Group();
-  const curve = new THREE.EllipseCurve(0, 0, 0.75, 0.45, 0, Math.PI*2);
-  const pts = curve.getPoints(48);
-  const geo = new THREE.BufferGeometry().setFromPoints(pts);
-  const mat = lineMaterial(colors.bone, 0.7);
-  const line = new THREE.Line(geo, mat);
-  line.rotation.x = Math.PI/2;
-  g.add(line);
-  g.userData.mat = mat;
-  /* Sacrum block */
-  const sacGeo = new THREE.BoxGeometry(0.28, 0.22, 0.18);
-  const sacMat = vertMaterial(colors.bone);
-  const sac = new THREE.Mesh(sacGeo, sacMat);
-  sac.userData.mat = sacMat;
-  g.add(sac);
-  g.position.y = -1.48;
-  return g;
-})();
-root.add(regions.pelvis);
-
-/* Arms */
-function buildArm(side){
-  const g = new THREE.Group();
-  /* Shoulder joint */
-  const shoulder = makeJoint(0.10);
-  shoulder.position.set(side*0.5, 1.45, 0);
-  g.add(shoulder);
-  /* Humerus */
-  const humerus = makeBone(0.85, 0.055);
-  humerus.position.set(side*0.65, 1.02, 0);
-  g.add(humerus);
-  /* Elbow */
-  const elbow = makeJoint(0.07);
-  elbow.position.set(side*0.78, 0.55, 0);
-  g.add(elbow);
-  /* Forearm */
-  const forearm = makeBone(0.78, 0.045);
-  forearm.position.set(side*0.85, 0.14, 0);
-  g.add(forearm);
-  /* Hand — tiny cube */
-  const handGeo = new THREE.BoxGeometry(0.10, 0.18, 0.06);
-  const handMat = wireMaterial(colors.bone);
-  const hand = new THREE.Mesh(handGeo, handMat);
-  hand.position.set(side*0.9, -0.30, 0);
-  hand.userData.mat = handMat;
-  g.add(hand);
-  g.userData.side = side;
-  return g;
-}
-regions.armL = buildArm(-1); root.add(regions.armL);
-regions.armR = buildArm( 1); root.add(regions.armR);
-
-/* Legs */
-function buildLeg(side){
-  const g = new THREE.Group();
-  /* Hip */
-  const hip = makeJoint(0.10);
-  hip.position.set(side*0.30, -1.55, 0);
-  g.add(hip);
-  /* Femur */
-  const femur = makeBone(1.10, 0.065);
-  femur.position.set(side*0.30, -2.18, 0);
-  g.add(femur);
-  /* Knee */
-  const knee = makeJoint(0.09);
-  knee.position.set(side*0.30, -2.78, 0);
-  g.add(knee);
-  /* Tibia */
-  const tibia = makeBone(1.00, 0.050);
-  tibia.position.set(side*0.30, -3.35, 0);
-  g.add(tibia);
-  /* Foot */
-  const footGeo = new THREE.BoxGeometry(0.13, 0.06, 0.28);
-  const footMat = wireMaterial(colors.bone);
-  const foot = new THREE.Mesh(footGeo, footMat);
-  foot.position.set(side*0.30, -3.90, 0.08);
-  foot.userData.mat = footMat;
-  g.add(foot);
-  g.userData.side = side;
-  return g;
-}
-regions.legL = buildLeg(-1); root.add(regions.legL);
-regions.legR = buildLeg( 1); root.add(regions.legR);
-
-/* Pulse rings — one per strain region; shown conditionally */
-for(const region of ['cervical','thoracic','lumbar']){
-  const ring = makePulseRing(0.7);
-  ring.visible = false;
-  ring.userData.region = region;
-  regions.pulseRings.push(ring);
-  root.add(ring);
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   REGENERATION — apply state to skeleton transforms + colors
-═══════════════════════════════════════════════════════════════ */
-
-function applyToState(){
-  const s = state;
-
-  /* Overall scale from height (reference: 175cm) */
-  const globalScale = s.height / 175;
-  root.scale.setScalar(globalScale);
-
-  /* Pelvis width by gender */
-  regions.pelvis.scale.x = s.gender==='female' ? 1.02 : 0.88;
-
-  /* Age: vertebra compression + cervical lordosis flattening */
-  const ageFactor = Math.max(0, s.age - 40) / 35;
-  const diskCompress = 1 - ageFactor*0.12;
-
-  /* Forward head carriage from desk hours */
-  const deskRad = (s.desk / 14) * 0.75;
-  /* Distribute cervical curl — more on lower cervical */
-  regions.cervical.forEach((v, i)=>{
-    const t = i/6;
-    v.rotation.x = deskRad * (0.3 + t*0.7);
-    v.position.z = deskRad * 0.08 * (i/6);
-    v.scale.y = diskCompress;
-  });
-  regions.skull.rotation.x = deskRad * 0.6;
-  regions.skull.position.z = deskRad * 0.35;
-
-  /* Thoracic kyphosis — cumulative curl */
-  const kyphosis = (s.desk / 14) * 0.32 + ageFactor * 0.12;
-  regions.thoracic.forEach((v, i)=>{
-    const t = i/11;
-    v.rotation.x = kyphosis * (0.4 + t*0.6) * 0.08;
-    v.scale.y = diskCompress;
-  });
-  regions.ribs.forEach((rib, i)=>{
-    rib.rotation.x = Math.PI/2 + kyphosis * (0.4 + i/22);
-  });
-
-  /* Lumbar lordosis — decreases with age (flattening) */
-  const lumbarArch = 0.06 - ageFactor*0.04;
-  regions.lumbar.forEach((v, i)=>{
-    v.rotation.x = -lumbarArch * (i<3 ? 1 : 0.5);
-    v.scale.y = diskCompress;
-  });
-
-  /* Shoulder protraction from desk hours */
-  const protract = (s.desk / 14) * 0.15;
-  [regions.armL, regions.armR].forEach(arm=>{
-    arm.position.z = protract;
-    arm.rotation.y = arm.userData.side * protract * 0.6;
-  });
-
-  /* ══════ Concern-driven color/strain + pulse rings ══════ */
-  const STRAIN = {
-    spine:     {cervical:0.3, thoracic:0.1, lumbar:1.0, ring:'lumbar'},
-    sports:    {cervical:0,   thoracic:0,   lumbar:0.1, knee:1,   ring:null},
-    pain:      {cervical:0.3, thoracic:0.5, lumbar:0.5, ring:null}, /* diffuse */
-    neuro:     {cervical:1.0, thoracic:0.2, lumbar:0.2, ring:'cervical'},
-    womens:    {cervical:0,   thoracic:0,   lumbar:0.3, pelvis:1, ring:null},
-    corporate: {cervical:0.8, thoracic:0.5, lumbar:0.2, ring:'cervical'},
-    none:      {cervical:0,   thoracic:0,   lumbar:0,   ring:null},
-  };
-  const strain = STRAIN[s.concern] || STRAIN.none;
-
-  /* Desk hours amplify upper-spine strain */
-  const deskStrain = (s.desk / 14) * 0.5;
-  const deskAdjusted = {
-    cervical: Math.min(1, strain.cervical + deskStrain),
-    thoracic: Math.min(1, strain.thoracic + deskStrain*0.5),
-    lumbar: Math.min(1, strain.lumbar + deskStrain*0.3),
-  };
-
-  /* Color vertebra groups */
-  function colorGroup(arr, amount){
-    arr.forEach(v=>{
-      const c = new THREE.Color(colors.bone).lerp(new THREE.Color(colors.strain), amount);
-      v.userData.mats.fill.color.copy(c);
-      v.userData.mats.fill.emissive.copy(c);
-      v.userData.mats.fill.opacity = 0.3 + amount*0.4;
-      v.userData.mats.wire.color.copy(c);
-      v.userData.mats.wire.opacity = 0.7 + amount*0.25;
-    });
-  }
-  colorGroup(regions.cervical, deskAdjusted.cervical);
-  colorGroup(regions.thoracic, deskAdjusted.thoracic);
-  colorGroup(regions.lumbar,   deskAdjusted.lumbar);
-
-  /* Pulse rings — position to match strained region center */
-  regions.pulseRings.forEach(ring=>{
-    const r = ring.userData.region;
-    const strainLevel = deskAdjusted[r] || 0;
-    if(strainLevel > 0.6){
-      const arr = regions[r];
-      const mid = arr[Math.floor(arr.length/2)];
-      ring.position.set(mid.position.x, mid.position.y, mid.position.z);
-      ring.visible = true;
-      ring.userData.strainLevel = strainLevel;
-    } else {
-      ring.visible = false;
-    }
-  });
-
-  /* Update aria-label on canvas for screen readers */
-  const headAngle = Math.max(0, Math.round(s.desk*3 - 4));
-  canvas.setAttribute('aria-label',
-    `3D anatomy model. Build: ${s.gender}, age ${s.age}, height ${s.height}cm. ` +
-    `Desk hours: ${s.desk} per day causing ${headAngle}° forward head carriage. ` +
-    `Primary concern: ${s.concern}. Use arrow keys to rotate when focused.`);
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   RENDER LOOP + ORBIT
-═══════════════════════════════════════════════════════════════ */
-let rotY = 0.4, rotX = 0.05, targetRotY = 0.4, targetRotX = 0.05;
-let camDist = 7.5, targetDist = 7.5;
-let paused = false;
-let needsRender = true;
-
-function fit(){
-  const rect = container.getBoundingClientRect();
-  const w = rect.width, h = rect.height;
-  renderer.setSize(w, h, false);
-  camera.aspect = w/h;
-  camera.updateProjectionMatrix();
-  needsRender = true;
-}
-fit();
-window.addEventListener('resize', fit, {passive:true});
-
-if('IntersectionObserver' in window){
-  new IntersectionObserver(es=>es.forEach(e=>{paused = !e.isIntersecting; if(!paused) needsRender=true;}),{rootMargin:'100px'}).observe(container);
-}
-document.addEventListener('visibilitychange', ()=>{paused = document.hidden; if(!paused) needsRender=true;});
-
-/* Drag to rotate */
-let dragging=false, lastX=0, lastY=0;
-canvas.addEventListener('pointerdown', e=>{dragging=true;lastX=e.clientX;lastY=e.clientY;canvas.setPointerCapture(e.pointerId);});
-canvas.addEventListener('pointerup',   e=>{dragging=false;canvas.releasePointerCapture?.(e.pointerId);});
-canvas.addEventListener('pointermove', e=>{
-  if(!dragging) return;
-  targetRotY += (e.clientX - lastX) * 0.01;
-  targetRotX += (e.clientY - lastY) * 0.008;
-  targetRotX = Math.max(-0.9, Math.min(0.9, targetRotX));
-  lastX = e.clientX; lastY = e.clientY;
-  needsRender = true;
-});
-canvas.addEventListener('wheel', e=>{
-  e.preventDefault();
-  targetDist = Math.max(4, Math.min(14, targetDist + e.deltaY * 0.006));
-  needsRender = true;
-},{passive:false});
-
-/* Keyboard rotation */
-canvas.addEventListener('keydown', e=>{
-  const step = 0.12;
-  if(e.key==='ArrowLeft')  { targetRotY -= step; needsRender=true; e.preventDefault(); }
-  if(e.key==='ArrowRight') { targetRotY += step; needsRender=true; e.preventDefault(); }
-  if(e.key==='ArrowUp')    { targetRotX = Math.max(-0.9, targetRotX - step); needsRender=true; e.preventDefault(); }
-  if(e.key==='ArrowDown')  { targetRotX = Math.min( 0.9, targetRotX + step); needsRender=true; e.preventDefault(); }
-  if(e.key===' ' || e.key==='Enter'){ targetRotY=0.4; targetRotX=0.05; targetDist=7.5; needsRender=true; e.preventDefault(); }
-});
-
-/* Recenter button */
-document.getElementById('recenter-btn').addEventListener('click',()=>{
-  targetRotY=0.4; targetRotX=0.05; targetDist=7.5; needsRender=true;
-});
-
-/* Render loop */
-let t = 0;
-function tick(){
-  requestAnimationFrame(tick);
-  if(paused) return;
-
-  t += 0.012;
-  /* Idle autorotate on desktop, skipped if reduced-motion or user is interacting */
-  if(!prefersReducedMotion && !dragging){
-    targetRotY += 0.0018;
-  }
-
-  /* Smooth rotations */
-  rotY += (targetRotY - rotY) * 0.08;
-  rotX += (targetRotX - rotX) * 0.08;
-  camDist += (targetDist - camDist) * 0.08;
-
-  /* Orbit camera */
-  camera.position.x = Math.sin(rotY) * Math.cos(rotX) * camDist;
-  camera.position.z = Math.cos(rotY) * Math.cos(rotX) * camDist;
-  camera.position.y = Math.sin(rotX) * camDist + 0.4;
-  camera.lookAt(0, -0.3, 0);
-
-  /* Pulse rings breathe */
-  regions.pulseRings.forEach(ring=>{
-    if(!ring.visible) return;
-    const pulse = prefersReducedMotion ? 0.3 : (Math.sin(t*1.6)+1)/2;
-    ring.userData.mat.opacity = pulse * 0.55 * (ring.userData.strainLevel || 1);
-    const s = 1 + pulse * 0.18;
-    ring.scale.set(s, s, s);
-  });
-
-  /* Subtle idle breath on spine */
-  if(!prefersReducedMotion){
-    root.position.y = Math.sin(t*.4) * 0.03;
-  }
-
-  renderer.render(scene, camera);
-}
-tick();
-
-/* Theme sync */
-window.KC_onTheme = ()=>{
-  refreshColors();
-  amb.color.setHex(colors.bone);
-  key.color.setHex(colors.bone);
-  fill.color.setHex(colors.purple);
-  rim.color.setHex(colors.turq);
-  applyToState();
-  needsRender = true;
-};
-
-/* Expose so input handlers (defined outside this block) can re-apply */
-window.applyToState = applyToState;
-
-/* Initial layout */
-applyToState();
-
-} /* end initScene */
-
-/* Kick off the scene bootstrap */
-waitForThreeThenInit();
-
-/* ═══════════════════════════════════════════════════════════════
-   INPUT HANDLERS + DEBOUNCED ANNOUNCEMENTS
-═══════════════════════════════════════════════════════════════ */
-let announceTimer = 0;
-function onChange(){
-  state.desk   = +deskEl.value;
-  state.age    = +ageEl.value;
-  state.height = +heightEl.value;
+let debounceTimer = 0;
+function onInputChange(){
+  state.desk    = +deskEl.value;
+  state.age     = +ageEl.value;
+  state.height  = +heightEl.value;
   state.concern = concernEl.value;
-  state.gender = document.querySelector('input[name="gender"]:checked').value;
+  const checked = document.querySelector('input[name="body"]:checked');
+  if(checked) state.body = checked.value;
 
   writeInputs();
-  renderInterpretation();
-  if(window.applyToState) window.applyToState();
+  pulse = 1;   // triggers brief glow
 
-  /* aria-live on .gen-output auto-announces on DOM change */
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(() => {
+    renderInterpretation();
+  }, 200);
 }
-
-deskEl.addEventListener('input', onChange);
-ageEl.addEventListener('input', onChange);
-heightEl.addEventListener('input', onChange);
-concernEl.addEventListener('change', onChange);
-document.querySelectorAll('input[name="gender"]').forEach(r=>r.addEventListener('change', onChange));
-
-document.getElementById('reset-btn').addEventListener('click',()=>{
+deskEl.addEventListener('input', onInputChange);
+ageEl.addEventListener('input', onInputChange);
+heightEl.addEventListener('input', onInputChange);
+concernEl.addEventListener('change', onInputChange);
+document.querySelectorAll('input[name="body"]').forEach(r => r.addEventListener('change', onInputChange));
+document.getElementById('reset-btn').addEventListener('click', () => {
   Object.assign(state, DEFAULTS);
   writeInputs();
   renderInterpretation();
-  if(window.applyToState) window.applyToState();
+  pulse = 1;
+});
+
+/* ═══════════════════════════════════════
+   VIEW TOGGLES + INTERACTION
+═══════════════════════════════════════ */
+document.querySelectorAll('.view-toggles button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.view-toggles button').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    view = btn.dataset.view;
+    rotYOffset = 0; targetRotYOffset = 0;
+    pulse = 1;
+  });
+});
+document.getElementById('recenter-btn').addEventListener('click', () => {
+  targetRotYOffset = 0; targetRotXOffset = 0; targetZoom = 1.0;
+});
+
+/* Drag rotate */
+let dragging = false, lastX = 0, lastY = 0;
+if(ctx){
+  canvas.addEventListener('pointerdown', e => { dragging = true; lastX = e.clientX; lastY = e.clientY; canvas.setPointerCapture(e.pointerId); });
+  canvas.addEventListener('pointerup',   e => { dragging = false; try{ canvas.releasePointerCapture(e.pointerId); }catch(_){} });
+  canvas.addEventListener('pointercancel', e => { dragging = false; });
+  canvas.addEventListener('pointermove', e => {
+    if(!dragging) return;
+    targetRotYOffset += (e.clientX - lastX) * 0.008;
+    targetRotXOffset += (e.clientY - lastY) * 0.006;
+    targetRotXOffset = Math.max(-0.8, Math.min(0.8, targetRotXOffset));
+    lastX = e.clientX; lastY = e.clientY;
+  });
+  canvas.addEventListener('wheel', e => {
+    e.preventDefault();
+    targetZoom = Math.max(0.5, Math.min(2.0, targetZoom - e.deltaY * 0.001));
+  }, {passive:false});
+  canvas.addEventListener('keydown', e => {
+    const step = 0.12;
+    if(e.key === 'ArrowLeft')  { targetRotYOffset -= step; e.preventDefault(); }
+    if(e.key === 'ArrowRight') { targetRotYOffset += step; e.preventDefault(); }
+    if(e.key === 'ArrowUp')    { targetRotXOffset = Math.max(-0.8, targetRotXOffset - step); e.preventDefault(); }
+    if(e.key === 'ArrowDown')  { targetRotXOffset = Math.min( 0.8, targetRotXOffset + step); e.preventDefault(); }
+    if(e.key === ' ' || e.key === 'Enter'){
+      targetRotYOffset = 0; targetRotXOffset = 0; targetZoom = 1.0; e.preventDefault();
+    }
+  });
+}
+
+/* ═══════════════════════════════════════
+   RENDER LOOP
+═══════════════════════════════════════ */
+let paused = false;
+if(ctx && 'IntersectionObserver' in window){
+  new IntersectionObserver(es => es.forEach(e => paused = !e.isIntersecting), {rootMargin: '100px'}).observe(wrap);
+}
+document.addEventListener('visibilitychange', () => { paused = document.hidden; });
+
+function loop(){
+  requestAnimationFrame(loop);
+  if(!ctx || paused) return;
+
+  // Smooth interpolation
+  rotYOffset += (targetRotYOffset - rotYOffset) * 0.08;
+  rotXOffset += (targetRotXOffset - rotXOffset) * 0.08;
+  zoom       += (targetZoom - zoom) * 0.08;
+  pulse = Math.max(0, pulse - 0.02);
+
+  drawSpine();
+}
+if(ctx) loop();
+
+/* Initial render */
+renderInterpretation();
+
+/* Theme sync — register via shared.js KC namespace once available */
+document.addEventListener('DOMContentLoaded', () => {
+  if(window.KC && window.KC.onTheme){
+    window.KC.onTheme.add(() => { /* drawSpine picks up colors from isDark() directly */ });
+  }
 });
 </script>
 
 <script src="shared.js" defer></script>
+
 </body>
 </html>

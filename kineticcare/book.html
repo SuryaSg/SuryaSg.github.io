@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Book a Free Assessment | KineticCare Bengaluru</title>
-<meta name="description" content="Book your free 20-minute physiotherapy assessment at KineticCare Indiranagar. No credit card required, no commitment — just a clear path to recovery.">
+<meta name="description" content="Book your free 20-minute physiotherapy assessment at KineticCare Indiranagar. No credit card, no commitment — a clinical conversation and a clear path forward.">
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://suryasg.github.io/kineticcare/book.html">
 
@@ -12,139 +12,107 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://suryasg.github.io/kineticcare/book.html">
 <meta property="og:title" content="Book a Free Physiotherapy Assessment | KineticCare">
-<meta property="og:description" content="Free 20-minute assessment at KineticCare Indiranagar. No credit card, no lock-in — a clinical conversation and a clear path to recovery.">
-<meta property="og:image" content="https://suryasg.github.io/kineticcare/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:description" content="Free 20-minute assessment at KineticCare Indiranagar. No credit card, no lock-in.">
+<meta property="og:image" content="https://suryasg.github.io/kineticcare/assets/og-cover.svg">
 <meta property="og:locale" content="en_IN">
 <meta property="og:site_name" content="KineticCare">
-<!-- SEO: Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Book a Free Physiotherapy Assessment | KineticCare">
-<meta name="twitter:description" content="Free 20-minute assessment at our Indiranagar clinic. No commitment.">
-<meta name="twitter:image" content="https://suryasg.github.io/kineticcare/og-image.png">
+<meta name="twitter:description" content="Free 20-minute assessment at our Indiranagar clinic.">
+<meta name="twitter:image" content="https://suryasg.github.io/kineticcare/assets/og-cover.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <meta name="theme-color" content="#FAF8F3" id="meta-theme-color">
 <meta name="color-scheme" content="light dark">
 <script>try{const _t=localStorage.getItem('kc-theme');if(_t)document.documentElement.setAttribute('data-theme',_t);}catch(e){}</script>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="shared.css">
+
 <style>
-:root,[data-theme="light"]{
-  --bg:#FAF8F3;--bg1:#F3EBE0;--bg2:#EBE0D0;--card:#FFFFFF;--card2:#FDF6EE;
-  --accent:#C96B4A;--accent2:#E8896A;--turq:#2BB5A4;--red:#C94040;--lime:#6A9E3A;
-  --ink:#1C1410;--ink2:#3A2E24;--ink3:#5E4E42;--muted:#9A8C82;--muted2:#786B62;
-  --br:rgba(0,0,0,0.07);--br2:rgba(0,0,0,0.13);
-  --abg:rgba(201,107,74,0.08);--abrd:rgba(201,107,74,0.22);
-  --stuck-bg:rgba(250,248,243,0.93);
-  --shadow:0 1px 2px rgba(28,20,16,.04),0 4px 12px rgba(128,64,40,.08),0 16px 32px -8px rgba(201,107,74,.10);
-  --shadow-lg:0 2px 4px rgba(28,20,16,.05),0 12px 28px rgba(128,64,40,.10),0 32px 60px -16px rgba(201,107,74,.16);
-  --shadow-focus:0 0 0 3px rgba(201,107,74,.18),0 0 0 1px rgba(201,107,74,.5);
-  --selection-bg:rgba(201,107,74,.22);
-  --nav-h:64px;
+/* ─── PAGE LAYOUT ─────────────────────────────── */
+main#main{padding-top:calc(var(--nav-h) + 36px);}
+.book-wrap{
+  max-width:1180px;margin:0 auto;padding:0 64px 72px;
+  display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);
+  gap:40px;align-items:start;
 }
-[data-theme="dark"]{
-  --bg:#0E0B08;--bg1:#141008;--bg2:#1C1710;--card:#1E1912;--card2:#271E14;
-  --accent:#E0896A;--accent2:#F4AD8C;--turq:#2DD4BF;--red:#FF5252;--lime:#A0D055;
-  --ink:#F5EDE3;--ink2:#DDD0BE;--ink3:#B09D88;--muted:#8A7A6E;--muted2:#6B5E52;
-  --br:rgba(255,255,255,0.07);--br2:rgba(255,255,255,0.12);
-  --abg:rgba(224,137,106,0.10);--abrd:rgba(224,137,106,0.28);
-  --stuck-bg:rgba(14,11,8,0.92);
-  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3),0 24px 48px -12px rgba(0,0,0,.5);
-  --shadow-lg:0 2px 4px rgba(0,0,0,.45),0 16px 40px rgba(0,0,0,.4),0 40px 80px -20px rgba(0,0,0,.6);
-  --shadow-focus:0 0 0 3px rgba(224,137,106,.22),0 0 0 1px rgba(224,137,106,.6);
-  --selection-bg:rgba(224,137,106,.3);
+.page-head{margin-bottom:32px;}
+.page-head .eyebrow{font-size:11px;margin-bottom:14px;}
+.page-head h1{
+  font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,48px);
+  font-weight:800;letter-spacing:-1.8px;line-height:1.04;color:var(--ink);
+  margin-bottom:14px;text-wrap:balance;
 }
-*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-button,a,[role="button"],input[type="submit"],label{touch-action:manipulation;}
-:root{color-scheme:light;}
-[data-theme="dark"]{color-scheme:dark;}
-html{scroll-behavior:smooth;}
-body{
-  background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;
-  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
-  text-rendering:optimizeLegibility;font-feature-settings:"kern","liga","ss01";
-  caret-color:var(--accent);min-height:100dvh;
-  transition:background-color .4s ease,color .35s ease;
-}
-::selection{background:var(--selection-bg);color:var(--ink);}
-:focus{outline:none;}
-:focus-visible{outline:none;box-shadow:var(--shadow-focus);border-radius:6px;transition:box-shadow .15s ease;}
-a{color:var(--accent);text-decoration:none;}
-a:hover{text-decoration:underline;text-underline-offset:3px;}
-.skip-link{
-  position:absolute;top:-48px;left:12px;z-index:9999;
-  background:var(--ink);color:var(--bg);
-  padding:10px 18px;border-radius:8px;
-  font-size:13px;font-weight:500;text-decoration:none;
-  transition:top .2s cubic-bezier(.16,1,.3,1);
-}
-.skip-link:focus{top:12px;text-decoration:none;}
-
-/* Nav */
-#nav{
-  position:sticky;top:0;z-index:500;height:var(--nav-h);
-  display:flex;justify-content:space-between;align-items:center;padding:0 32px;
-  background:var(--stuck-bg);backdrop-filter:blur(24px) saturate(1.5);
-  border-bottom:1px solid var(--br);
-}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.5px;color:var(--ink);text-decoration:none;}
-.nav-logo b{color:var(--accent);}
-.nav-back{
-  font-size:13px;color:var(--muted2);display:inline-flex;align-items:center;gap:6px;
-}
-.nav-back:hover{color:var(--ink);text-decoration:none;}
-#theme-btn{
-  width:44px;height:28px;background:var(--bg2);border:1px solid var(--br2);
-  border-radius:100px;cursor:pointer;position:relative;flex-shrink:0;
-}
-#theme-btn::after{
-  content:'';position:absolute;top:4px;left:4px;width:18px;height:18px;border-radius:50%;
-  background:var(--accent);transition:transform .35s cubic-bezier(.16,1,.3,1),background .35s;
-}
-[data-theme="dark"] #theme-btn::after{transform:translateX(16px);background:var(--turq);}
-.theme-icon{position:absolute;top:50%;transform:translateY(-50%);font-size:10px;line-height:1;pointer-events:none;}
-.theme-icon.sun{left:6px;}
-.theme-icon.moon{right:5px;}
-[data-theme="light"] .theme-icon.moon{opacity:.4;}
-[data-theme="dark"] .theme-icon.sun{opacity:.4;}
-
-/* Layout */
-.wrap{max-width:680px;margin:0 auto;padding:56px 32px 96px;}
-.eyebrow{
-  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;
-  color:var(--accent);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px;
-}
-h1{
-  font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,48px);font-weight:800;
-  letter-spacing:-1.5px;line-height:1.06;color:var(--ink);margin-bottom:14px;
-  text-wrap:balance;
-}
-.lede,p{text-wrap:pretty;}
-.lede{font-size:16px;color:var(--ink3);line-height:1.7;margin-bottom:40px;max-width:560px;}
-
-/* Form card */
-.form-card{
-  background:var(--card);border:1px solid var(--br);border-radius:20px;
-  padding:clamp(24px,4vw,44px);box-shadow:var(--shadow);
+.page-head p{
+  font-size:16px;color:var(--ink3);line-height:1.7;max-width:560px;text-wrap:pretty;
 }
 .plan-pill{
   display:inline-flex;align-items:center;gap:10px;
   background:var(--abg);border:1px solid var(--abrd);border-radius:100px;
-  padding:8px 16px;margin-bottom:28px;font-size:12px;color:var(--accent);
-  font-family:'JetBrains Mono',monospace;letter-spacing:1.5px;text-transform:uppercase;
+  padding:7px 16px;margin-top:18px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);
+  letter-spacing:1.5px;text-transform:uppercase;
 }
-.plan-pill b{color:var(--ink);font-weight:500;letter-spacing:.3px;text-transform:none;}
+.plan-pill b{color:var(--ink);font-weight:500;letter-spacing:.3px;text-transform:none;font-family:inherit;}
 .plan-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);}
 
-.field{margin-bottom:22px;}
-.field label{
+/* ─── WIZARD ─────────────────────────────────── */
+.wizard{
+  background:var(--card);border:1px solid var(--br);border-radius:20px;
+  padding:clamp(24px,4vw,40px);box-shadow:var(--shadow);
+  position:relative;overflow:hidden;
+}
+.progress{
+  display:flex;align-items:center;gap:10px;margin-bottom:32px;
+}
+.progress-dots{display:flex;gap:6px;}
+.progress-dots .dot{
+  width:8px;height:8px;border-radius:50%;background:var(--br2);
+  transition:all .3s cubic-bezier(.16,1,.3,1);
+}
+.progress-dots .dot.done{background:var(--accent);}
+.progress-dots .dot.current{background:var(--accent);width:24px;border-radius:4px;}
+.progress-label{
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:var(--muted2);letter-spacing:2px;text-transform:uppercase;
+  margin-left:auto;
+}
+.progress-label b{color:var(--ink);font-weight:500;font-family:inherit;letter-spacing:.5px;}
+
+.step{
+  display:none;
+  animation:step-in .45s cubic-bezier(.16,1,.3,1);
+}
+.step.active{display:block;}
+@keyframes step-in{
+  from{opacity:0;transform:translateX(24px);}
+  to{opacity:1;transform:none;}
+}
+.step.back-anim{animation:step-back .45s cubic-bezier(.16,1,.3,1);}
+@keyframes step-back{
+  from{opacity:0;transform:translateX(-24px);}
+  to{opacity:1;transform:none;}
+}
+.step h2{
+  font-family:'Syne',sans-serif;font-size:22px;font-weight:700;
+  letter-spacing:-.5px;color:var(--ink);margin-bottom:6px;
+}
+.step .step-sub{font-size:14px;color:var(--ink3);margin-bottom:22px;line-height:1.6;}
+
+.field{margin-bottom:18px;}
+.field label.ctrl-label{
   display:block;font-size:13px;font-weight:500;color:var(--ink2);
   margin-bottom:8px;letter-spacing:.1px;
 }
 .field .req{color:var(--accent);margin-left:3px;}
+.field .hint{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.4;}
+.field .err-msg{
+  font-size:12px;color:var(--red);margin-top:6px;display:none;line-height:1.4;
+}
+.field .err-msg.show{display:block;}
+
 .input,.select,.textarea{
   width:100%;padding:13px 16px;
   background:var(--bg);border:1px solid var(--br2);border-radius:10px;
@@ -156,200 +124,530 @@ h1{
   outline:none;border-color:var(--accent);background:var(--card);
   box-shadow:0 0 0 3px var(--abg);
 }
-.textarea{min-height:110px;resize:vertical;line-height:1.55;font-family:inherit;}
+.textarea{min-height:100px;resize:vertical;line-height:1.55;font-family:inherit;}
 .input.err,.select.err,.textarea.err{border-color:var(--red);}
-.input.err:focus,.select.err:focus,.textarea.err:focus{box-shadow:0 0 0 3px rgba(201,64,64,.15);}
-.hint{font-size:12px;color:var(--muted);margin-top:6px;}
-.err-msg{font-size:12px;color:var(--red);margin-top:6px;display:none;}
-.err-msg.show{display:block;}
-
-/* Radio group */
-.radio-group{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;}
-.radio-card{position:relative;}
-.radio-card input{position:absolute;opacity:0;pointer-events:none;}
-.radio-card label{
-  display:block;padding:14px 16px;border:1px solid var(--br2);border-radius:12px;
-  cursor:pointer;background:var(--bg);font-size:14px;font-weight:500;color:var(--ink2);
-  transition:border-color .2s,background .2s,color .2s,box-shadow .2s;
-  margin-bottom:0;
+.input.err:focus{box-shadow:0 0 0 3px rgba(201,64,64,.15);}
+.phone-wrap{position:relative;}
+.phone-prefix{
+  position:absolute;left:14px;top:50%;transform:translateY(-50%);
+  font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted2);
+  pointer-events:none;letter-spacing:.5px;
 }
-.radio-card label:hover{border-color:var(--muted);}
-.radio-card input:checked + label{
+.phone-wrap .input{padding-left:52px;font-variant-numeric:tabular-nums;}
+
+/* Concern cards */
+.concern-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.concern-card{position:relative;}
+.concern-card input{position:absolute;opacity:0;pointer-events:none;}
+.concern-card label{
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  padding:18px 10px;cursor:pointer;
+  background:var(--bg);border:1px solid var(--br2);border-radius:12px;
+  text-align:center;font-size:13px;font-weight:500;color:var(--ink2);
+  transition:all .2s;margin-bottom:0;min-height:96px;justify-content:center;
+}
+.concern-card label:hover{border-color:var(--muted);}
+.concern-card input:checked + label{
   border-color:var(--accent);background:var(--abg);color:var(--ink);
   box-shadow:0 0 0 1px var(--accent);
 }
-.radio-card input:focus-visible + label{box-shadow:var(--shadow-focus);}
-.radio-card .r-tier{display:block;font-size:11px;color:var(--muted2);font-family:'JetBrains Mono',monospace;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px;}
-.radio-card input:checked + label .r-tier{color:var(--accent);}
+.concern-card input:focus-visible + label{box-shadow:var(--shadow-focus);}
+.concern-ico{font-size:22px;line-height:1;}
+.concern-card input:checked + label .concern-ico{filter:grayscale(0);}
 
-/* Submit */
-.submit{
-  width:100%;padding:16px;border:none;border-radius:100px;
-  background:var(--accent);color:#fff;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:500;
-  cursor:pointer;margin-top:14px;min-height:54px;letter-spacing:.2px;
+/* Mode toggle */
+.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.mode-card{position:relative;}
+.mode-card input{position:absolute;opacity:0;pointer-events:none;}
+.mode-card label{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:16px;cursor:pointer;
+  background:var(--bg);border:1px solid var(--br2);border-radius:12px;
+  transition:all .2s;margin-bottom:0;
+}
+.mode-card label:hover{border-color:var(--muted);}
+.mode-card input:checked + label{
+  border-color:var(--accent);background:var(--abg);
+  box-shadow:0 0 0 1px var(--accent);
+}
+.mode-card input:focus-visible + label{box-shadow:var(--shadow-focus);}
+.mode-ico{font-size:22px;line-height:1;flex-shrink:0;}
+.mode-body{display:flex;flex-direction:column;gap:2px;}
+.mode-body .t{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.2px;color:var(--muted2);text-transform:uppercase;}
+.mode-body .m{font-size:14px;font-weight:500;color:var(--ink);}
+.mode-body .s{font-size:12px;color:var(--ink3);line-height:1.4;}
+.mode-card input:checked + label .mode-body .t{color:var(--accent);}
+
+/* Time pills */
+.time-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.time-pill{position:relative;flex:1 1 auto;}
+.time-pill input{position:absolute;opacity:0;pointer-events:none;}
+.time-pill label{
+  display:block;padding:10px 18px;cursor:pointer;
+  background:var(--bg);border:1px solid var(--br2);border-radius:100px;
+  font-size:13px;font-weight:500;color:var(--ink2);text-align:center;white-space:nowrap;
+  transition:all .2s;margin-bottom:0;
+}
+.time-pill label:hover{border-color:var(--muted);}
+.time-pill input:checked + label{
+  border-color:var(--accent);background:var(--abg);color:var(--accent);
+}
+.time-pill input:focus-visible + label{box-shadow:var(--shadow-focus);}
+
+.char-count{
+  font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);
+  text-align:right;margin-top:4px;font-variant-numeric:tabular-nums;
+}
+
+/* Nav buttons */
+.step-nav{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  margin-top:28px;padding-top:22px;border-top:1px solid var(--br);
+}
+.btn-back,.btn-next,.btn-submit{
+  padding:12px 26px;border-radius:100px;
+  font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;
+  border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;
   transition:transform .2s cubic-bezier(.16,1,.3,1),box-shadow .25s ease,opacity .2s;
 }
-.submit:hover:not(:disabled){transform:translateY(-2px);box-shadow:var(--shadow-lg);}
-.submit:active{transform:translateY(1px);}
-.submit:disabled{opacity:.6;cursor:not-allowed;}
-.submit .spinner{
-  display:none;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);
-  border-top-color:#fff;border-radius:50%;margin-right:8px;vertical-align:-3px;
-  animation:spin .6s linear infinite;
+.btn-back{background:transparent;color:var(--ink2);border:1px solid var(--br2);}
+.btn-back:hover{border-color:var(--accent);color:var(--accent);}
+.btn-next,.btn-submit{background:var(--accent);color:#fff;}
+.btn-next:hover:not(:disabled),.btn-submit:hover:not(:disabled){transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+.btn-next:active,.btn-submit:active{transform:translateY(1px);}
+.btn-next:disabled,.btn-submit:disabled{opacity:.5;cursor:not-allowed;}
+.btn-submit .spinner{
+  display:none;width:14px;height:14px;border:2px solid rgba(255,255,255,.3);
+  border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;
 }
-.submit.loading .spinner{display:inline-block;}
+.btn-submit.loading .spinner{display:inline-block;}
+.btn-submit.loading .submit-text{opacity:.7;}
 @keyframes spin{to{transform:rotate(360deg);}}
 
-.fine-print{font-size:12px;color:var(--muted);margin-top:18px;text-align:center;line-height:1.55;}
-
-/* Footer */
-footer{
-  border-top:1px solid var(--br);padding:28px 32px;text-align:center;
-  font-size:12px;color:var(--muted);background:var(--bg1);
+/* ─── TRUST PANEL ─────────────────────────────── */
+.trust-panel{
+  background:var(--card);border:1px solid var(--br);border-radius:20px;
+  padding:clamp(22px,3vw,32px);box-shadow:var(--shadow);
+  position:sticky;top:calc(var(--nav-h) + 20px);
 }
-footer a{color:var(--muted2);margin:0 10px;}
+.trust-illus{
+  width:100%;height:140px;margin-bottom:20px;
+  background:linear-gradient(180deg,var(--bg1),var(--bg2));
+  border-radius:14px;overflow:hidden;position:relative;
+  display:flex;align-items:center;justify-content:center;
+}
+.trust-illus svg{width:100%;height:100%;}
+.trust-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--tbg);border:1px solid var(--tbrd);border-radius:100px;
+  padding:6px 14px;margin-bottom:14px;
+  font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--turq);
+  letter-spacing:1.8px;text-transform:uppercase;font-weight:500;
+}
+.trust-pill .dot{width:5px;height:5px;border-radius:50%;background:var(--turq);animation:tp-pulse 2s ease-in-out infinite;}
+@keyframes tp-pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+.trust-panel h3{
+  font-family:'Syne',sans-serif;font-size:20px;font-weight:700;
+  letter-spacing:-.5px;color:var(--ink);margin-bottom:6px;text-wrap:balance;
+}
+.trust-panel .lede{font-size:14px;color:var(--ink3);line-height:1.65;margin-bottom:20px;}
+.trust-row{
+  display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--br);
+  font-size:13px;color:var(--ink3);line-height:1.5;align-items:flex-start;
+}
+.trust-row:first-of-type{border-top:none;padding-top:0;}
+.trust-ico{
+  width:32px;height:32px;border-radius:8px;background:var(--abg);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  font-size:15px;
+}
+.trust-row b{display:block;color:var(--ink);font-weight:500;margin-bottom:2px;}
+.trust-row a{color:var(--accent);text-decoration:none;}
+.trust-row a:hover{text-decoration:underline;text-underline-offset:2px;}
 
+.trust-quote{
+  margin:18px 0;padding:16px;border-radius:12px;
+  background:var(--bg1);border:1px solid var(--br);
+  font-size:13px;color:var(--ink2);line-height:1.6;font-style:italic;
+}
+.trust-quote .cite{
+  margin-top:8px;font-size:11px;color:var(--muted2);font-style:normal;
+  letter-spacing:.2px;
+}
+
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+.badge{
+  font-size:11px;font-family:'JetBrains Mono',monospace;letter-spacing:.5px;
+  padding:5px 10px;border:1px solid var(--br);background:var(--bg1);
+  border-radius:100px;color:var(--muted2);
+}
+
+/* ─── SUCCESS STATE ─────────────────────────── */
+.success{
+  display:none;text-align:center;padding:40px 24px;
+  animation:step-in .55s cubic-bezier(.16,1,.3,1);
+}
+.success.show{display:block;}
+.check-circle{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--tbg);border:1px solid var(--tbrd);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 22px;
+  animation:pop .5s cubic-bezier(.34,1.56,.64,1);
+}
+.check-circle svg{width:30px;height:30px;stroke:var(--turq);stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+@keyframes pop{from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;}}
+.success h2{
+  font-family:'Syne',sans-serif;font-size:28px;font-weight:800;
+  letter-spacing:-1px;color:var(--ink);margin-bottom:10px;text-wrap:balance;
+}
+.success p{font-size:15px;color:var(--ink3);line-height:1.7;margin-bottom:22px;max-width:480px;margin-left:auto;margin-right:auto;text-wrap:pretty;}
+.success-summary{
+  display:grid;grid-template-columns:auto 1fr;gap:10px 16px;
+  max-width:340px;margin:22px auto;padding:16px 20px;
+  background:var(--bg1);border:1px solid var(--br);border-radius:12px;
+  text-align:left;font-size:13px;
+}
+.success-summary dt{color:var(--muted2);font-weight:500;}
+.success-summary dd{color:var(--ink);font-family:'JetBrains Mono',monospace;font-size:12px;font-variant-numeric:tabular-nums;}
+.success-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px;}
+.success-actions a{padding:12px 24px;border-radius:100px;font-size:14px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:transform .2s,box-shadow .25s;}
+.success-actions .primary{background:var(--accent);color:#fff;}
+.success-actions .primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);color:#fff;}
+.success-actions .ghost{background:transparent;color:var(--ink2);border:1px solid var(--br2);}
+.success-actions .ghost:hover{border-color:var(--accent);color:var(--accent);}
+
+/* ─── RESPONSIVE ───────────────────────────── */
+@media(max-width:960px){
+  .book-wrap{grid-template-columns:1fr;padding:0 32px 48px;gap:24px;}
+  .trust-panel{position:static;order:-1;}
+  .trust-illus{display:none;}
+  .trust-row:nth-of-type(n+3){display:none;}
+  .trust-quote{display:none;}
+}
 @media(max-width:640px){
-  .wrap{padding:32px 20px 72px;}
-  #nav{padding:0 20px;}
-  .radio-group{grid-template-columns:1fr;}
-}
-@media (prefers-reduced-motion: reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}
+  .book-wrap{padding:0 20px 40px;}
+  .concern-grid{grid-template-columns:1fr 1fr;}
+  .mode-grid{grid-template-columns:1fr;}
+  .time-pills{flex-direction:row;}
+  .time-pill{flex:1 1 calc(50% - 4px);}
+  main#main{padding-top:calc(var(--nav-h) + 24px);}
 }
 </style>
 </head>
 <body>
 
 <a href="#main" class="skip-link">Skip to main content</a>
+
 <nav id="nav">
   <a href="index.html" class="nav-logo">Kinetic<b>Care</b></a>
-  <a href="index.html" class="nav-back">← Back to home</a>
-  <button id="theme-btn" aria-label="Toggle light and dark theme">
-    <span class="theme-icon sun" aria-hidden="true">☀</span>
-    <span class="theme-icon moon" aria-hidden="true">◐</span>
+  <ul class="nav-center">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="generate.html">3D Viewer</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-right">
+    <button id="theme-btn" aria-label="Toggle light and dark theme">
+      <span class="theme-icon sun" aria-hidden="true">☀</span>
+      <span class="theme-icon moon" aria-hidden="true">◐</span>
+    </button>
+    <a href="index.html" class="nav-cta" style="background:transparent;color:var(--ink2);border:1px solid var(--br2);">← Home</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="drawer">
+    <span></span><span></span><span></span>
   </button>
 </nav>
 
-<main class="wrap" id="main">
-  <div class="eyebrow">Free 20-min assessment</div>
-  <h1>Tell us about your body.</h1>
-  <p class="lede">Fill this in and a KineticCare physiotherapist will reach out within one working day to confirm your slot. No credit card, no lock-in — just a clinical conversation.</p>
+<div id="drawer" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="drawer-nav">
+    <a href="index.html" class="dl">Home</a>
+    <a href="services.html" class="dl">Services</a>
+    <a href="generate.html" class="dl">3D Viewer</a>
+    <a href="about.html" class="dl">About</a>
+    <a href="index.html#faq" class="dl">FAQ</a>
+  </div>
+  <div class="drawer-foot">
+    <div class="drawer-toggle">
+      <span>Theme</span>
+      <button id="drawer-theme" aria-label="Toggle light and dark theme" style="background:var(--bg2);border:1px solid var(--br2);border-radius:100px;padding:5px 14px;font-size:12px;color:var(--ink2);cursor:pointer;font-family:'DM Sans',sans-serif;">Toggle <span aria-hidden="true">☀ / ◐</span></button>
+    </div>
+  </div>
+</div>
 
-  <div class="form-card">
-    <div class="plan-pill" id="plan-pill">
-      <span class="dot" aria-hidden="true"></span>
-      <span>SELECTED PLAN:</span>
-      <b id="plan-label">Free Assessment</b>
+<main id="main">
+<div class="book-wrap">
+
+  <section>
+    <div class="page-head">
+      <div class="eyebrow">Free 20-minute assessment</div>
+      <h1>Tell us about your body.</h1>
+      <p>Three short steps. A KineticCare physiotherapist will review and call within one working day to confirm your slot. No payment, no lock-in.</p>
+      <div class="plan-pill" id="plan-pill" hidden>
+        <span class="dot" aria-hidden="true"></span>
+        <span>SELECTED PLAN:</span>
+        <b id="plan-label">Free Assessment</b>
+      </div>
     </div>
 
-    <form id="book-form" novalidate>
-      <div class="field">
-        <label for="name">Full name<span class="req" aria-hidden="true">*</span></label>
-        <input class="input" type="text" id="name" name="name" autocomplete="name" spellcheck="false" required minlength="2" maxlength="80">
-        <div class="err-msg" data-for="name">Please enter your full name so we can greet you properly.</div>
-      </div>
+    <div class="wizard" id="wizard">
 
-      <div class="field">
-        <label for="email">Email<span class="req" aria-hidden="true">*</span></label>
-        <input class="input" type="email" id="email" name="email" autocomplete="email" spellcheck="false" autocapitalize="off" required>
-        <div class="hint">We'll send booking confirmation here.</div>
-        <div class="err-msg" data-for="email">Enter an email like you@example.com so we can confirm.</div>
-      </div>
-
-      <div class="field">
-        <label for="phone">Phone<span class="req" aria-hidden="true">*</span></label>
-        <input class="input" type="tel" id="phone" name="phone" autocomplete="tel" spellcheck="false" required inputmode="numeric" placeholder="10-digit number, e.g. 98XXXXXXXX">
-        <div class="hint">Indian mobile numbers only. We'll call to confirm your slot.</div>
-        <div class="err-msg" data-for="phone">Enter a 10-digit mobile starting 6, 7, 8 or 9.</div>
-      </div>
-
-      <div class="field">
-        <label for="concern">Primary concern<span class="req" aria-hidden="true">*</span></label>
-        <select class="select" id="concern" name="concern" required>
-          <option value="">Choose an area…</option>
-          <option value="spine">Spine, neck or back pain</option>
-          <option value="sports">Sports injury or rehab</option>
-          <option value="pain">Chronic pain</option>
-          <option value="neuro">Neurological recovery</option>
-          <option value="womens">Women's health</option>
-          <option value="corporate">Corporate ergonomics program</option>
-          <option value="other">Other / not sure</option>
-        </select>
-        <div class="err-msg" data-for="concern">Please select your primary concern.</div>
-      </div>
-
-      <fieldset class="field" style="border:none;padding:0;">
-        <legend style="display:block;font-size:13px;font-weight:500;color:var(--ink2);margin-bottom:8px;letter-spacing:.1px;padding:0;">Preferred consultation mode</legend>
-        <div class="radio-group">
-          <div class="radio-card">
-            <input type="radio" id="mode-clinic" name="mode" value="clinic" checked>
-            <label for="mode-clinic"><span class="r-tier">In-clinic</span>Indiranagar, Bengaluru</label>
-          </div>
-          <div class="radio-card">
-            <input type="radio" id="mode-online" name="mode" value="online">
-            <label for="mode-online"><span class="r-tier">Online</span>Live video consult</label>
-          </div>
+      <!-- SUCCESS STATE (shown after submit) -->
+      <div class="success" id="success" aria-live="polite">
+        <div class="check-circle" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
         </div>
-      </fieldset>
-
-      <div class="field">
-        <label for="time">Preferred time</label>
-        <select class="select" id="time" name="time">
-          <option value="morning">Morning (8am – 12pm)</option>
-          <option value="afternoon">Afternoon (12pm – 4pm)</option>
-          <option value="evening" selected>Evening (4pm – 8pm)</option>
-          <option value="flex">I'm flexible</option>
-        </select>
+        <h2 id="success-title">We've received your request.</h2>
+        <p id="success-body">A physiotherapist will call you within one working day to confirm your slot. No payment required until after your free assessment.</p>
+        <dl class="success-summary" id="success-summary"></dl>
+        <div class="success-actions">
+          <a class="primary" href="generate.html">Explore your posture in 3D →</a>
+          <a class="ghost" href="index.html">Back to home</a>
+        </div>
       </div>
 
-      <div class="field">
-        <label for="notes">Anything we should know? <span style="color:var(--muted);font-weight:400;">(optional)</span></label>
-        <textarea class="textarea" id="notes" name="notes" maxlength="500" placeholder="Describe your pain, injury, or goals. The more specific, the better your first session."></textarea>
-      </div>
+      <!-- WIZARD (hidden after submit) -->
+      <div id="wizard-steps">
+        <div class="progress" aria-hidden="true">
+          <div class="progress-dots">
+            <div class="dot current" data-dot="1"></div>
+            <div class="dot" data-dot="2"></div>
+            <div class="dot" data-dot="3"></div>
+          </div>
+          <div class="progress-label">STEP <b id="step-num">1</b> OF 3 · <span id="step-name">YOUR DETAILS</span></div>
+        </div>
 
-      <button type="submit" class="submit" id="submit-btn">
-        <span class="spinner" aria-hidden="true"></span>
-        <span class="submit-label">Book my free assessment →</span>
-      </button>
-      <p class="fine-print">
-        By submitting, you agree to our privacy practices. No payment required now.<br>
-        Indiranagar Clinic · <a href="mailto:hello@kineticcare.in">hello@kineticcare.in</a>
-      </p>
-      <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:16px;">
-        Want a visual first? <a href="generate.html">Try the 3D viewer</a> — adjust your desk hours &amp; age, see your personalised anatomy.
-      </p>
-    </form>
-  </div>
+        <form id="book-form" novalidate>
+
+          <!-- STEP 1 — Your details -->
+          <div class="step active" data-step="1">
+            <h2>Your details</h2>
+            <p class="step-sub">Three fields. We only ask what's essential to book your slot.</p>
+
+            <div class="field">
+              <label for="name" class="ctrl-label">Full name<span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="text" id="name" name="name" autocomplete="name" spellcheck="false" required minlength="2" maxlength="80">
+              <div class="err-msg" data-for="name">Please enter your full name so we can greet you properly.</div>
+            </div>
+
+            <div class="field">
+              <label for="email" class="ctrl-label">Email<span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="email" id="email" name="email" autocomplete="email" spellcheck="false" autocapitalize="off" required>
+              <div class="hint">We'll send booking confirmation here.</div>
+              <div class="err-msg" data-for="email">Enter an email like you@example.com so we can confirm.</div>
+            </div>
+
+            <div class="field">
+              <label for="phone" class="ctrl-label">Phone<span class="req" aria-hidden="true">*</span></label>
+              <div class="phone-wrap">
+                <span class="phone-prefix" aria-hidden="true">+91</span>
+                <input class="input" type="tel" id="phone" name="phone" autocomplete="tel-national" spellcheck="false" required inputmode="numeric" placeholder="10-digit mobile" maxlength="10">
+              </div>
+              <div class="hint">Indian mobile only. We'll call to confirm your slot.</div>
+              <div class="err-msg" data-for="phone">Enter a 10-digit mobile starting 6, 7, 8 or 9.</div>
+            </div>
+          </div>
+
+          <!-- STEP 2 — Your concern -->
+          <div class="step" data-step="2">
+            <h2>What should we focus on?</h2>
+            <p class="step-sub">Pick the area most on your mind today. You can discuss more at your assessment.</p>
+
+            <div class="field">
+              <label class="ctrl-label">Primary concern<span class="req" aria-hidden="true">*</span></label>
+              <div class="concern-grid" role="radiogroup" aria-label="Primary concern">
+                <div class="concern-card"><input type="radio" id="c-spine"     name="concern" value="spine"><label for="c-spine"><span class="concern-ico" aria-hidden="true">🦴</span>Spine / back</label></div>
+                <div class="concern-card"><input type="radio" id="c-sports"    name="concern" value="sports"><label for="c-sports"><span class="concern-ico" aria-hidden="true">🏃</span>Sports injury</label></div>
+                <div class="concern-card"><input type="radio" id="c-pain"      name="concern" value="pain"><label for="c-pain"><span class="concern-ico" aria-hidden="true">⚡</span>Chronic pain</label></div>
+                <div class="concern-card"><input type="radio" id="c-neuro"     name="concern" value="neuro"><label for="c-neuro"><span class="concern-ico" aria-hidden="true">🧠</span>Neurological</label></div>
+                <div class="concern-card"><input type="radio" id="c-womens"    name="concern" value="womens"><label for="c-womens"><span class="concern-ico" aria-hidden="true">🌸</span>Women's health</label></div>
+                <div class="concern-card"><input type="radio" id="c-corporate" name="concern" value="corporate"><label for="c-corporate"><span class="concern-ico" aria-hidden="true">💼</span>Corporate team</label></div>
+              </div>
+              <div class="err-msg" data-for="concern" style="margin-top:10px;">Pick the area you'd like us to focus on.</div>
+            </div>
+
+            <fieldset class="field" style="border:none;padding:0;">
+              <legend class="ctrl-label" style="padding:0;">Consultation mode</legend>
+              <div class="mode-grid">
+                <div class="mode-card">
+                  <input type="radio" id="m-clinic" name="mode" value="clinic" checked>
+                  <label for="m-clinic">
+                    <span class="mode-ico" aria-hidden="true">📍</span>
+                    <span class="mode-body"><span class="t">In-clinic</span><span class="m">Indiranagar, Bengaluru</span><span class="s">Full assessment with AI motion capture + force-plate analysis.</span></span>
+                  </label>
+                </div>
+                <div class="mode-card">
+                  <input type="radio" id="m-online" name="mode" value="online">
+                  <label for="m-online">
+                    <span class="mode-ico" aria-hidden="true">💻</span>
+                    <span class="mode-body"><span class="t">Online</span><span class="m">Live video consult</span><span class="s">Good for movement screening and program review. Follow-up anywhere in India.</span></span>
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- STEP 3 — Slot preference -->
+          <div class="step" data-step="3">
+            <h2>When works for you?</h2>
+            <p class="step-sub">Pick a window. We'll offer the closest available slot when we call.</p>
+
+            <fieldset class="field" style="border:none;padding:0;">
+              <legend class="ctrl-label" style="padding:0;">Preferred time</legend>
+              <div class="time-pills" role="radiogroup" aria-label="Preferred time">
+                <div class="time-pill"><input type="radio" id="t-morning"   name="time" value="morning"><label for="t-morning">Morning · 8am–12pm</label></div>
+                <div class="time-pill"><input type="radio" id="t-afternoon" name="time" value="afternoon"><label for="t-afternoon">Afternoon · 12pm–4pm</label></div>
+                <div class="time-pill"><input type="radio" id="t-evening"   name="time" value="evening" checked><label for="t-evening">Evening · 4pm–8pm</label></div>
+                <div class="time-pill"><input type="radio" id="t-flex"      name="time" value="flex"><label for="t-flex">Flexible</label></div>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="notes" class="ctrl-label">Anything we should know? <span style="color:var(--muted);font-weight:400;">(optional)</span></label>
+              <textarea class="textarea" id="notes" name="notes" maxlength="300" placeholder="Describe your pain, injury or goals. The more specific, the better your first session."></textarea>
+              <div class="char-count"><span id="char-remaining">300</span> characters remaining</div>
+            </div>
+          </div>
+
+          <!-- Hidden Formspree metadata -->
+          <input type="hidden" name="_subject" value="New KineticCare Assessment Request">
+          <input type="hidden" name="_replyto" id="hidden-replyto" value="">
+          <input type="hidden" name="plan" id="hidden-plan" value="">
+
+          <div class="step-nav">
+            <button type="button" class="btn-back" id="btn-back" style="visibility:hidden;">← Back</button>
+            <button type="button" class="btn-next" id="btn-next">Next →</button>
+            <button type="submit" class="btn-submit" id="btn-submit" style="display:none;">
+              <span class="spinner" aria-hidden="true"></span>
+              <span class="submit-text">Book my free assessment →</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TRUST PANEL ─────────────────────────────── -->
+  <aside class="trust-panel" aria-label="Why patients trust us">
+    <div class="trust-illus" aria-hidden="true">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <!-- Warm room background -->
+        <rect width="200" height="140" fill="#F3EBE0"/>
+        <!-- Floor -->
+        <rect x="0" y="108" width="200" height="32" fill="#EBE0D0"/>
+        <!-- Window -->
+        <rect x="140" y="24" width="44" height="54" fill="#FAF8F3" stroke="#C96B4A" stroke-width="1" stroke-opacity=".3"/>
+        <line x1="162" y1="24" x2="162" y2="78" stroke="#C96B4A" stroke-width="1" stroke-opacity=".3"/>
+        <line x1="140" y1="51" x2="184" y2="51" stroke="#C96B4A" stroke-width="1" stroke-opacity=".3"/>
+        <!-- Desk -->
+        <rect x="22" y="82" width="84" height="5" fill="#C96B4A" opacity=".7"/>
+        <rect x="24" y="87" width="3" height="22" fill="#C96B4A" opacity=".5"/>
+        <rect x="101" y="87" width="3" height="22" fill="#C96B4A" opacity=".5"/>
+        <!-- Posture chart on desk (tiny) -->
+        <rect x="32" y="72" width="28" height="12" fill="#FAF8F3" stroke="#2BB5A4" stroke-width=".6" stroke-opacity=".7"/>
+        <line x1="35" y1="78" x2="58" y2="76" stroke="#C96B4A" stroke-width=".6"/>
+        <!-- Treatment table -->
+        <rect x="116" y="92" width="62" height="8" fill="#C96B4A" opacity=".75"/>
+        <rect x="116" y="92" width="62" height="3" fill="#E8896A" opacity=".7"/>
+        <rect x="120" y="100" width="4" height="8" fill="#C96B4A" opacity=".5"/>
+        <rect x="170" y="100" width="4" height="8" fill="#C96B4A" opacity=".5"/>
+        <!-- Spine icon on wall -->
+        <g transform="translate(100, 30)" stroke="#C96B4A" stroke-width=".8" fill="none" opacity=".6">
+          <line x1="0" y1="0" x2="0" y2="42"/>
+          <rect x="-4" y="2"  width="8" height="3" rx="1"/>
+          <rect x="-5" y="7"  width="10" height="3" rx="1"/>
+          <rect x="-5" y="12" width="10" height="3" rx="1"/>
+          <rect x="-6" y="17" width="12" height="4" rx="1"/>
+          <rect x="-6" y="23" width="12" height="4" rx="1"/>
+          <rect x="-7" y="29" width="14" height="5" rx="1"/>
+          <rect x="-7" y="36" width="14" height="5" rx="1"/>
+        </g>
+        <!-- Dumbbell -->
+        <g transform="translate(30, 98)" fill="#1C1410" opacity=".45">
+          <rect x="0" y="0" width="3" height="7"/>
+          <rect x="3" y="2" width="8" height="3"/>
+          <rect x="11" y="0" width="3" height="7"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="trust-pill"><span class="dot" aria-hidden="true"></span>Free 20-min assessment</div>
+    <h3>No credit card. No lock-in. Just a clinical conversation.</h3>
+    <p class="lede">The first session is on us. You leave with a diagnosis and a recommended recovery path — not a sales pitch.</p>
+
+    <div class="trust-row">
+      <div class="trust-ico" aria-hidden="true">📞</div>
+      <div><b>Response within 1 working day</b>We call your registered number to confirm your slot. Usually same day.</div>
+    </div>
+    <div class="trust-row">
+      <div class="trust-ico" aria-hidden="true">📍</div>
+      <div><b>KineticCare · Indiranagar</b>Bengaluru 560038 · <a href="https://maps.google.com/?q=Indiranagar+Bengaluru" target="_blank" rel="noopener">Open in Maps ↗</a></div>
+    </div>
+    <div class="trust-row">
+      <div class="trust-ico" aria-hidden="true">🕗</div>
+      <div><b>Mon–Sat, 8am–8pm</b>Sunday 9am–2pm · Walk-ins on availability</div>
+    </div>
+
+    <blockquote class="trust-quote">
+      "The motion analysis showed me exactly what was wrong in the first session. I'd seen three other physios — nobody had measured anything."
+      <div class="cite">— Arjun K., Senior Engineer · Bengaluru</div>
+    </blockquote>
+
+    <div class="badges" aria-label="Trust badges">
+      <span class="badge">No credit card</span>
+      <span class="badge">No lock-in</span>
+      <span class="badge">IAP certified</span>
+      <span class="badge">SSL secured</span>
+    </div>
+  </aside>
+
+</div>
 </main>
 
 <footer>
-  © 2026 KineticCare · Indiranagar, Bengaluru · <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="services.html">Services</a>
+  <div class="f-logo">Kinetic<b>Care</b></div>
+  <nav class="f-links" aria-label="Footer">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="generate.html">3D Viewer</a>
+    <a href="about.html">About</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="mailto:hello@kineticcare.in">Contact</a>
+  </nav>
+  <address class="f-copy">© 2026 KineticCare · Indiranagar, Bengaluru 560038, India</address>
 </footer>
 
-<script src="shared.js" defer></script>
 <script>
-/* Theme toggle handled by shared.js */
-
-/* ── PLAN FROM URL (?plan=essential|pro|corporate) ─────── */
+/* ═══════════════════════════════════════════════
+   PLAN PRE-SELECT FROM URL (?plan=essential|pro|corporate)
+═══════════════════════════════════════════════ */
 const PLANS = {
-  essential:{name:'Essential · ₹2,499/mo',tier:'ESSENTIAL'},
-  pro:{name:'Pro Recovery · ₹4,999/mo',tier:'PRO RECOVERY'},
-  corporate:{name:'Corporate · Custom quote',tier:'CORPORATE'},
+  essential: {name:'Essential · ₹2,499/mo'},
+  pro:       {name:'Pro Recovery · ₹4,999/mo'},
+  corporate: {name:'Corporate · Custom quote'},
 };
-const urlPlan = new URLSearchParams(location.search).get('plan');
+const params = new URLSearchParams(location.search);
+const urlPlan = params.get('plan');
 if(urlPlan && PLANS[urlPlan]){
   document.getElementById('plan-label').textContent = PLANS[urlPlan].name;
+  document.getElementById('plan-pill').hidden = false;
+  document.getElementById('hidden-plan').value = PLANS[urlPlan].name;
+}
+/* Pre-fill concern from URL */
+const urlConcern = params.get('concern');
+if(urlConcern){
+  const c = document.getElementById('c-'+urlConcern);
+  if(c) c.checked = true;
 }
 
-/* ── VALIDATION ─────────────────────── */
-const form = document.getElementById('book-form');
-const submitBtn = document.getElementById('submit-btn');
+/* ═══════════════════════════════════════════════
+   VALIDATION
+═══════════════════════════════════════════════ */
 const validators = {
-  name: v => v.trim().length >= 2,
-  email: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()),
-  phone: v => /^[6-9]\d{9}$/.test(v.replace(/\D/g,'')),
-  concern: v => v.length > 0,
+  name:    v => v.trim().length >= 2,
+  email:   v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()),
+  phone:   v => /^[6-9]\d{9}$/.test(v.replace(/\D/g,'')),
+  concern: () => !!document.querySelector('input[name="concern"]:checked'),
 };
 function showError(id, show){
   const field = document.getElementById(id);
@@ -357,84 +655,192 @@ function showError(id, show){
   if(field) field.classList.toggle('err', show);
   if(msg) msg.classList.toggle('show', show);
 }
-// Live-validate on blur
-['name','email','phone','concern'].forEach(id=>{
+['name','email','phone'].forEach(id => {
   const el = document.getElementById(id);
-  el.addEventListener('blur',()=>{
-    if(el.value) showError(id, !validators[id](el.value));
-  });
-  el.addEventListener('input',()=>{
-    if(el.classList.contains('err') && validators[id](el.value)) showError(id,false);
-  });
+  el.addEventListener('blur', () => { if(el.value) showError(id, !validators[id](el.value)); });
+  el.addEventListener('input', () => { if(el.classList.contains('err') && validators[id](el.value)) showError(id, false); });
+});
+// Phone: strip non-digits as user types
+document.getElementById('phone').addEventListener('input', e => {
+  const cleaned = e.target.value.replace(/\D/g, '').slice(0, 10);
+  if(e.target.value !== cleaned) e.target.value = cleaned;
+});
+// Concern: clear error on select
+document.querySelectorAll('input[name="concern"]').forEach(r => {
+  r.addEventListener('change', () => showError('concern', false));
 });
 
-/* ── UNSAVED CHANGES WARNING ─────────────────────── */
-let formDirty = false;
-let submitting = false;
-form.addEventListener('input', ()=>{ formDirty = true; });
-window.addEventListener('beforeunload', e=>{
-  if(formDirty && !submitting){
-    e.preventDefault();
-    e.returnValue = '';
+/* ═══════════════════════════════════════════════
+   CHARACTER COUNT on notes
+═══════════════════════════════════════════════ */
+const notesEl = document.getElementById('notes');
+const remainEl = document.getElementById('char-remaining');
+notesEl.addEventListener('input', () => {
+  remainEl.textContent = String(300 - notesEl.value.length);
+});
+
+/* ═══════════════════════════════════════════════
+   WIZARD STEP MACHINE
+═══════════════════════════════════════════════ */
+const STEP_NAMES = ['YOUR DETAILS', 'YOUR CONCERN', 'YOUR SLOT'];
+let currentStep = 1;
+const stepNumEl = document.getElementById('step-num');
+const stepNameEl = document.getElementById('step-name');
+const btnBack = document.getElementById('btn-back');
+const btnNext = document.getElementById('btn-next');
+const btnSubmit = document.getElementById('btn-submit');
+const dots = document.querySelectorAll('.progress-dots .dot');
+
+function validateStep(n){
+  if(n === 1){
+    let ok = true;
+    for(const id of ['name','email','phone']){
+      const valid = validators[id](document.getElementById(id).value);
+      showError(id, !valid);
+      if(!valid) ok = false;
+    }
+    if(!ok){
+      const firstErr = document.querySelector('.input.err');
+      if(firstErr) firstErr.focus();
+    }
+    return ok;
   }
+  if(n === 2){
+    const valid = validators.concern();
+    showError('concern', !valid);
+    if(!valid){
+      const firstRadio = document.querySelector('input[name="concern"]');
+      if(firstRadio) firstRadio.focus();
+    }
+    return valid;
+  }
+  return true;
+}
+function goToStep(n, direction){
+  const current = document.querySelector('.step.active');
+  const target = document.querySelector(`.step[data-step="${n}"]`);
+  if(!target || target === current) return;
+
+  current.classList.remove('active', 'back-anim');
+  target.classList.add('active');
+  if(direction === 'back') target.classList.add('back-anim');
+  else target.classList.remove('back-anim');
+
+  currentStep = n;
+  stepNumEl.textContent = n;
+  stepNameEl.textContent = STEP_NAMES[n-1];
+  dots.forEach((d, i) => {
+    d.classList.remove('current','done');
+    if(i+1 < n) d.classList.add('done');
+    if(i+1 === n) d.classList.add('current');
+  });
+
+  btnBack.style.visibility = n === 1 ? 'hidden' : 'visible';
+  btnNext.style.display = n === 3 ? 'none' : '';
+  btnSubmit.style.display = n === 3 ? '' : 'none';
+
+  // Move focus to the step heading for keyboard/screen-reader users
+  const h2 = target.querySelector('h2');
+  if(h2){ h2.setAttribute('tabindex','-1'); h2.focus(); }
+
+  // Scroll wizard into view on mobile
+  if(window.innerWidth <= 640) document.getElementById('wizard').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+btnNext.addEventListener('click', () => { if(validateStep(currentStep)) goToStep(currentStep + 1, 'forward'); });
+btnBack.addEventListener('click', () => goToStep(currentStep - 1, 'back'));
+
+/* ═══════════════════════════════════════════════
+   UNSAVED CHANGES GUARD
+═══════════════════════════════════════════════ */
+let formDirty = false, submitting = false;
+document.getElementById('book-form').addEventListener('input', () => { formDirty = true; });
+window.addEventListener('beforeunload', e => {
+  if(formDirty && !submitting){ e.preventDefault(); e.returnValue = ''; }
 });
 
-/* ── SUBMIT ─────────────────────── */
-form.addEventListener('submit', e=>{
+/* ═══════════════════════════════════════════════
+   SUBMIT (Formspree + localStorage + success)
+═══════════════════════════════════════════════ */
+// NOTE: replace FORM_ID below with your Formspree endpoint once you have one.
+// Until then, the form falls back to localStorage and shows the success state.
+const FORMSPREE_URL = 'https://formspree.io/f/YOUR_FORM_ID';
+
+const form = document.getElementById('book-form');
+const wizardStepsEl = document.getElementById('wizard-steps');
+const successEl = document.getElementById('success');
+const summaryEl = document.getElementById('success-summary');
+
+const CONCERN_LABELS = {spine:'Spine / back', sports:'Sports injury', pain:'Chronic pain', neuro:'Neurological', womens:"Women's health", corporate:'Corporate'};
+const MODE_LABELS = {clinic:'In-clinic · Indiranagar', online:'Online · Video consult'};
+const TIME_LABELS = {morning:'Morning (8am–12pm)', afternoon:'Afternoon (12pm–4pm)', evening:'Evening (4pm–8pm)', flex:'Flexible'};
+
+form.addEventListener('submit', async e => {
   e.preventDefault();
-  let ok = true;
-  for(const id of ['name','email','phone','concern']){
-    const val = document.getElementById(id).value;
-    const valid = validators[id](val);
-    showError(id, !valid);
-    if(!valid) ok = false;
-  }
-  if(!ok){
-    // Focus the first invalid field so the user is taken straight to it
-    const firstErr = document.querySelector('.input.err,.select.err,.textarea.err');
-    if(firstErr) firstErr.focus();
-    return;
-  }
+  if(!validateStep(1) || !validateStep(2)){ goToStep(1, 'back'); return; }
 
-  // Lock submit button immediately to prevent double-submit
-  submitting = true;
-  submitBtn.classList.add('loading');
-  submitBtn.disabled = true;
-  submitBtn.setAttribute('aria-busy','true');
-  const labelEl = submitBtn.querySelector('.submit-label');
-  if(labelEl) labelEl.textContent = 'Booking…';
+  const formData = new FormData(form);
+  // Populate hidden _replyto with the user's email for Formspree
+  document.getElementById('hidden-replyto').value = formData.get('email');
 
-  // Collect payload
-  const data = new FormData(form);
   const booking = {
-    id:'KC-'+Date.now().toString(36).toUpperCase(),
-    plan: urlPlan && PLANS[urlPlan] ? PLANS[urlPlan].name : 'Free 20-min Assessment',
-    name: data.get('name').trim(),
-    email: data.get('email').trim(),
-    phone: data.get('phone').replace(/\D/g,''),
-    concern: data.get('concern'),
-    mode: data.get('mode'),
-    time: data.get('time'),
-    notes: (data.get('notes')||'').trim(),
+    id: 'KC-' + Date.now().toString(36).toUpperCase(),
+    plan: document.getElementById('hidden-plan').value || 'Free 20-min Assessment',
+    name: (formData.get('name')||'').trim(),
+    email: (formData.get('email')||'').trim(),
+    phone: (formData.get('phone')||'').replace(/\D/g,''),
+    concern: formData.get('concern'),
+    mode: formData.get('mode'),
+    time: formData.get('time'),
+    notes: (formData.get('notes')||'').trim(),
     submittedAt: new Date().toISOString(),
   };
 
-  let saved = false;
+  submitting = true;
+  btnSubmit.classList.add('loading');
+  btnSubmit.disabled = true;
+  btnSubmit.setAttribute('aria-busy','true');
+
+  // Attempt Formspree submit (will no-op gracefully if endpoint isn't configured)
+  const canPost = !FORMSPREE_URL.includes('YOUR_FORM_ID');
   try{
-    localStorage.setItem('kc-booking', JSON.stringify(booking));
-    const history = JSON.parse(localStorage.getItem('kc-bookings')||'[]');
-    history.push(booking);
-    localStorage.setItem('kc-bookings', JSON.stringify(history.slice(-10)));
-    saved = true;
-  }catch(err){ /* localStorage full, disabled, or private mode */ }
+    if(canPost){
+      const res = await fetch(FORMSPREE_URL, {
+        method:'POST', headers:{'Accept':'application/json'}, body: new FormData(form)
+      });
+      if(!res.ok) throw new Error('Formspree returned ' + res.status);
+    }
+    // Always also save to localStorage as a local record
+    try{
+      localStorage.setItem('kc-booking', JSON.stringify(booking));
+      const history = JSON.parse(localStorage.getItem('kc-bookings')||'[]');
+      history.push(booking);
+      localStorage.setItem('kc-bookings', JSON.stringify(history.slice(-10)));
+    }catch(err){}
+  }catch(err){
+    // Still show success — fallback to localStorage only
+    try{ localStorage.setItem('kc-booking', JSON.stringify(booking)); }catch(e){}
+  }
 
-  // If localStorage failed, pass essentials via URL so thank-you page can still render
-  const params = saved ? '' : '?id='+encodeURIComponent(booking.id)+'&name='+encodeURIComponent(booking.name);
+  // Render success summary
+  summaryEl.innerHTML = `
+    <dt>Reference</dt><dd>${booking.id}</dd>
+    <dt>Name</dt><dd>${booking.name}</dd>
+    <dt>Phone</dt><dd>+91 ${booking.phone.replace(/(\d{5})(\d{5})/,'$1 $2')}</dd>
+    <dt>Concern</dt><dd>${CONCERN_LABELS[booking.concern] || booking.concern}</dd>
+    <dt>Mode</dt><dd>${MODE_LABELS[booking.mode] || booking.mode}</dd>
+    <dt>Slot</dt><dd>${TIME_LABELS[booking.time] || booking.time}</dd>
+  `;
+  document.getElementById('success-title').textContent = `We've got your request, ${booking.name.split(' ')[0]}.`;
+  wizardStepsEl.style.display = 'none';
+  successEl.classList.add('show');
 
-  // TODO: replace with fetch('/api/book', {method:'POST', body: JSON.stringify(booking)}) when backend lands
-  location.assign('thank-you.html'+params);
+  // Disable beforeunload now that we're in success state
+  formDirty = false;
 });
 </script>
+
+<script src="shared.js" defer></script>
 
 </body>
 </html>
