@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#FAF8F3"/>
+
+  <!-- Warm radial accent -->
+  <defs>
+    <radialGradient id="warmGlow" cx="80%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#C96B4A" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#C96B4A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spineGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C96B4A" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#C96B4A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#warmGlow)"/>
+
+  <!-- Grid texture -->
+  <g stroke="#000" stroke-opacity="0.04" stroke-width="1" fill="none">
+    <path d="M0 80 H1200 M0 160 H1200 M0 240 H1200 M0 320 H1200 M0 400 H1200 M0 480 H1200 M0 560 H1200"/>
+    <path d="M80 0 V630 M160 0 V630 M240 0 V630 M320 0 V630 M400 0 V630 M480 0 V630 M560 0 V630 M640 0 V630"/>
+  </g>
+
+  <!-- Logo -->
+  <text x="80" y="130" font-family="Syne, 'Inter', system-ui, sans-serif"
+        font-size="56" font-weight="800" letter-spacing="-2" fill="#1C1410">
+    Kinetic<tspan fill="#C96B4A">Care</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="80" y="178" font-family="'DM Sans', system-ui, sans-serif"
+        font-size="22" font-weight="400" fill="#5E4E42">
+    Advanced physiotherapy · Indiranagar, Bengaluru
+  </text>
+
+  <!-- Main headline -->
+  <text x="80" y="360" font-family="Syne, 'Inter', system-ui, sans-serif"
+        font-size="92" font-weight="800" letter-spacing="-3.5" fill="#1C1410" text-anchor="start">
+    Move Better.
+  </text>
+  <text x="80" y="450" font-family="Syne, 'Inter', system-ui, sans-serif"
+        font-size="92" font-weight="800" letter-spacing="-3.5" fill="#C96B4A" text-anchor="start">
+    Heal Faster.
+  </text>
+
+  <!-- Clinical bar -->
+  <g font-family="'JetBrains Mono', ui-monospace, monospace" font-size="18" fill="#5E4E42">
+    <line x1="80" y1="540" x2="880" y2="540" stroke="#000" stroke-opacity="0.13" stroke-width="1"/>
+    <line x1="80" y1="585" x2="880" y2="585" stroke="#000" stroke-opacity="0.13" stroke-width="1"/>
+    <text x="95" y="569">
+      <tspan fill="#1C1410" font-weight="500">12,427</tspan> recoveries
+      <tspan fill="#000" fill-opacity="0.25">  ·  </tspan>
+      <tspan fill="#C96B4A" font-weight="500">3.2×</tspan> faster median
+      <tspan fill="#000" fill-opacity="0.25">  ·  </tspan>
+      <tspan fill="#1C1410" font-weight="500">94%</tspan> adherence
+    </text>
+  </g>
+
+  <!-- Wireframe spine on the right -->
+  <g transform="translate(1000, 315)">
+    <circle cx="0" cy="0" r="180" fill="url(#spineGlow)"/>
+    <!-- Skull -->
+    <circle cx="0" cy="-150" r="32" fill="none" stroke="#C96B4A" stroke-width="1.5" opacity="0.7"/>
+    <!-- Spine — vertebrae stack -->
+    <g stroke="#C96B4A" stroke-width="1.3" fill="none" opacity="0.8">
+      <rect x="-12" y="-108" width="24" height="8" rx="2"/>
+      <rect x="-13" y="-95" width="26" height="9" rx="2"/>
+      <rect x="-14" y="-81" width="28" height="10" rx="2"/>
+      <rect x="-15" y="-66" width="30" height="10" rx="2"/>
+      <rect x="-16" y="-50" width="32" height="11" rx="2"/>
+      <rect x="-17" y="-33" width="34" height="12" rx="2"/>
+      <rect x="-18" y="-15" width="36" height="13" rx="2"/>
+      <rect x="-19" y="4" width="38" height="14" rx="2"/>
+      <rect x="-20" y="24" width="40" height="15" rx="2"/>
+      <rect x="-21" y="45" width="42" height="16" rx="2"/>
+      <rect x="-22" y="67" width="44" height="16" rx="2"/>
+    </g>
+    <!-- Pelvis -->
+    <ellipse cx="0" cy="110" rx="46" ry="24" fill="none" stroke="#2BB5A4" stroke-width="1.5" opacity="0.8"/>
+    <!-- Ribs (ellipse lines) -->
+    <g stroke="#8B6FE8" stroke-width="0.9" fill="none" opacity="0.35">
+      <ellipse cx="0" cy="-40" rx="52" ry="18"/>
+      <ellipse cx="0" cy="-20" rx="55" ry="18"/>
+      <ellipse cx="0" cy="0" rx="56" ry="18"/>
+      <ellipse cx="0" cy="22" rx="54" ry="17"/>
+      <ellipse cx="0" cy="44" rx="50" ry="16"/>
+    </g>
+    <!-- Vertebra label -->
+    <text x="64" y="-25" font-family="'JetBrains Mono', ui-monospace, monospace"
+          font-size="11" fill="#5E4E42" letter-spacing="1.5">
+      C5–C7
+    </text>
+    <line x1="16" y1="-28" x2="60" y2="-28" stroke="#9A8C82" stroke-width="1"/>
+    <text x="64" y="60" font-family="'JetBrains Mono', ui-monospace, monospace"
+          font-size="11" fill="#C94040" letter-spacing="1.5">
+      L4–L5
+    </text>
+    <line x1="22" y1="57" x2="60" y2="57" stroke="#C94040" stroke-width="1"/>
+  </g>
+</svg>

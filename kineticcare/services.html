@@ -28,6 +28,8 @@
 <meta name="theme-color" content="#FAF8F3" id="meta-theme-color">
 <meta name="color-scheme" content="light dark">
 <script>try{const _t=localStorage.getItem('kc-theme');if(_t)document.documentElement.setAttribute('data-theme',_t);}catch(e){}</script>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="shared.css">
 <!-- Breadcrumb schema for rich snippet eligibility -->
 <script type="application/ld+json">
 {
@@ -491,18 +493,8 @@ footer a{color:var(--muted2);margin:0 10px;}
   © 2026 KineticCare · Indiranagar, Bengaluru · <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="generate.html">3D Viewer</a> · <a href="index.html#faq">FAQ</a> · <a href="mailto:hello@kineticcare.in">hello@kineticcare.in</a>
 </footer>
 
+<script src="shared.js" defer></script>
 <script>
-/* Theme toggle */
-const html=document.documentElement;
-const isDark=()=>html.getAttribute('data-theme')==='dark';
-document.getElementById('theme-btn').addEventListener('click',()=>{
-  const next=isDark()?'light':'dark';
-  html.setAttribute('data-theme',next);
-  localStorage.setItem('kc-theme',next);
-  const m=document.getElementById('meta-theme-color');
-  if(m)m.content=next==='dark'?'#0E0B08':'#FAF8F3';
-});
-
 /* Active sub-nav on scroll */
 const subLinks = document.querySelectorAll('.subnav a');
 const sections = [...document.querySelectorAll('.svc')];

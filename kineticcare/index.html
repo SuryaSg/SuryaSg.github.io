@@ -186,6 +186,8 @@
 
 <!-- Anti-FOUC: apply saved theme before body renders (synchronous, tiny inline) -->
 <script>try{const _t=localStorage.getItem('kc-theme');if(_t)document.documentElement.setAttribute('data-theme',_t);}catch(e){}</script>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="shared.css">
 <!-- Preconnect to CDN so deferred library load is faster -->
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <style>
@@ -658,7 +660,7 @@ a.svc-tag:hover{color:var(--accent);transform:translateX(3px);}
 .prog-row{margin-bottom:11px;}
 .prog-meta{display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px;}
 .prog-meta b{color:var(--ink2);}
-.prog-meta s{text-decoration:none;color:var(--turq);}
+.prog-meta .val{color:var(--turq);}
 .prog-track{height:3px;background:var(--tbg);border-radius:2px;overflow:hidden;}
 .prog-bar{height:100%;border-radius:2px;background:var(--turq);width:0;transition:width 1.8s cubic-bezier(.22,1,.36,1);}
 .prog-bar.r{background:var(--accent);}
@@ -1019,7 +1021,7 @@ a.nav-cta,a.btn-solid,a.btn-ghost,a.pc-btn,.drawer-foot a,#mob-cta a{
       <a href="#process" class="btn-ghost">See How It Works ↓</a>
     </div>
     <div class="hero-clinical" role="group" aria-label="Clinic outcomes">
-      <span class="hc-cell"><span class="hc-live" aria-hidden="true"></span><b>LIVE</b>&nbsp;· 42 in program</span>
+      <span class="hc-cell"><span class="hc-live" aria-hidden="true"></span><b>LIVE</b>&nbsp;· <span data-live-counter aria-live="polite" style="display:inline-block;">42</span>&nbsp;in program</span>
       <span class="hc-cell"><b>12,427</b>&nbsp;recoveries</span>
       <span class="hc-cell"><em>3.2×</em>&nbsp;faster median</span>
       <span class="hc-cell"><b>94%</b>&nbsp;adherence</span>
@@ -1120,9 +1122,9 @@ a.nav-cta,a.btn-solid,a.btn-ghost,a.pc-btn,.drawer-foot a,#mob-cta a{
       <div class="rv" data-d="2" id="dash-trig">
         <div class="dash">
           <div class="dash-top"><div class="dash-av">RS</div><div><div class="dash-name">Riya Sharma</div><div class="dash-sub">Lumbar Disc Rehab · Week 6 of 12</div></div></div>
-          <div class="prog-row"><div class="prog-meta"><b>Pain Score</b><s>2/10 ↓ from 8</s></div><div class="prog-track"><div class="prog-bar r" data-w="25" id="pb1"></div></div></div>
-          <div class="prog-row"><div class="prog-meta"><b>Mobility Range</b><s>78%</s></div><div class="prog-track"><div class="prog-bar" data-w="78" id="pb2"></div></div></div>
-          <div class="prog-row"><div class="prog-meta"><b>Program Completion</b><s>50%</s></div><div class="prog-track"><div class="prog-bar" data-w="50" id="pb3"></div></div></div>
+          <div class="prog-row"><div class="prog-meta"><b>Pain Score</b><span class="val">2/10 ↓ from 8</span></div><div class="prog-track"><div class="prog-bar r" data-w="25" id="pb1"></div></div></div>
+          <div class="prog-row"><div class="prog-meta"><b>Mobility Range</b><span class="val">78%</span></div><div class="prog-track"><div class="prog-bar" data-w="78" id="pb2"></div></div></div>
+          <div class="prog-row"><div class="prog-meta"><b>Program Completion</b><span class="val">50%</span></div><div class="prog-track"><div class="prog-bar" data-w="50" id="pb3"></div></div></div>
           <div class="dash-mets"><div class="dm"><div class="dm-v">12</div><div class="dm-l">Sessions</div></div><div class="dm"><div class="dm-v">94%</div><div class="dm-l">Adherence</div></div><div class="dm"><div class="dm-v">6wk</div><div class="dm-l">Active</div></div></div>
           <div class="ai-chip"><strong>AI Insight:</strong> Lumbar flexion improved 34° since intake. Recommend Phase 3 loading based on current pain response trends.</div>
         </div>
@@ -1255,22 +1257,9 @@ const html = document.documentElement;
 const isMob = ()=>innerWidth<=768;
 const isDark = ()=>html.getAttribute('data-theme')==='dark';
 
-/* ── THEME TOGGLE ───────────────────────────── */
-function toggleTheme(){
-  const next = isDark() ? 'light' : 'dark';
-  html.setAttribute('data-theme', next);
-  localStorage.setItem('kc-theme', next);
-  // Update browser chrome colour
-  const metaTC = document.getElementById('meta-theme-color');
-  if(metaTC) metaTC.content = next==='dark' ? '#0E0B08' : '#FAF8F3';
-  // Refresh ScrollTrigger after theme change
-  setTimeout(()=>ScrollTrigger.refresh(), 450);
-}
-document.getElementById('theme-btn').addEventListener('click', toggleTheme);
-document.getElementById('drawer-theme').addEventListener('click', toggleTheme);
-// Restore saved theme SYNCHRONOUSLY before DOMContentLoaded to prevent FOUC
-const saved = localStorage.getItem('kc-theme');
-if(saved){ html.setAttribute('data-theme', saved); const m=document.getElementById('meta-theme-color');if(m)m.content=saved==='dark'?'#0E0B08':'#FAF8F3'; }
+/* Theme toggle + nav scroll + burger + reveal + stat counters + progress bars
+   + testi visibility guard + WhatsApp injection are all handled by shared.js.
+   This file only owns the page-specific 3D hero, spine canvas, and GSAP scroll story. */
 
 /* ── LOADER ─────────────────────────────────── */
 (()=>{
@@ -1280,20 +1269,9 @@ if(saved){ html.setAttribute('data-theme', saved); const m=document.getElementBy
   window.addEventListener('load',done);setTimeout(done,3000);
 })();
 
-/* ── NAV ────────────────────────────────────── */
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('stuck',scrollY>50),{passive:true});
-const burger=document.getElementById('burger'),drawer=document.getElementById('drawer');
-function syncDrawerA11y(){
-  const open=drawer.classList.contains('open');
-  burger.setAttribute('aria-expanded',String(open));
-  burger.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');
-  drawer.setAttribute('aria-hidden',String(!open));
-}
-function closeDrawer(){burger.classList.remove('open');drawer.classList.remove('open');document.body.style.overflow='';syncDrawerA11y();}
-burger.addEventListener('click',()=>{burger.classList.toggle('open');drawer.classList.toggle('open');document.body.style.overflow=drawer.classList.contains('open')?'hidden':'';syncDrawerA11y();});
-document.querySelectorAll('.dl').forEach(a=>a.addEventListener('click',closeDrawer));
-// Close drawer on Escape
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('open'))closeDrawer();});
+/* Nav, drawer, and closeDrawer() are owned by shared.js. Back-compat alias so
+   existing onclick="closeDrawer()" handlers on drawer links still work. */
+function closeDrawer(){ if(window.KC && window.KC.closeDrawer) window.KC.closeDrawer(); }
 
 /* ── THREE.JS HERO ──────────────────────────── */
 (()=>{
@@ -1558,27 +1536,10 @@ function drawSpine(ctx,W,H,p){
   });
 })();
 
-/* ── SCROLL REVEAL ──────────────────────────── */
-(()=>{
-  const io=new IntersectionObserver(ee=>{ee.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.08});
-  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-})();
+/* Scroll reveal, stat counters, progress bars are handled by shared.js.
+   Only page-specific behaviour remains here. */
 
-/* ── PROGRESS BARS ──────────────────────────── */
-(()=>{
-  const io=new IntersectionObserver(ee=>{ee.forEach(e=>{if(e.isIntersecting){['pb1','pb2','pb3'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.width=el.dataset.w+'%';});io.unobserve(e.target);}});},{threshold:.3});
-  const d=document.getElementById('dash-trig');if(d)io.observe(d);
-})();
-
-/* ── STAT COUNTERS ──────────────────────────── */
-(()=>{
-  function run(el){const n=parseInt(el.dataset.n),s=el.dataset.s||'',isK=n>=1000,dt=isK?Math.round(n/1000):n,dur=1500,t0=performance.now();
-    function step(now){const f=Math.min((now-t0)/dur,1),e=1-Math.pow(1-f,3),v=Math.round(dt*e);el.innerHTML=v+'<em>'+s+'</em>';if(f<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
-  const io=new IntersectionObserver(ee=>{ee.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.stat-n').forEach(run);io.unobserve(e.target);}});},{threshold:.35});
-  const s=document.getElementById('stats');if(s)io.observe(s);
-})();
-
-/* ── SCROLL SNAP DOTS ───────────────────────── */
+/* ── SCROLL SNAP DOTS (mobile pricing + testimonial dots) ─── */
 (()=>{
   function initDots(scrollEl,dotsWrapId,dotClass){
     const wrap=document.getElementById(dotsWrapId);if(!wrap||!scrollEl)return;
@@ -1586,7 +1547,6 @@ function drawSpine(ctx,W,H,p){
     show();window.addEventListener('resize',show,{passive:true});
     scrollEl.addEventListener('scroll',()=>{
       const items=[...scrollEl.querySelectorAll('.'+dotClass)];if(!items.length)return;
-      // Find the item whose centre is closest to the scroll container's centre
       const ctrL=scrollEl.scrollLeft+scrollEl.clientWidth/2;
       let best=0,bestD=Infinity;
       items.forEach((item,i)=>{
@@ -1608,5 +1568,7 @@ function drawSpine(ctx,W,H,p){
   hide(document.getElementById('cta-sec'));
 })();
 </script>
+
+<script src="shared.js" defer></script>
 </body>
 </html>

@@ -28,6 +28,8 @@
 <meta name="theme-color" content="#FAF8F3" id="meta-theme-color">
 <meta name="color-scheme" content="light dark">
 <script>try{const _t=localStorage.getItem('kc-theme');if(_t)document.documentElement.setAttribute('data-theme',_t);}catch(e){}</script>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="shared.css">
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
 <!-- SoftwareApplication schema — references MedicalBusiness @id from index.html -->
@@ -464,12 +466,9 @@ footer a{color:var(--muted2);margin:0 10px;}
       </div>
     </div>
     <div class="fallback" id="fallback" hidden>
-      <h3 id="fallback-title">3D viewer couldn't start</h3>
-      <p id="fallback-msg">Loading diagnostic…</p>
-      <p style="margin-top:16px;font-size:12px;color:var(--muted);">
-        Tip: open DevTools (F12) → Console tab to see the exact error.
-      </p>
-      <p style="margin-top:8px;"><a href="book.html">Book an assessment</a> — we'll demo it in clinic.</p>
+      <h3 id="fallback-title">3D viewer couldn't start here</h3>
+      <p id="fallback-msg">Your browser couldn't render the live 3D model. No problem — we'll show you the same posture analysis at your free in-clinic assessment.</p>
+      <p style="margin-top:18px;"><a href="book.html" class="fallback-cta">Book a free assessment →</a></p>
     </div>
   </section>
 
@@ -517,17 +516,16 @@ footer a{color:var(--muted2);margin:0 10px;}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" onerror="this.onerror=null;console.warn('[generate] cdnjs failed, trying jsdelivr'); var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js';s.onerror=function(){console.warn('[generate] jsdelivr failed, trying unpkg'); var s2=document.createElement('script');s2.src='https://unpkg.com/three@0.128.0/build/three.min.js';document.head.appendChild(s2);};document.head.appendChild(s);"></script>
 <script>
 /* ═══════════════════════════════════════════════════════════════
-   THEME TOGGLE
+   THEME TOGGLE — owned by shared.js. Register a callback so the 3D
+   scene can re-colour materials when the theme flips.
 ═══════════════════════════════════════════════════════════════ */
 const html = document.documentElement;
 const isDark = ()=>html.getAttribute('data-theme')==='dark';
-document.getElementById('theme-btn').addEventListener('click',()=>{
-  const next = isDark() ? 'light' : 'dark';
-  html.setAttribute('data-theme', next);
-  localStorage.setItem('kc-theme', next);
-  const m = document.getElementById('meta-theme-color');
-  if(m) m.content = next==='dark' ? '#0E0B08' : '#FAF8F3';
-  if(window.KC_onTheme) window.KC_onTheme();
+// Defer registration until shared.js has set up window.KC
+document.addEventListener('DOMContentLoaded',()=>{
+  if(window.KC && window.KC.onTheme){
+    window.KC.onTheme.add(()=>{ if(window.KC_onTheme) window.KC_onTheme(); });
+  }
 });
 
 /* ═══════════════════════════════════════════════════════════════
@@ -1238,5 +1236,6 @@ document.getElementById('reset-btn').addEventListener('click',()=>{
 });
 </script>
 
+<script src="shared.js" defer></script>
 </body>
 </html>
