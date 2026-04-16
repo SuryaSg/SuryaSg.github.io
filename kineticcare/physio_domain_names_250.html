@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>250 Physio Domain Names | KineticCare</title>
+<meta name="description" content="Working list of 250 domain name candidates for physiotherapy platforms — search, filter by category and TLD, click to copy.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#FAF8F3" id="meta-theme-color">
+<meta name="color-scheme" content="light dark">
+<script>try{const _t=localStorage.getItem('kc-theme');if(_t)document.documentElement.setAttribute('data-theme',_t);}catch(e){}</script>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="shared.css">
+
+<style>
+/* Map the artifact-style tokens used in the inline script to our design system */
+:root,[data-theme="light"]{
+  --font-sans:'DM Sans',system-ui,sans-serif;
+  --color-text-primary:var(--ink);
+  --color-text-secondary:var(--ink3);
+  --color-text-tertiary:var(--muted2);
+  --color-text-success:var(--turq);
+  --color-background-primary:var(--card);
+  --color-background-secondary:var(--bg1);
+  --color-border-primary:var(--accent);
+  --color-border-secondary:var(--br2);
+  --color-border-tertiary:var(--br);
+  --color-border-success:var(--turq);
+  --border-radius-md:10px;
+}
+[data-theme="dark"]{
+  --color-text-primary:var(--ink);
+  --color-text-secondary:var(--ink3);
+  --color-text-tertiary:var(--muted2);
+}
+
+/* Page layout */
+main#main{padding:calc(var(--nav-h) + 40px) 0 64px;}
+.page-head{max-width:1180px;margin:0 auto;padding:0 64px 28px;}
+.page-head .eyebrow{font-size:11px;margin-bottom:12px;}
+.page-head h1{
+  font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,42px);font-weight:800;
+  letter-spacing:-1.4px;line-height:1.05;color:var(--ink);margin-bottom:10px;text-wrap:balance;
+}
+.page-head p{font-size:14px;color:var(--ink3);line-height:1.6;max-width:620px;text-wrap:pretty;}
+.page-head .hint{
+  display:inline-block;margin-top:14px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted2);
+  letter-spacing:.5px;
+}
+
+.dom-wrap{max-width:1180px;margin:0 auto;padding:0 64px;}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+/* Controls + grid (uses mapped tokens above) */
+.controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+.controls input{
+  flex:1;min-width:220px;padding:11px 14px;
+  border:1px solid var(--color-border-secondary);border-radius:var(--border-radius-md);
+  background:var(--color-background-primary);color:var(--color-text-primary);
+  font-size:14px;font-family:var(--font-sans);
+}
+.controls input:focus{outline:none;border-color:var(--color-border-primary);box-shadow:0 0 0 3px var(--abg);}
+.filter-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+.pill{
+  padding:6px 14px;border-radius:100px;
+  border:1px solid var(--color-border-secondary);background:var(--color-background-primary);
+  color:var(--color-text-secondary);font-size:12px;cursor:pointer;
+  transition:all .18s ease;font-family:var(--font-sans);
+}
+.pill:hover{border-color:var(--muted);color:var(--ink);}
+.pill.active{background:var(--abg);color:var(--accent);border-color:var(--abrd);}
+.stats{
+  font-size:12px;color:var(--muted2);margin-bottom:16px;
+  font-family:'JetBrains Mono',monospace;letter-spacing:.3px;font-variant-numeric:tabular-nums;
+}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;}
+.card{
+  background:var(--color-background-primary);
+  border:1px solid var(--color-border-tertiary);
+  border-radius:var(--border-radius-md);
+  padding:12px 14px;cursor:pointer;position:relative;
+  transition:border-color .15s ease,transform .15s ease,box-shadow .18s ease;
+}
+.card:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:var(--shadow);}
+.card.copied{border-color:var(--color-border-success);background:var(--tbg);}
+.domain{
+  font-size:14px;font-weight:500;color:var(--color-text-primary);
+  word-break:break-all;font-family:'JetBrains Mono',monospace;letter-spacing:-.2px;
+}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:8px;}
+.cat-badge{
+  font-size:10px;padding:3px 8px;border-radius:100px;font-weight:500;letter-spacing:.2px;
+  white-space:nowrap;
+}
+.tld-tag{
+  font-size:11px;color:var(--color-text-tertiary);
+  font-family:'JetBrains Mono',monospace;letter-spacing:.3px;
+}
+.copy-hint{
+  font-size:10px;color:var(--color-text-success);
+  position:absolute;top:8px;right:10px;opacity:0;
+  transition:opacity .2s;font-family:'JetBrains Mono',monospace;letter-spacing:.5px;text-transform:uppercase;
+}
+.card.copied .copy-hint{opacity:1;}
+
+@media(max-width:768px){
+  main#main{padding-top:calc(var(--nav-h) + 24px);}
+  .page-head,.dom-wrap{padding-left:20px;padding-right:20px;}
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">Kinetic<b>Care</b></a>
+  <ul class="nav-center">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="generate.html">3D Viewer</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-right">
+    <button id="theme-btn" aria-label="Toggle light and dark theme">
+      <span class="theme-icon sun" aria-hidden="true">☀</span>
+      <span class="theme-icon moon" aria-hidden="true">◐</span>
+    </button>
+    <a href="book.html" class="nav-cta">Book Assessment</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="drawer">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="drawer" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="drawer-nav">
+    <a href="index.html" class="dl">Home</a>
+    <a href="services.html" class="dl">Services</a>
+    <a href="generate.html" class="dl">3D Viewer</a>
+    <a href="about.html" class="dl">About</a>
+    <a href="index.html#faq" class="dl">FAQ</a>
+  </div>
+  <div class="drawer-foot">
+    <a href="book.html">Book Free Assessment →</a>
+  </div>
+</div>
+
+<main id="main">
+
+<header class="page-head">
+  <div class="eyebrow">Internal · Working list</div>
+  <h1>250 physiotherapy domain candidates</h1>
+  <p>Naming research across 12 categories — brand, AI physio, clinic platform, recovery, movement, flow series, short premium, wellness, B2B SaaS, hybrid, sports, specialty. Search, filter by category or TLD, click any card to copy the domain to clipboard.</p>
+  <span class="hint">TIP · CLICK A DOMAIN TO COPY IT</span>
+</header>
+
+<div class="dom-wrap">
+  <h2 class="sr-only">250 high-value domain name suggestions for a physiotherapy platform</h2>
+  <div class="controls">
+    <input type="text" id="search" placeholder="Search domains or categories…" oninput="render()">
+  </div>
+  <div class="filter-row" id="cats"></div>
+  <div class="filter-row" id="tlds"></div>
+  <div class="stats" id="stats"></div>
+  <div class="grid" id="grid"></div>
+</div>
+
+</main>
+
+<footer>
+  <div class="f-logo">Kinetic<b>Care</b></div>
+  <nav class="f-links" aria-label="Footer">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="book.html">Book</a>
+    <a href="mailto:hello@kineticcare.in">Contact</a>
+  </nav>
+  <address class="f-copy">© 2026 KineticCare · Indiranagar, Bengaluru 560038, India</address>
+</footer>
+
+<script>
+const domains = [
+  ["flexandflow.com","Brand","com"],["flexandflow.co","Brand","co"],["flexandflow.in","Brand","in"],["flexandflow.ai","Brand","ai"],["flexandflow.io","Brand","io"],
+  ["movebetter.ai","Brand","ai"],["movebetter.io","Brand","io"],["movebetter.in","Brand","in"],["movebetterco.com","Brand","com"],["movebet.co","Brand","co"],
+  ["physioai.com","AI Physio","com"],["physioai.co","AI Physio","co"],["physioai.in","AI Physio","in"],["physioai.io","AI Physio","io"],["physioai.app","AI Physio","app"],
+  ["physioflow.co","AI Physio","co"],["physioflow.in","AI Physio","in"],["physioflow.io","AI Physio","io"],["physioflow.ai","AI Physio","ai"],["physioflow.app","AI Physio","app"],
+  ["rehabai.com","AI Physio","com"],["rehabai.co","AI Physio","co"],["rehabai.in","AI Physio","in"],["rehabai.io","AI Physio","io"],["rehabai.app","AI Physio","app"],
+  ["recoveryai.co","AI Physio","co"],["recoveryai.in","AI Physio","in"],["kineticai.co","AI Physio","co"],["kineticai.in","AI Physio","in"],["kineticai.io","AI Physio","io"],
+  ["moveai.co","AI Physio","co"],["moveai.in","AI Physio","in"],["motionai.co","AI Physio","co"],["motionai.in","AI Physio","in"],["mobilityai.co","AI Physio","co"],
+  ["physiohub.com","Clinic Platform","com"],["physiohub.co","Clinic Platform","co"],["physiohub.in","Clinic Platform","in"],["physiohub.io","Clinic Platform","io"],["physiohub.app","Clinic Platform","app"],
+  ["rehabclub.com","Clinic Platform","com"],["rehabclub.co","Clinic Platform","co"],["rehabclub.in","Clinic Platform","in"],["rehabhub.co","Clinic Platform","co"],["rehabhub.in","Clinic Platform","in"],
+  ["physioplus.co","Clinic Platform","co"],["physioplus.in","Clinic Platform","in"],["physioplus.app","Clinic Platform","app"],["physiocare.co","Clinic Platform","co"],["physiocare.in","Clinic Platform","in"],
+  ["physiomate.com","Clinic Platform","com"],["physiomate.co","Clinic Platform","co"],["physiomate.in","Clinic Platform","in"],["physiomate.app","Clinic Platform","app"],["physiomate.io","Clinic Platform","io"],
+  ["recoverfast.com","Recovery","com"],["recoverfast.co","Recovery","co"],["recoverfast.in","Recovery","in"],["recovr.co","Recovery","co"],["recovr.in","Recovery","in"],
+  ["recoverwell.com","Recovery","com"],["recoverwell.co","Recovery","co"],["recoverwell.in","Recovery","in"],["recoverflow.com","Recovery","com"],["recoverflow.co","Recovery","co"],
+  ["healflow.com","Recovery","com"],["healflow.co","Recovery","co"],["healflow.in","Recovery","in"],["healflow.ai","Recovery","ai"],["healfast.co","Recovery","co"],
+  ["rehab.ai","Recovery","ai"],["rehab.co","Recovery","co"],["rehabflow.com","Recovery","com"],["rehabflow.co","Recovery","co"],["rehabflow.in","Recovery","in"],
+  ["movewell.com","Movement","com"],["movewell.co","Movement","co"],["movewell.in","Movement","in"],["movewell.ai","Movement","ai"],["movewell.app","Movement","app"],
+  ["movefree.co","Movement","co"],["movefree.in","Movement","in"],["movefree.ai","Movement","ai"],["moveco.in","Movement","in"],["movedaily.co","Movement","co"],
+  ["kineticflow.com","Movement","com"],["kineticflow.co","Movement","co"],["kineticflow.in","Movement","in"],["kineticflow.app","Movement","app"],["kineticlab.co","Movement","co"],
+  ["motionstudio.co","Movement","co"],["motionstudio.in","Movement","in"],["motionflow.co","Movement","co"],["motionflow.in","Movement","in"],["motionfix.co","Movement","co"],
+  ["physiopath.co","Flow Series","co"],["physiopath.in","Flow Series","in"],["physiopath.app","Flow Series","app"],["mobility.app","Flow Series","app"],["moveforward.co","Flow Series","co"],
+  ["moveforward.in","Flow Series","in"],["gofly.co","Flow Series","co"],["goflux.co","Flow Series","co"],["influxphysio.co","Flow Series","co"],["influxphysio.in","Flow Series","in"],
+  ["flowphysio.com","Flow Series","com"],["flowphysio.co","Flow Series","co"],["flowphysio.in","Flow Series","in"],["flowfit.co","Flow Series","co"],["flowfit.in","Flow Series","in"],
+  ["physical.io","Flow Series","io"],["physical.co","Flow Series","co"],["bodyflow.co","Flow Series","co"],["bodyflow.in","Flow Series","in"],["bodyflow.ai","Flow Series","ai"],
+  ["phys.io","Short Premium","io"],["rhab.co","Short Premium","co"],["rhab.in","Short Premium","in"],["rehab.app","Short Premium","app"],["phyio.co","Short Premium","co"],
+  ["phyzio.co","Short Premium","co"],["phyzio.in","Short Premium","in"],["kio.in","Short Premium","in"],["mov.co","Short Premium","co"],["mov.in","Short Premium","in"],
+  ["flex.ai","Short Premium","ai"],["flexi.in","Short Premium","in"],["flexi.co","Short Premium","co"],["flexco.in","Short Premium","in"],["flex.in","Short Premium","in"],
+  ["wellflow.com","Wellness","com"],["wellflow.co","Wellness","co"],["wellflow.in","Wellness","in"],["wellnessai.co","Wellness","co"],["wellnessai.in","Wellness","in"],
+  ["fitlab.co","Wellness","co"],["fitlab.in","Wellness","in"],["fitai.co","Wellness","co"],["fitai.in","Wellness","in"],["fitphysio.co","Wellness","co"],
+  ["fitphysio.in","Wellness","in"],["fitrecover.co","Wellness","co"],["fitrehab.co","Wellness","co"],["restorephysio.co","Wellness","co"],["restorephysio.in","Wellness","in"],
+  ["healthyflow.co","Wellness","co"],["healthyflow.in","Wellness","in"],["healthymove.co","Wellness","co"],["healthymove.in","Wellness","in"],["healthrehab.co","Wellness","co"],
+  ["clinicflow.com","B2B SaaS","com"],["clinicflow.co","B2B SaaS","co"],["clinicflow.in","B2B SaaS","in"],["clinicflow.io","B2B SaaS","io"],["clinicflow.app","B2B SaaS","app"],
+  ["physiodesk.co","B2B SaaS","co"],["physiodesk.in","B2B SaaS","in"],["physiodesk.app","B2B SaaS","app"],["rehabdesk.co","B2B SaaS","co"],["rehabdesk.in","B2B SaaS","in"],
+  ["patientflow.com","B2B SaaS","com"],["patientflow.co","B2B SaaS","co"],["patientflow.in","B2B SaaS","in"],["patientflow.io","B2B SaaS","io"],["patientflow.app","B2B SaaS","app"],
+  ["therapyflow.com","B2B SaaS","com"],["therapyflow.co","B2B SaaS","co"],["therapyflow.in","B2B SaaS","in"],["therapyflow.app","B2B SaaS","app"],["therapycare.co","B2B SaaS","co"],
+  ["therapycare.in","B2B SaaS","in"],["therapyhub.co","B2B SaaS","co"],["therapyhub.in","B2B SaaS","in"],["therapyplus.co","B2B SaaS","co"],["therapyplus.in","B2B SaaS","in"],
+  ["physiolink.co","Hybrid","co"],["physiolink.in","Hybrid","in"],["physiolink.io","Hybrid","io"],["physiolink.app","Hybrid","app"],["physiofind.co","Hybrid","co"],
+  ["physiofind.in","Hybrid","in"],["physiofind.app","Hybrid","app"],["physionow.co","Hybrid","co"],["physionow.in","Hybrid","in"],["physionow.app","Hybrid","app"],
+  ["physioroom.co","Hybrid","co"],["physioroom.in","Hybrid","in"],["physioroom.app","Hybrid","app"],["physioshop.co","Hybrid","co"],["physioshop.in","Hybrid","in"],
+  ["physiozone.co","Hybrid","co"],["physiozone.in","Hybrid","in"],["physiocircle.co","Hybrid","co"],["physiocircle.in","Hybrid","in"],["physionet.co","Hybrid","co"],
+  ["sportrehab.co","Sports","co"],["sportrehab.in","Sports","in"],["sportrehab.ai","Sports","ai"],["sportsphysio.co","Sports","co"],["sportsphysio.in","Sports","in"],
+  ["athlephysio.co","Sports","co"],["athlephysio.in","Sports","in"],["athleterehab.co","Sports","co"],["athleterehab.in","Sports","in"],["performphysio.co","Sports","co"],
+  ["performphysio.in","Sports","in"],["performrehab.co","Sports","co"],["performrehab.in","Sports","in"],["peakrehab.co","Sports","co"],["peakrehab.in","Sports","in"],
+  ["peakphysio.co","Sports","co"],["peakphysio.in","Sports","in"],["eliterehab.co","Sports","co"],["eliterehab.in","Sports","in"],["elitephysio.co","Sports","co"],
+  ["spinecare.ai","Specialty","ai"],["spineflow.co","Specialty","co"],["spineflow.in","Specialty","in"],["jointflow.co","Specialty","co"],["jointflow.in","Specialty","in"],
+  ["musclerehab.co","Specialty","co"],["musclerehab.in","Specialty","in"],["backrehab.co","Specialty","co"],["backrehab.in","Specialty","in"],["postureai.co","Specialty","co"],
+  ["postureflow.co","Specialty","co"],["postureflow.in","Specialty","in"],["painflow.co","Specialty","co"],["painfree.ai","Specialty","ai"],["painrelief.ai","Specialty","ai"],
+];
+
+const catColors = {
+  "Brand":"#7F77DD","AI Physio":"#1D9E75","Clinic Platform":"#378ADD","Recovery":"#D85A30",
+  "Movement":"#BA7517","Flow Series":"#3B6D11","Short Premium":"#D4537E","Wellness":"#185FA5",
+  "B2B SaaS":"#993556","Hybrid":"#5F5E5A","Sports":"#639922","Specialty":"#E24B4A"
+};
+
+let activeCat = "All", activeTld = "All";
+
+function render(){
+  const q = document.getElementById("search").value.toLowerCase();
+  const filtered = domains.filter(([d,c,t])=>{
+    const matchCat = activeCat==="All"||c===activeCat;
+    const matchTld = activeTld==="All"||t===activeTld;
+    const matchQ = d.toLowerCase().includes(q)||c.toLowerCase().includes(q);
+    return matchCat&&matchTld&&matchQ;
+  });
+  document.getElementById("stats").textContent = filtered.length+" / "+domains.length+" domains shown";
+  const g = document.getElementById("grid");
+  g.innerHTML = filtered.map(([d,c,t])=>{
+    const col = catColors[c]||"#888";
+    return `<div class="card" onclick="copyDomain(this,'${d}')">
+      <span class="copy-hint">copied!</span>
+      <div class="domain">${d}</div>
+      <div class="meta">
+        <span class="cat-badge" style="background:${col}1A;color:${col}">${c}</span>
+        <span class="tld-tag">.${t}</span>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+function copyDomain(el, d){
+  navigator.clipboard.writeText(d).catch(()=>{});
+  el.classList.add("copied");
+  setTimeout(()=>el.classList.remove("copied"),1500);
+}
+
+function buildFilters(){
+  const cats = ["All",...new Set(domains.map(d=>d[1]))];
+  const tlds = ["All",...new Set(domains.map(d=>d[2])).values()].sort((a,b)=>a==="All"?-1:b==="All"?1:a.localeCompare(b));
+  document.getElementById("cats").innerHTML = cats.map(c=>`<span class="pill${c===activeCat?" active":""}" onclick="setCat('${c}')">${c}</span>`).join("");
+  document.getElementById("tlds").innerHTML = tlds.map(t=>`<span class="pill${t===activeTld?" active":""}" onclick="setTld('${t}')">.${t}</span>`).join("");
+}
+
+function setCat(c){activeCat=c;buildFilters();render();}
+function setTld(t){activeTld=t;buildFilters();render();}
+
+buildFilters();render();
+</script>
+
+<script src="shared.js" defer></script>
+
+</body>
+</html>
