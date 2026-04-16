@@ -188,8 +188,12 @@ main#main{padding-top:calc(var(--nav-h) + 32px);}
 .canvas-fallback a:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);color:#fff;}
 
 /* ─── OUTPUT ─────────────────────────────── */
+/* Lives OUTSIDE .gen-layout so the sticky inputs panel stops at the
+   end of the canvas row — otherwise it follows scroll and overlaps
+   the clinical interpretation panels below. */
 .gen-output-wrap{
-  grid-column:1 / -1;padding-top:24px;border-top:1px solid var(--br);
+  max-width:1200px;margin:28px auto 0;padding:24px 32px 0;
+  border-top:1px solid var(--br);
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;
 }
 .gen-output{
@@ -244,12 +248,12 @@ main#main{padding-top:calc(var(--nav-h) + 32px);}
 .disclaimer{font-size:11px;color:var(--muted);margin-top:14px;text-align:center;line-height:1.5;}
 
 @media(max-width:960px){
-  .gen-layout{grid-template-columns:1fr;padding:0 20px 32px;gap:18px;}
+  .gen-layout{grid-template-columns:1fr;padding:0 20px 0;gap:18px;}
   .gen-inputs{position:static;}
   .gen-canvas-wrap{aspect-ratio:auto;height:min(60dvh,440px);}
-  .gen-output-wrap{grid-template-columns:1fr;}
+  .gen-output-wrap{grid-template-columns:1fr;padding:20px 20px 0;margin-top:20px;}
   .page-head{padding:0 20px 20px;}
-  main#main{padding-top:calc(var(--nav-h) + 20px);}
+  main#main{padding-top:calc(var(--nav-h) + 20px);padding-bottom:32px;}
 }
 @media(max-width:480px){
   .canvas-help{display:none;}
@@ -385,37 +389,37 @@ main#main{padding-top:calc(var(--nav-h) + 32px);}
       <a href="book.html">Book a free assessment →</a>
     </div>
   </section>
+</div>
 
-  <div class="gen-output-wrap">
-    <aside class="gen-output" aria-live="polite" aria-atomic="true">
-      <h2>
-        <span>Clinical interpretation</span>
-        <span class="risk-badge risk-low" id="risk-badge">LOW</span>
-      </h2>
-      <ul class="interpret-list" id="interpret"></ul>
+<div class="gen-output-wrap">
+  <aside class="gen-output" aria-live="polite" aria-atomic="true">
+    <h2>
+      <span>Clinical interpretation</span>
+      <span class="risk-badge risk-low" id="risk-badge">LOW</span>
+    </h2>
+    <ul class="interpret-list" id="interpret"></ul>
 
-      <div class="rec-card">
-        <div class="eyebrow">Recommended service</div>
-        <a id="rec-link" href="services.html#spine">Spine &amp; Posture →</a>
-      </div>
+    <div class="rec-card">
+      <div class="eyebrow">Recommended service</div>
+      <a id="rec-link" href="services.html#spine">Spine &amp; Posture →</a>
+    </div>
 
-      <a class="gen-cta" id="book-cta" href="book.html?concern=spine">See this live with AI motion capture →</a>
-      <p class="disclaimer">
-        Informational only. Not a medical diagnosis. Procedural model from population-average biomechanical data.
-      </p>
-    </aside>
+    <a class="gen-cta" id="book-cta" href="book.html?concern=spine">See this live with AI motion capture →</a>
+    <p class="disclaimer">
+      Informational only. Not a medical diagnosis. Procedural model from population-average biomechanical data.
+    </p>
+  </aside>
 
-    <aside class="gen-output" aria-label="How to read this model">
-      <h2>How to read this</h2>
-      <ul class="interpret-list">
-        <li><b>Terracotta</b> vertebrae are within typical range for your inputs.</li>
-        <li class="warn"><b>Red</b> vertebrae indicate excessive curvature, compression, or concern-specific strain.</li>
-        <li>Pulse rings show where a physiotherapist would likely focus the first assessment.</li>
-        <li><b>Cervical</b> = neck · <b>Thoracic</b> = mid-back · <b>Lumbar</b> = lower back · <b>Pelvis</b> = base.</li>
-        <li>This is procedural — it doesn't use your real photo or records. A live assessment uses AI motion capture and force-plate data.</li>
-      </ul>
-    </aside>
-  </div>
+  <aside class="gen-output" aria-label="How to read this model">
+    <h2>How to read this</h2>
+    <ul class="interpret-list">
+      <li><b>Terracotta</b> vertebrae are within typical range for your inputs.</li>
+      <li class="warn"><b>Red</b> vertebrae indicate excessive curvature, compression, or concern-specific strain.</li>
+      <li>Pulse rings show where a physiotherapist would likely focus the first assessment.</li>
+      <li><b>Cervical</b> = neck · <b>Thoracic</b> = mid-back · <b>Lumbar</b> = lower back · <b>Pelvis</b> = base.</li>
+      <li>This is procedural — it doesn't use your real photo or records. A live assessment uses AI motion capture and force-plate data.</li>
+    </ul>
+  </aside>
 </div>
 
 </main>
